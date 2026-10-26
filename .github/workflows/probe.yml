@@ -10,15 +10,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          mkdir -p out6
+          mkdir -p out7
           UA="Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1"
-          G=https://www.gkd.bayern.de/de/seen/wasserstand/bayern/lindau-20001001
-          curl -sSL -A "$UA" "$G/messwerte/tabelle?beginn=26.09.2026&ende=27.10.2026" -o out6/lin_daily_2026.html || true
-          curl -sSL -A "$UA" "$G/messwerte/tabelle?beginn=01.01.1990&ende=27.10.2026" -o out6/lin_all.html || true
-          curl -sSL -A "$UA" "$G/messwerte/tabelle" -o out6/lin_15min.html || true
-          curl -sSL -A "$UA" "$G/stammdaten" -o out6/lin_stamm.html || true
-          curl -sS "https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations/aa9179c1-17ef-4c61-a48a-74193fa7bfdf/W/measurements.json?start=P31D" -o out6/kn.json || true
-          ls -la out6
+          curl -sSL -A "$UA" "https://www.bodensee-hochwasser.info/lagebericht.php" -o out7/lage.html || true
+          curl -sSL -A "$UA" "https://www.hydrodaten.admin.ch/de/seen-und-fluesse/stationen-und-daten/2032" -o out7/bafu2032.html || true
+          curl -sSL -A "$UA" "https://www.hydrodaten.admin.ch/de/2032.html" -o out7/bafu2032b.html || true
+          curl -sSL "https://api.open-meteo.com/v1/forecast?latitude=47.55,47.45,46.85,46.80,47.08,47.30&longitude=9.68,9.65,9.53,9.83,9.90,9.40&daily=precipitation_sum,temperature_2m_mean,snowfall_sum&forecast_days=7&timezone=Europe%2FBerlin" -o out7/om.json || true
+          curl -sSI -H "Origin: https://jan-ai75.github.io" "https://api.open-meteo.com/v1/forecast?latitude=47.55&longitude=9.68&daily=precipitation_sum&forecast_days=7" -o out7/om_cors.txt || true
+          ls -la out7
       - run: |
           git config user.name probe; git config user.email probe@users.noreply.github.com
-          git add out6 && git commit -m probe-results && git push
+          git add out7 && git commit -m probe-results && git push
