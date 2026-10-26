@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+
+
+<meta content="Die Website «Hydrologische Daten und Vorhersagen» wird vom Bundesamt für Umwelt BAFU herausgegeben. Das Portal veröffentlicht aktuelle und historische hydrologische Daten zu Flüssen, Seen und zum Grundwasser der Schweiz sowie Vorhersagen und Hochwasserwarnungen." name="description">
+<meta content="#ffffff" name="theme-color">
+<meta content="Hochwasser Hochwassergefahr Hochwassergefahrenwarnung Hochwasserwarnung Warnung Gefahr durch Hochwasser Schweiz Gewässer BAFU Bundesamt für Umwelt Naturgefahren Bund Hochwasser Aargau Appenzell Innerrhoden Appenzell Ausserrhoden Bern Basel-Landschaft Basel-Stadt Freiburg Genf Glarus Graubünden Jura Luzern Neuenburg Nidwalden Obwalden St. Gallen Schaffhausen Solothurn Schwyz Thurgau Ticino Uri Waadt Wallis Zug Zürich" name="keywords">
+<title>Hydrologische Daten und Vorhersagen</title>
+<link href="/de/manifest" rel="manifest">
+<link href="/assets/styleguide/css/vendors.css" rel="stylesheet">
+<link href="/assets/styleguide/css/admin.css" rel="stylesheet">
+<link href="/assets/styleguide/css/print.css" rel="stylesheet">
+<link rel="stylesheet" href="/vite/assets/web-yMWwfgfQ.css" media="all" />
+<link rel="stylesheet" href="/vite/assets/web_hydro-GnxnZf2A.css" media="all" />
+<link href="/assets/styleguide/img/ico/favicon.ico" rel="shortcut icon">
+<link href="/assets/styleguide/img/ico/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57">
+<link href="/assets/styleguide/img/ico/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+<link href="/assets/styleguide/img/ico/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+<link href="/assets/styleguide/img/ico/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+<link href="/assets/styleguide/img/ico/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60">
+<link href="/assets/styleguide/img/ico/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+<link href="/assets/styleguide/img/ico/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+<link href="/assets/styleguide/img/ico/favicon-512x512.png" rel="icon" sizes="512x512" type="image/png">
+<link href="/assets/styleguide/img/ico/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png">
+<link href="/assets/styleguide/img/ico/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
+<link href="/assets/styleguide/img/ico/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+<link href="/assets/styleguide/img/ico/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+<meta content="#ffffff" name="msapplication-TileColor">
+<meta content="/assets/styleguide/img/ico/mstile-144x144.png" name="msapplication-TileImage">
+<meta content="/assets/styleguide/img/ico/browserconfig.xml" name="msapplication-config">
+<meta content="no" name="apple-mobile-web-app-capable">
+<meta data-matomo-url="sam.matomo.monitoring.cloud.bafu.admin.ch" data-site-id="4" name="matomo-config">
+<script src="/vite/assets/web-6-m-nng0.js" crossorigin="anonymous" type="module"></script>
+<script src="/vite/assets/web_hydro-XAQqhi0N.js" crossorigin="anonymous" type="module"></script><link rel="modulepreload" href="/vite/assets/index-RSHqpKB9.js" as="script" crossorigin="anonymous">
+<link rel="modulepreload" href="/vite/assets/index-CNtZvQ7D.js" as="script" crossorigin="anonymous">
+
+
+
+</head>
+<body>
+<nav aria-label="Tastaturkürzel" class="access-keys">
+<ul>
+<li><a accesskey="0" href="/de/aktuelle-lage">Startseite</a></li>
+<li><a accesskey="1" href="#main-navigation">Hauptnavigation</a></li>
+<li><a accesskey="2" href="#content">Inhalt</a></li>
+</ul>
+</nav>
+
+<div class="container container-main">
+
+<header>
+<div class="clearfix">
+<nav aria-label="Orientierung in der Website" class="navbar treecrumb pull-left">
+<h2 class="sr-only">Orientierung in der Website</h2>
+<ul class="nav navbar-nav">
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="federal_council-dropdown">
+<span class="icon icon--right"></span>
+Der Bundesrat
+</a>
+<ul aria-labelledby="federal_council-dropdown" class="dropdown-menu" role="menu">
+<li class="dropdown-header">
+<a target="_blank" rel="noopener" href="https://www.admin.ch/gov/de/start.html">Der Bundesrat admin.ch</a>
+<ul>
+<li>
+<a target="_blank" rel="noopener" href="https://www.bk.admin.ch/de">BK: Schweizerische Bundeskanzlei
+</a></li>
+<li>
+<a target="_blank" rel="noopener" href="https://www.eda.admin.ch/eda/de/home.html">EDA: Eidgenössisches Departement für auswärtige Angelegenheiten
+</a></li>
+<li>
+<a target="_blank" rel="noopener" href="https://www.edi.admin.ch/de">EDI: Eidgenössisches Department des Innern
+</a></li>
+<li>
+<a target="_blank" rel="noopener" href="https://www.ejpd.admin.ch/ejpd/de/home.html">EJPD: Eidgenössisches Justiz- und Polizeidepartment
+</a></li>
+<li>
+<a target="_blank" rel="noopener" href="https://www.vbs.admin.ch/de">VBS: Eidgenössisches Department für Verteidigung, Bevölkerungsschutz und Sport
+</a></li>
+<li>
+<a target="_blank" rel="noopener" href="https://www.efd.admin.ch/de">EFD: Eidgenössisches Finanzdepartement
+</a></li>
+<li>
+<a target="_blank" rel="noopener" href="https://www.wbf.admin.ch/de">WBF: Eidgenössisches Departement für Wirtschaft, Bildung und Forschung
+</a></li>
+<li>
+<a target="_blank" rel="noopener" href="https://www.uvek.admin.ch/uvek/de/home.html"><strong>UVEK: Eidgenössisches Department für Umwelt, Verkehr, Energie und Kommunikation</strong>
+</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="uvek-dropdown">
+<span class="icon icon--right"></span>
+UVEK
+</a>
+<ul aria-labelledby="uvek-dropdown" class="dropdown-menu" role="menu">
+<li class="dropdown-header">
+<a target="_blank" rel="noopener" href="https://www.uvek.admin.ch/uvek/de/home.html">UVEK: Eidgenössisches Department für Umwelt, Verkehr, Energie und Kommunikation</a>
+<ul>
+<li>
+<a target="_blank" rel="noopener" href="https://www.bav.admin.ch/de">Bundesamt für Verkehr
+</a></li>
+<li>
+<a target="_blank" rel="noopener" href="https://www.bazl.admin.ch/de">Bundesamt für Zivilluftfahrt
+</a></li>
+<li>
+<a target="_blank" rel="noopener" href="https://www.bfe.admin.ch/bfe/de/home.html">Bundesamt für Energie
+</a></li>
+<li>
+<a target="_blank" rel="noopener" href="https://www.astra.admin.ch/de">Bundesamt für Strassen
+</a></li>
+<li>
+<a target="_blank" rel="noopener" href="https://www.bakom.admin.ch/de/">Bundesamt für Kommunikation
+</a></li>
+<li>
+<a target="_blank" rel="noopener" href="https://www.bafu.admin.ch/bafu/de/home.html"><strong>BAFU: Bundesamt für Umwelt</strong>
+</a></li>
+<li>
+<a target="_blank" rel="noopener" href="https://www.are.admin.ch/de/are">Bundesamt für Raumentwicklung
+</a></li>
+<li>
+<a target="_blank" rel="noopener" href="https://www.sust.admin.ch/de/sust-startseite">Schweizerische Unfalluntersuchungsstelle
+</a></li>
+<li>
+<a target="_blank" rel="noopener" href="https://www.esti.admin.ch/de/esti-startseite">Eidgenössisches Starkstrominspektorat
+</a></li>
+<li>
+<a target="_blank" rel="noopener" href="https://www.ensi.ch/de/">Eidgenössisches Nuklearsicherheitsinspektorat
+</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="bafu-dropdown">
+<span class="icon icon--right"></span>
+BAFU
+</a>
+<ul aria-labelledby="bafu-dropdown" class="dropdown-menu" role="menu">
+<li class="dropdown-header">
+<a target="_blank" rel="noopener" href="https://www.bafu.admin.ch/bafu/de/home.html">BAFU: Bundesamt für Umwelt</a>
+<ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+
+<section class="nav-services clearfix">
+<h2 class="sr-only">Sprachauswahl</h2>
+<nav aria-label="Sprachauswahl" class="nav-lang">
+<ul>
+<li><a lang="de" title="Deutsch ausgewählt" aria-label="Deutsch ausgewählt" class="active" href="/de/aktuelle-lage">DE</a></li>
+<li><a lang="fr" title="Français" aria-label="Français" href="/fr/situation-actuelle">FR</a></li>
+<li><a lang="it" title="Italiano" aria-label="Italiano" href="/it/corrente">IT</a></li>
+<li><a lang="en" title="English" aria-label="English" href="/en/current-situation">EN</a></li>
+</ul>
+</nav>
+
+<nav aria-label="Services navigation" class="nav-service">
+<h2 class="sr-only">Services navigation</h2>
+<ul>
+<li>
+<a href="/de/kontakt">Kontakt</a>
+</li>
+</ul>
+</nav>
+
+</section>
+</div>
+<div class="clearfix">
+<a title="zurück zur Startseite" class="brand hidden-xs" href="/de/aktuelle-lage"><img alt="zurück zur Startseite" onerror="this.onerror=null; this.src=&#39;/assets/styleguide/img/logo-CH.png&#39;" src="/assets/styleguide/img/logo-CH.svg">
+<h1>
+Bundesamt für Umwelt BAFU
+<br>
+Hydrologische Daten und Vorhersagen
+</h1>
+</a><div class="title-links">
+<div class="mod mod-searchfield global-search" data-controller="web--hydro--search-component" data-groundwater-label="Alle Grundwasser-Stationen und -Messwerte" data-groundwater-path="/de/grundwasser/stationen-und-daten" data-stations-label="Alle Stationen und Messwerte der Flüsse und Seen" data-stations-path="/de/seen-und-fluesse/stationen-und-daten">
+<form class="stations-search form-horizontal" data-web--hydro--search-component-target="form" id="station-selector">
+<h2 class="sr-only">Stationssuche</h2>
+<label class="sr-only control-label" for="quicksearch">Stationssuche</label>
+<input class="form-control search-input" data-web--hydro--search-component-target="search" id="quicksearch" placeholder="Stationssuche">
+<button class="initially-hidden d-none icon icon--close icon--after search-reset" data-action="web--hydro--search-component#reset" data-web--hydro--search-component-target="reset" type="reset">
+<span class="initially-hidden sr-only">Reset</span>
+</button>
+<span class="initially-hidden icon icon--search"></span>
+<div class="d-none tt-suggestion empty-placeholder">
+<p></p>
+</div>
+</form>
+</div>
+
+<div id="favorites-link">
+<a class="btn link-button pull-right" href="/de/favoriten"><span class="icon link-icon-left icon--star"></span>
+<span class="link-text">
+Meine Favoriten
+</span>
+<span class="link-icon-right icon icon--right"></span>
+</a></div>
+
+</div>
+</div>
+</header>
+<nav aria-label="Navigation" class="nav-main yamm navbar" id="main-navigation">
+<h2 class="sr-only">Navigation</h2>
+<section class="nav-mobile">
+<div class="table-row">
+<div class="nav-mobile-header">
+<div class="table-row">
+<span class="nav-mobile-logo">
+<img alt="Confederatio Helvetica" onerror="this.onerror=null; this.src=&#39;/assets/styleguide/img/swiss.png&#39;" src="/assets/styleguide/img/swiss.svg">
+</span>
+<h1>
+<a href="/de/aktuelle-lage">BAFU Hydrologische Daten und Vorhersagen</a>
+</h1>
+</div>
+</div>
+<div class="table-cell dropdown">
+<a class="nav-mobile-menu dropdown-toggle" data-toggle="dropdown" href="#">
+<span class="icon icon--search"></span>
+</a>
+<div class="dropdown-menu" role="menu">
+<div class="mod mod-searchfield global-search" data-controller="web--hydro--search-component" data-groundwater-label="Alle Grundwasser-Stationen und -Messwerte" data-groundwater-path="/de/grundwasser/stationen-und-daten" data-stations-label="Alle Stationen und Messwerte der Flüsse und Seen" data-stations-path="/de/seen-und-fluesse/stationen-und-daten">
+<form class="stations-search form-horizontal" data-web--hydro--search-component-target="form" id="station-selector">
+<h2 class="sr-only">Stationssuche</h2>
+<label class="sr-only control-label" for="quicksearch">Stationssuche</label>
+<input class="form-control search-input" data-web--hydro--search-component-target="search" id="quicksearch" placeholder="Stationssuche">
+<button class="initially-hidden d-none icon icon--close icon--after search-reset" data-action="web--hydro--search-component#reset" data-web--hydro--search-component-target="reset" type="reset">
+<span class="initially-hidden sr-only">Reset</span>
+</button>
+<span class="initially-hidden icon icon--search"></span>
+<div class="d-none tt-suggestion empty-placeholder">
+<p></p>
+</div>
+</form>
+</div>
+
+</div>
+</div>
+<div class="table-cell">
+<a class="nav-mobile-menu" href="/de/favoriten"><span class="icon icon--star"></span>
+</a></div>
+<div class="table-cell dropdown">
+<a class="nav-mobile-menu dropdown-toggle" data-toggle="dropdown" href="#">
+<span class="icon icon--menu"></span>
+<div class="sr-only">Navigation</div>
+</a>
+<div class="drilldown dropdown-menu" role="menu">
+<div class="drilldown-container">
+<nav aria-label="Mobile Navigation" class="nav-page-list">
+<ul>
+<li class="list-sub">
+<a href="#">Vorhersagen und Hochwassergefahr</a>
+<nav aria-expanded="false" class="drilldown-sub">
+<a class="icon icon--before icon--less drilldown-back" aria-hidden="true" href="#">Vorhersagen und Hochwassergefahr</a>
+<ul>
+<li class="">
+<a href="/de/hochwasserkarte">Hochwasserwarnkarte</a>
+</li>
+
+<li class="">
+<a href="/de/messstationen-vorhersage">Stationen mit Vorhersage</a>
+</li>
+
+<li class="">
+<a href="/de/naturgefahrenbulletin">Naturgefahrenbulletin</a>
+</li>
+
+<li class="">
+<a href="/de/hydro-preview">Hochwasser-Ausblick</a>
+</li>
+
+<li class="">
+<a href="/de/bulletin">Trockenheitsbulletin</a>
+</li>
+
+<li class="">
+<a href="/de/die-5-gefahrenstufen-fuer-hochwasser">Die 5 Gefahrenstufen für Hochwasser und Verhaltensempfehlungen</a>
+</li>
+
+</ul>
+<a class="yamm-close-bottom" href="#"><span aria-hidden="true" class="icon icon--top"></span>
+</a></nav>
+</li>
+<li class="list-sub">
+<a href="#">Flüsse und Seen</a>
+<nav aria-expanded="false" class="drilldown-sub">
+<a class="icon icon--before icon--less drilldown-back" aria-hidden="true" href="#">Flüsse und Seen</a>
+<ul>
+<li class="">
+<a href="/de/seen-und-fluesse/messstationen-zustand">Abfluss und Wasserstand</a>
+</li>
+
+<li class="">
+<a href="/de/seen-und-fluesse/messstationen-gefahrenstufen">Vergleich mit Gefahrenstufe</a>
+</li>
+
+<li class="">
+<a href="/de/seen-und-fluesse/messstationen-temperatur">Wassertemperatur</a>
+</li>
+
+<li class="">
+<a href="/de/seen-und-fluesse/messstationen-sauerstoff">Sauerstoff</a>
+</li>
+
+<li class="">
+<a href="/de/seen-und-fluesse/messstationen-truebung">Trübung</a>
+</li>
+
+<li class="">
+<a href="/de/seen-und-fluesse/stationen-und-daten">Stationen und Messwerte: Flüsse und Seen</a>
+</li>
+
+</ul>
+<a class="yamm-close-bottom" href="#"><span aria-hidden="true" class="icon icon--top"></span>
+</a></nav>
+</li>
+<li class="list-sub">
+<a href="#">Grundwasser</a>
+<nav aria-expanded="false" class="drilldown-sub">
+<a class="icon icon--before icon--less drilldown-back" aria-hidden="true" href="#">Grundwasser</a>
+<ul>
+<li class="">
+<a href="/de/grundwasser/messstationen-grundwasserstand">Grundwasserstand</a>
+</li>
+
+<li class="">
+<a href="/de/grundwasser/messstationen-temperatur">Grundwassertemperatur</a>
+</li>
+
+<li class="">
+<a href="/de/grundwasser/bulletin">Grundwasserbulletin</a>
+</li>
+
+<li class="">
+<a href="/de/grundwasser/stationen-und-daten">Stationen und Messwerte: Grundwasser</a>
+</li>
+
+</ul>
+<a class="yamm-close-bottom" href="#"><span aria-hidden="true" class="icon icon--top"></span>
+</a></nav>
+</li>
+<li class="list-sub">
+<a href="#">Weitere Informationen</a>
+<nav aria-expanded="false" class="drilldown-sub">
+<a class="icon icon--before icon--less drilldown-back" aria-hidden="true" href="#">Weitere Informationen</a>
+<ul>
+<li class="">
+<a href="/de/news">News</a>
+</li>
+
+<li class="">
+<a href="/de/messnetze">Messnetze</a>
+</li>
+
+<li class="">
+<a href="/de/hydrologie-schweiz">Hydrologie Schweiz</a>
+</li>
+
+<li class="">
+<a href="/de/service">Dienstleistungen</a>
+</li>
+
+<li class="">
+<a href="/de/aktuelle-hydrologische-daten-beziehen">Aktuelle hydrologische Daten beziehen</a>
+</li>
+
+<li class="">
+<a href="/de/fragen">FAQ</a>
+</li>
+
+</ul>
+<a class="yamm-close-bottom" href="#"><span aria-hidden="true" class="icon icon--top"></span>
+</a></nav>
+</li>
+<li class="list-sub">
+<a href="#">Über das Portal</a>
+<nav aria-expanded="false" class="drilldown-sub">
+<a class="icon icon--before icon--less drilldown-back" aria-hidden="true" href="#">Über das Portal</a>
+<ul>
+<li class="">
+<a href="/de/ueber-das-portal">Über das Portal</a>
+</li>
+
+<li class="">
+<a href="/de/kontakt">Kontakt</a>
+</li>
+
+</ul>
+<a class="yamm-close-bottom" href="#"><span aria-hidden="true" class="icon icon--top"></span>
+</a></nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<ul class="nav navbar-nav" style="width: calc(100% - 2* 1.6em)">
+<li class="dropdown yamm-fw">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">Vorhersagen und Hochwassergefahr</a>
+<ul class="dropdown-menu" role="menu">
+<li role="presentation">
+<div class="yamm-content container-fluid">
+<div class="row">
+<div class="col-sm-12">
+<button class="yamm-close btn btn-link icon icon--after icon--close pull-right">Schliessen</button>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12 main-column initialized">
+<div class="mod mod-columncontrols">
+<div class="row">
+<div class="col-md-3 col-sm-4">
+<div class="mod mod-teaser">
+<div>
+<div class="clearfix">
+<h3><a href="/de/hochwasserkarte">Hochwasserwarnkarte</a></h3>
+</div>
+</div>
+</div>
+
+<div class="mod mod-teaser">
+<div>
+<div class="clearfix">
+<h3><a href="/de/messstationen-vorhersage">Stationen mit Vorhersage</a></h3>
+</div>
+</div>
+</div>
+
+<div class="mod mod-teaser">
+<div>
+<div class="clearfix">
+<h3><a href="/de/naturgefahrenbulletin">Naturgefahrenbulletin</a></h3>
+</div>
+</div>
+</div>
+
+<div class="mod mod-teaser">
+<div>
+<div class="clearfix">
+<h3><a href="/de/hydro-preview">Hochwasser-Ausblick</a></h3>
+</div>
+</div>
+</div>
+
+<div class="mod mod-teaser">
+<div>
+<div class="clearfix">
+<h3><a href="/de/bulletin">Trockenheitsbulletin</a></h3>
+</div>
+</div>
+</div>
+
+<div class="mod mod-teaser">
+<div>
+<div class="clearfix">
+<h3><a href="/de/die-5-gefahrenstufen-fuer-hochwasser">Die 5 Gefahrenstufen für Hochwasser und Verhaltensempfehlungen</a></h3>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="dropdown yamm-fw">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">Flüsse und Seen</a>
+<ul class="dropdown-menu" role="menu">
+<li role="presentation">
+<div class="yamm-content container-fluid">
+<div class="row">
+<div class="col-sm-12">
+<button class="yamm-close btn btn-link icon icon--after icon--close pull-right">Schliessen</button>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12 main-column initialized">
+<div class="mod mod-columncontrols">
+<div class="row">
+<div class="col-md-3 col-sm-4">
+<div class="mod mod-teaser">
+<div>
+<div class="clearfix">
+<h3><a href="/de/seen-und-fluesse/messstationen-zustand">Abfluss und Wasserstand</a></h3>
+</div>
+</div>
+</div>
+
+<div class="mod mod-teaser">
+<div>
+<div class="clearfix">
+<h3><a href="/de/seen-und-fluesse/messstationen-gefahrenstufen">Vergleich mit Gefahrenstufe</a></h3>
+</div>
+</div>
+</div>
+
+<div class="mod mod-teaser">
+<div>
+<div class="clearfix">
+<h3><a href="/de/seen-und-fluesse/messstationen-temperatur">Wassertemperatur</a></h3>
+</div>
+</div>
+</div>
+
+<div class="mod mod-teaser">
+<div>
+<div class="clearfix">
+<h3><a href="/de/seen-und-fluesse/messstationen-sauerstoff">Sauerstoff</a></h3>
+</div>
+</div>
+</div>
+
+<div class="mod mod-teaser">
+<div>
+<div class="clearfix">
+<h3><a href="/de/seen-und-fluesse/messstationen-truebung">Trübung</a></h3>
+</div>
+</div>
+</div>
+
+<div class="mod mod-teaser">
+<div>
+<div class="clearfix">
+<h3><a href="/de/seen-und-fluesse/stationen-und-daten">Stationen und Messwerte: Flüsse und Seen</a></h3>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="dropdown yamm-fw">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">Grundwasser</a>
+<ul class="dropdown-menu" role="menu">
+<li role="presentation">
+<div class="yamm-content container-fluid">
+<div class="row">
+<div class="col-sm-12">
+<button class="yamm-close btn btn-link icon icon--after icon--close pull-right">Schliessen</button>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12 main-column initialized">
+<div class="mod mod-columncontrols">
+<div class="row">
+<div class="col-md-3 col-sm-4">
+<div class="mod mod-teaser">
+<div>
+<div class="clearfix">
+<h3><a href="/de/grundwasser/messstationen-grundwasserstand">Grundwasserstand</a></h3>
+</div>
+</div>
+</div>
+
+<div class="mod mod-teaser">
+<div>
+<div class="clearfix">
+<h3><a href="/de/grundwasser/messstationen-temperatur">Grundwassertemperatur</a></h3>
+</div>
+</div>
+</div>
+
+<div class="mod mod-teaser">
+<div>
+<div class="clearfix">
+<h3><a href="/de/grundwasser/bulletin">Grundwasserbulletin</a></h3>
+</div>
+</div>
+</div>
+
+<div class="mod mod-teaser">
+<div>
+<div class="clearfix">
+<h3><a href="/de/grundwasser/stationen-und-daten">Stationen und Messwerte: Grundwasser</a></h3>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="dropdown yamm-fw">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">Weitere Informationen</a>
+<ul class="dropdown-menu" role="menu">
+<li role="presentation">
+<div class="yamm-content container-fluid">
+<div class="row">
+<div class="col-sm-12">
+<button class="yamm-close btn btn-link icon icon--after icon--close pull-right">Schliessen</button>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12 main-column initialized">
+<div class="mod mod-columncontrols">
+<div class="row">
+<div class="col-md-3 col-sm-4">
+<div class="mod mod-teaser">
+<div>
+<div class="clearfix">
+<h3><a href="/de/news">News</a></h3>
+</div>
+</div>
+</div>
+
+<div class="mod mod-teaser">
+<div>
+<div class="clearfix">
+<h3><a href="/de/messnetze">Messnetze</a></h3>
+</div>
+</div>
+</div>
+
+<div class="mod mod-teaser">
+<div>
+<div class="clearfix">
+<h3><a href="/de/hydrologie-schweiz">Hydrologie Schweiz</a></h3>
+</div>
+</div>
+</div>
+
+<div class="mod mod-teaser">
+<div>
+<div class="clearfix">
+<h3><a href="/de/service">Dienstleistungen</a></h3>
+</div>
+</div>
+</div>
+
+<div class="mod mod-teaser">
+<div>
+<div class="clearfix">
+<h3><a href="/de/aktuelle-hydrologische-daten-beziehen">Aktuelle hydrologische Daten beziehen</a></h3>
+</div>
+</div>
+</div>
+
+<div class="mod mod-teaser">
+<div>
+<div class="clearfix">
+<h3><a href="/de/fragen">FAQ</a></h3>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="dropdown yamm-fw">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">Über das Portal</a>
+<ul class="dropdown-menu" role="menu">
+<li role="presentation">
+<div class="yamm-content container-fluid">
+<div class="row">
+<div class="col-sm-12">
+<button class="yamm-close btn btn-link icon icon--after icon--close pull-right">Schliessen</button>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12 main-column initialized">
+<div class="mod mod-columncontrols">
+<div class="row">
+<div class="col-md-3 col-sm-4">
+<div class="mod mod-teaser">
+<div>
+<div class="clearfix">
+<h3><a href="/de/ueber-das-portal">Über das Portal</a></h3>
+</div>
+</div>
+</div>
+
+<div class="mod mod-teaser">
+<div>
+<div class="clearfix">
+<h3><a href="/de/kontakt">Kontakt</a></h3>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</nav>
+<div class="container-fluid mt-6" role="main">
+<div class="row">
+<div class="col-md-12" id="content">
+
+<div class="row">
+<div class="col col-sm-9">
+<div class="list-group-header">
+<h2 class="pull-left">Übersichtskarten</h2>
+</div>
+<ul class="nav nav-tabs tabbed-map" role="tablist">
+<li class="active ">
+<a data-toggle="tab" title="Abfluss und Wasserstand" href="#hydro_sensor_pq"><div class="visible-xs">
+Abfluss und Wasserstand
+</div>
+<div class="hidden-xs">
+<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path
+    d="M20.5 6.5C20.5 6.5 19.4148 5.5 18 5.5C16.5 5.5 15.5 7.5 14 7.5C12.5 7.5 11.5 5.5 10 5.5C8.5 5.5 7.5 7.5 6 7.5C4.5 7.5 3.5 6.5 3.5 6.5"
+    stroke="currentColor" stroke-linecap="round" />
+  <path
+    d="M20.5 10.5C20.5 10.5 19.4148 9.5 18 9.5C16.5 9.5 15.5 11.5 14 11.5C12.5 11.5 11.5 9.5 10 9.5C8.5 9.5 7.5 11.5 6 11.5C4.5 11.5 3.5 10.5 3.5 10.5"
+    stroke="currentColor" stroke-linecap="round" />
+  <path
+    d="M20.5 14.5C20.5 14.5 19.4148 13.5 18 13.5C16.5 13.5 15.5 15.5 14 15.5C12.5 15.5 11.5 13.5 10 13.5C8.5 13.5 7.5 15.5 6 15.5C4.5 15.5 3.5 14.5 3.5 14.5"
+    stroke="currentColor" stroke-linecap="round" />
+  <path
+    d="M20.5 18.5C20.5 18.5 19.4148 17.5 18 17.5C16.5 17.5 15.5 19.5 14 19.5C12.5 19.5 11.5 17.5 10 17.5C8.5 17.5 7.5 19.5 6 19.5C4.5 19.5 3.5 18.5 3.5 18.5"
+    stroke="currentColor" stroke-linecap="round" />
+</svg>
+
+</div>
+</a></li>
+<li class="">
+<a data-toggle="tab" title="Wassertemperatur" href="#hydro_sensor_temperature"><div class="visible-xs">
+Wassertemperatur
+</div>
+<div class="hidden-xs">
+<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M10.5 12.5V2.5C10.5 2.5 10.5 1.5 11.5 1.5C12.5 1.5 12.5 2.5 12.5 2.5V12.5"
+    stroke="currentColor" />
+  <path fill-rule="evenodd" clip-rule="evenodd"
+    d="M11 12.05C9.85888 12.2817 9 13.2906 9 14.5C9 15.8808 10.1193 17 11.5 17C12.8807 17 14 15.8808 14 14.5C14 13.2906 13.1411 12.2817 12 12.05V13.0854C12.5826 13.2913 13 13.8469 13 14.5C13 15.3285 12.3284 16 11.5 16C10.6716 16 10 15.3285 10 14.5C10 13.8469 10.4174 13.2913 11 13.0854V12.05Z"
+    fill="currentColor" />
+  <path d="M14.5 3.5H17.5" stroke="currentColor" stroke-linecap="round" />
+  <path d="M14.5 6.5H17.5" stroke="currentColor" stroke-linecap="round" />
+  <path d="M14.5 9.5H17.5" stroke="currentColor" stroke-linecap="round" />
+  <path
+    d="M20.1612 13.8677C20.3642 14.0548 20.6806 14.0419 20.8677 13.8388C21.0548 13.6358 21.0419 13.3194 20.8388 13.1323L20.1612 13.8677ZM3.85355 13.1464C3.65829 12.9512 3.34171 12.9512 3.14645 13.1464C2.95118 13.3417 2.95118 13.6583 3.14645 13.8536L3.85355 13.1464ZM14 15C14.9581 15 15.7243 14.3608 16.3123 13.8904C16.9743 13.3608 17.4581 13 18 13V12C17.0419 12 16.2757 12.6392 15.6877 13.1096C15.0257 13.6392 14.5419 14 14 14V15ZM10 12C9.04193 12 8.27567 12.6392 7.68765 13.1096C7.02567 13.6392 6.54193 14 6 14V15C6.95807 15 7.72433 14.3608 8.31235 13.8904C8.97433 13.3608 9.45807 13 10 13V12ZM18 13C18.5922 13 19.1319 13.2107 19.537 13.4367C19.7371 13.5483 19.8975 13.6598 20.0065 13.7424C20.0609 13.7835 20.102 13.8171 20.1283 13.8393C20.1415 13.8504 20.151 13.8587 20.1565 13.8635C20.1593 13.866 20.1611 13.8676 20.1618 13.8683C20.1622 13.8687 20.1624 13.8688 20.1623 13.8687C20.1622 13.8686 20.1621 13.8685 20.1619 13.8684C20.1618 13.8683 20.1617 13.8682 20.1616 13.8681C20.1615 13.868 20.1614 13.8679 20.1614 13.8679C20.1613 13.8678 20.1612 13.8677 20.5 13.5C20.8388 13.1323 20.8387 13.1322 20.8386 13.1321C20.8385 13.132 20.8384 13.1319 20.8383 13.1318C20.8381 13.1317 20.8379 13.1315 20.8377 13.1313C20.8372 13.1309 20.8367 13.1304 20.8361 13.1299C20.835 13.1288 20.8335 13.1275 20.8318 13.1259C20.8284 13.1229 20.824 13.1189 20.8184 13.114C20.8074 13.1042 20.7921 13.091 20.7729 13.0747C20.7344 13.0423 20.6796 12.9977 20.6101 12.9451C20.4715 12.8402 20.2722 12.7017 20.0241 12.5633C19.5329 12.2893 18.8226 12 18 12V13ZM6 14C5.36189 14 4.82254 13.787 4.43557 13.5659C4.24313 13.4559 4.09267 13.3463 3.99204 13.2658C3.94187 13.2257 3.90454 13.1931 3.88104 13.1719C3.8693 13.1613 3.86106 13.1536 3.85642 13.1492C3.85411 13.147 3.8527 13.1456 3.85222 13.1451C3.85197 13.1449 3.85196 13.1449 3.85219 13.1451C3.8523 13.1452 3.85247 13.1454 3.85269 13.1456C3.85281 13.1457 3.85294 13.1458 3.85308 13.146C3.85315 13.146 3.85327 13.1462 3.85331 13.1462C3.85343 13.1463 3.85355 13.1464 3.5 13.5C3.14645 13.8536 3.14658 13.8537 3.14672 13.8538C3.14677 13.8539 3.14691 13.854 3.14701 13.8541C3.14722 13.8543 3.14744 13.8545 3.14767 13.8548C3.14814 13.8552 3.14868 13.8558 3.14928 13.8564C3.15047 13.8575 3.15192 13.859 3.15361 13.8606C3.157 13.8639 3.16139 13.8682 3.16677 13.8733C3.17752 13.8835 3.19222 13.8973 3.21076 13.914C3.2478 13.9475 3.30032 13.9931 3.36734 14.0467C3.50108 14.1537 3.69437 14.2941 3.93943 14.4341C4.42746 14.713 5.13811 15 6 15V14ZM10 13C10.1207 13 10.2397 13.0184 10.36 13.0535L10.64 12.0935C10.4382 12.0347 10.2249 12 10 12V13ZM13.36 14.9065C13.5618 14.9653 13.7751 15 14 15V14C13.8793 14 13.7603 13.9816 13.64 13.9465L13.36 14.9065Z"
+    fill="currentColor" />
+  <path
+    d="M20.5 17.5C20.5 17.5 19.4148 16.5 18 16.5C16.5 16.5 15.5 18.5 14 18.5C12.5 18.5 11.5 16.5 10 16.5C8.5 16.5 7.5 18.5 6 18.5C4.5 18.5 3.5 17.5 3.5 17.5"
+    stroke="currentColor" stroke-linecap="round" />
+  <path
+    d="M20.5 21.5C20.5 21.5 19.4148 20.5 18 20.5C16.5 20.5 15.5 22.5 14 22.5C12.5 22.5 11.5 20.5 10 20.5C8.5 20.5 7.5 22.5 6 22.5C4.5 22.5 3.5 21.5 3.5 21.5"
+    stroke="currentColor" stroke-linecap="round" />
+</svg>
+
+</div>
+</a></li>
+<li class="">
+<a data-toggle="tab" title="Grundwasserstand" href="#hydro_sensor_pq_groundwater"><div class="visible-xs">
+Grundwasserstand
+</div>
+<div class="hidden-xs">
+<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path
+    d="M20.5 15.5C20.5 15.5 19.4148 14.5 18 14.5C16.5 14.5 15.5 16.5 14 16.5C12.5 16.5 11.5 14.5 10 14.5C8.5 14.5 7.5 16.5 6 16.5C4.5 16.5 3.5 15.5 3.5 15.5"
+    stroke="currentColor" stroke-linecap="round" />
+  <path
+    d="M20.5 19.5C20.5 19.5 19.4148 18.5 18 18.5C16.5 18.5 15.5 20.5 14 20.5C12.5 20.5 11.5 18.5 10 18.5C8.5 18.5 7.5 20.5 6 20.5C4.5 20.5 3.5 19.5 3.5 19.5"
+    stroke="currentColor" stroke-linecap="round" />
+  <path d="M3.5 11.5L20.5 11.5" stroke="currentColor" stroke-linecap="round" />
+  <path d="M8 9.5C8 9.22386 7.77614 9 7.5 9C7.22386 9 7 9.22386 7 9.5H8ZM7 9.5V11.5H8V9.5H7Z"
+    fill="currentColor" />
+  <mask id="path-5-outside-1_5909_27895" maskUnits="userSpaceOnUse" x="4" y="3" width="7" height="7"
+    fill="black">
+    <rect fill="white" x="4" y="3" width="7" height="7" />
+    <path fill-rule="evenodd" clip-rule="evenodd"
+      d="M8.89496 6.05254C8.96274 5.88155 9 5.69512 9 5.5C9 4.67157 8.32843 4 7.5 4C6.67157 4 6 4.67157 6 5.5C6 5.69512 6.03726 5.88155 6.10504 6.05254C5.46823 6.22589 5 6.80827 5 7.5C5 8.32843 5.67157 9 6.5 9C6.88418 9 7.23462 8.85557 7.5 8.61805C7.76538 8.85557 8.11582 9 8.5 9C9.32843 9 10 8.32843 10 7.5C10 6.80827 9.53177 6.22589 8.89496 6.05254Z" />
+  </mask>
+  <path
+    d="M8.89496 6.05254L7.96534 5.68401L7.55318 6.72367L8.63229 7.01743L8.89496 6.05254ZM6.10504 6.05254L6.36771 7.01743L7.44682 6.72367L7.03466 5.68401L6.10504 6.05254ZM7.5 8.61805L8.16691 7.87292L7.5 7.27602L6.83309 7.87292L7.5 8.61805ZM9.82457 6.42107C9.9381 6.13471 10 5.82337 10 5.5H8C8 5.56688 7.98739 5.62838 7.96534 5.68401L9.82457 6.42107ZM10 5.5C10 4.11929 8.88071 3 7.5 3V5C7.77614 5 8 5.22386 8 5.5H10ZM7.5 3C6.11929 3 5 4.11929 5 5.5H7C7 5.22386 7.22386 5 7.5 5V3ZM5 5.5C5 5.82337 5.06191 6.13471 5.17543 6.42107L7.03466 5.68401C7.01261 5.62838 7 5.56688 7 5.5H5ZM5.84238 5.08765C4.78143 5.37647 4 6.34569 4 7.5H6C6 7.27084 6.15504 7.07532 6.36771 7.01743L5.84238 5.08765ZM4 7.5C4 8.88071 5.11929 10 6.5 10V8C6.22386 8 6 7.77614 6 7.5H4ZM6.5 10C7.13966 10 7.72528 9.75846 8.16691 9.36319L6.83309 7.87292C6.74396 7.95269 6.6287 8 6.5 8V10ZM8.5 8C8.3713 8 8.25604 7.95269 8.16691 7.87292L6.83309 9.36319C7.27472 9.75846 7.86034 10 8.5 10V8ZM9 7.5C9 7.77614 8.77614 8 8.5 8V10C9.88071 10 11 8.88071 11 7.5H9ZM8.63229 7.01743C8.84496 7.07532 9 7.27084 9 7.5H11C11 6.34569 10.2186 5.37647 9.15762 5.08765L8.63229 7.01743Z"
+    fill="currentColor" mask="url(#path-5-outside-1_5909_27895)" />
+</svg>
+
+</div>
+</a></li>
+<li class="">
+<a data-toggle="tab" title="Grundwassertemperatur" href="#hydro_sensor_temperature_groundwater"><div class="visible-xs">
+Grundwassertemperatur
+</div>
+<div class="hidden-xs">
+<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M13.5 18.5V11.5C13.5 11.5 13.5 10.5 14.5 10.5C15.5 10.5 15.5 11.5 15.5 11.5V18.5"
+    stroke="currentColor" />
+  <path fill-rule="evenodd" clip-rule="evenodd"
+    d="M14 18.05C12.8589 18.2817 12 19.2906 12 20.5C12 21.8808 13.1193 23 14.5 23C15.8807 23 17 21.8808 17 20.5C17 19.2906 16.1411 18.2817 15 18.05V19.0854C15.5826 19.2913 16 19.8469 16 20.5C16 21.3285 15.3284 22 14.5 22C13.6716 22 13 21.3285 13 20.5C13 19.8469 13.4174 19.2913 14 19.0854V18.05Z"
+    fill="currentColor" />
+  <path d="M17.5 11.5H20.5" stroke="currentColor" stroke-linecap="round" />
+  <path d="M17.5 14.5H20.5" stroke="currentColor" stroke-linecap="round" />
+  <path d="M17.5 17.5H20.5" stroke="currentColor" stroke-linecap="round" />
+  <path d="M8 9.5C8 9.22386 7.77614 9 7.5 9C7.22386 9 7 9.22386 7 9.5H8ZM7 9.5V11.5H8V9.5H7Z"
+    fill="currentColor" />
+  <mask id="path-7-outside-1_5909_27896" maskUnits="userSpaceOnUse" x="4" y="3" width="7" height="7"
+    fill="black">
+    <rect fill="white" x="4" y="3" width="7" height="7" />
+    <path fill-rule="evenodd" clip-rule="evenodd"
+      d="M8.89496 6.05254C8.96274 5.88155 9 5.69512 9 5.5C9 4.67157 8.32843 4 7.5 4C6.67157 4 6 4.67157 6 5.5C6 5.69512 6.03726 5.88155 6.10504 6.05254C5.46823 6.22589 5 6.80827 5 7.5C5 8.32843 5.67157 9 6.5 9C6.88418 9 7.23462 8.85557 7.5 8.61805C7.76538 8.85557 8.11582 9 8.5 9C9.32843 9 10 8.32843 10 7.5C10 6.80827 9.53177 6.22589 8.89496 6.05254Z" />
+  </mask>
+  <path
+    d="M8.89496 6.05254L7.96534 5.68401L7.55318 6.72367L8.63229 7.01743L8.89496 6.05254ZM6.10504 6.05254L6.36771 7.01743L7.44682 6.72367L7.03466 5.68401L6.10504 6.05254ZM7.5 8.61805L8.16691 7.87292L7.5 7.27602L6.83309 7.87292L7.5 8.61805ZM9.82457 6.42107C9.9381 6.13471 10 5.82337 10 5.5H8C8 5.56688 7.98739 5.62838 7.96534 5.68401L9.82457 6.42107ZM10 5.5C10 4.11929 8.88071 3 7.5 3V5C7.77614 5 8 5.22386 8 5.5H10ZM7.5 3C6.11929 3 5 4.11929 5 5.5H7C7 5.22386 7.22386 5 7.5 5V3ZM5 5.5C5 5.82337 5.06191 6.13471 5.17543 6.42107L7.03466 5.68401C7.01261 5.62838 7 5.56688 7 5.5H5ZM5.84238 5.08765C4.78143 5.37647 4 6.34569 4 7.5H6C6 7.27084 6.15504 7.07532 6.36771 7.01743L5.84238 5.08765ZM4 7.5C4 8.88071 5.11929 10 6.5 10V8C6.22386 8 6 7.77614 6 7.5H4ZM6.5 10C7.13966 10 7.72528 9.75846 8.16691 9.36319L6.83309 7.87292C6.74396 7.95269 6.6287 8 6.5 8V10ZM8.5 8C8.3713 8 8.25604 7.95269 8.16691 7.87292L6.83309 9.36319C7.27472 9.75846 7.86034 10 8.5 10V8ZM9 7.5C9 7.77614 8.77614 8 8.5 8V10C9.88071 10 11 8.88071 11 7.5H9ZM8.63229 7.01743C8.84496 7.07532 9 7.27084 9 7.5H11C11 6.34569 10.2186 5.37647 9.15762 5.08765L8.63229 7.01743Z"
+    fill="currentColor" mask="url(#path-7-outside-1_5909_27896)" />
+  <path d="M3.5 11.5L7.5 11.5C12 11.5 13 7 20.5 8.49997" stroke="currentColor"
+    stroke-linecap="round" />
+  <path
+    d="M3.85355 14.1464C3.65829 13.9512 3.34171 13.9512 3.14645 14.1464C2.95118 14.3417 2.95118 14.6583 3.14645 14.8536L3.85355 14.1464ZM10 13C9.04193 13 8.27567 13.6392 7.68765 14.1096C7.02567 14.6392 6.54193 15 6 15V16C6.95807 16 7.72433 15.3608 8.31235 14.8904C8.97433 14.3608 9.45807 14 10 14V13ZM6 15C5.36189 15 4.82254 14.787 4.43557 14.5659C4.24313 14.4559 4.09267 14.3463 3.99204 14.2658C3.94187 14.2257 3.90454 14.1931 3.88104 14.1719C3.8693 14.1613 3.86106 14.1536 3.85642 14.1492C3.85411 14.147 3.8527 14.1456 3.85222 14.1451C3.85197 14.1449 3.85196 14.1449 3.85219 14.1451C3.8523 14.1452 3.85247 14.1454 3.85269 14.1456C3.85281 14.1457 3.85294 14.1458 3.85308 14.146C3.85315 14.146 3.85327 14.1462 3.85331 14.1462C3.85343 14.1463 3.85355 14.1464 3.5 14.5C3.14645 14.8536 3.14658 14.8537 3.14672 14.8538C3.14677 14.8539 3.14691 14.854 3.14701 14.8541C3.14722 14.8543 3.14744 14.8545 3.14767 14.8548C3.14814 14.8552 3.14868 14.8558 3.14928 14.8564C3.15047 14.8575 3.15192 14.859 3.15361 14.8606C3.157 14.8639 3.16139 14.8682 3.16677 14.8733C3.17752 14.8835 3.19222 14.8973 3.21076 14.914C3.2478 14.9475 3.30032 14.9931 3.36734 15.0467C3.50108 15.1537 3.69437 15.2941 3.93943 15.4341C4.42746 15.713 5.13811 16 6 16V15ZM10 14C10.4707 14 10.9111 14.2773 11.4745 14.7208C11.7357 14.9264 12.0335 15.1747 12.3313 15.383C12.6347 15.5952 12.9763 15.7946 13.36 15.9065L13.64 14.9465C13.4051 14.878 13.166 14.7465 12.9045 14.5636C12.6375 14.3769 12.3865 14.1661 12.0931 13.9351C11.5476 13.5056 10.8565 13 10 13V14Z"
+    fill="currentColor" />
+  <path
+    d="M3.85355 18.1464C3.65829 17.9512 3.34171 17.9512 3.14645 18.1464C2.95118 18.3417 2.95118 18.6583 3.14645 18.8536L3.85355 18.1464ZM10 17C9.04193 17 8.27567 17.6392 7.68765 18.1096C7.02567 18.6392 6.54193 19 6 19V20C6.95807 20 7.72433 19.3608 8.31235 18.8904C8.97433 18.3608 9.45807 18 10 18V17ZM6 19C5.36189 19 4.82254 18.787 4.43557 18.5659C4.24313 18.4559 4.09267 18.3463 3.99204 18.2658C3.94187 18.2257 3.90454 18.1931 3.88104 18.1719C3.8693 18.1613 3.86106 18.1536 3.85642 18.1492C3.85411 18.147 3.8527 18.1456 3.85222 18.1451C3.85197 18.1449 3.85196 18.1449 3.85219 18.1451C3.8523 18.1452 3.85247 18.1454 3.85269 18.1456C3.85281 18.1457 3.85294 18.1458 3.85308 18.146C3.85315 18.146 3.85327 18.1462 3.85331 18.1462C3.85343 18.1463 3.85355 18.1464 3.5 18.5C3.14645 18.8536 3.14658 18.8537 3.14672 18.8538C3.14677 18.8539 3.14691 18.854 3.14701 18.8541C3.14722 18.8543 3.14744 18.8545 3.14767 18.8548C3.14814 18.8552 3.14868 18.8558 3.14928 18.8564C3.15047 18.8575 3.15192 18.859 3.15361 18.8606C3.157 18.8639 3.16139 18.8682 3.16677 18.8733C3.17752 18.8835 3.19222 18.8973 3.21076 18.914C3.2478 18.9475 3.30032 18.9931 3.36734 19.0467C3.50108 19.1537 3.69437 19.2941 3.93943 19.4341C4.42746 19.713 5.13811 20 6 20V19ZM10 18C10.3997 18 10.7862 18.2021 11.2528 18.5503C11.4906 18.7277 11.7018 18.905 11.9605 19.1069C12.2054 19.298 12.4721 19.494 12.7589 19.6518L13.2411 18.7758C13.0256 18.6571 12.809 18.5007 12.5758 18.3186C12.3564 18.1474 12.0946 17.9307 11.8509 17.7488C11.3544 17.3784 10.7431 17 10 17V18Z"
+    fill="currentColor" />
+</svg>
+
+</div>
+</a></li>
+<li class="">
+<a data-toggle="tab" title="Vergleich mit Gefahrenstufe" href="#hydro_sensor_warn_level"><div class="visible-xs">
+Vergleich mit Gefahrenstufe
+</div>
+<div class="hidden-xs">
+<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M15.5 1.5L19.5 8.5H11.5L15.5 1.5Z" stroke="currentColor" stroke-linejoin="round" />
+  <path d="M15.5 4.5V5.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="15.5" cy="7" r="0.5" fill="currentColor" />
+  <path
+    d="M20.5 12.5C20.5 12.5 19.4148 11.5 18 11.5C16.5 11.5 15.5 13.5 14 13.5C12.5 13.5 11.5 11.5 10 11.5C8.5 11.5 7.5 13.5 6 13.5C4.5 13.5 3.5 12.5 3.5 12.5"
+    stroke="currentColor" stroke-linecap="round" />
+  <path
+    d="M20.5 16.5C20.5 16.5 19.4148 15.5 18 15.5C16.5 15.5 15.5 17.5 14 17.5C12.5 17.5 11.5 15.5 10 15.5C8.5 15.5 7.5 17.5 6 17.5C4.5 17.5 3.5 16.5 3.5 16.5"
+    stroke="currentColor" stroke-linecap="round" />
+  <path
+    d="M20.5 20.5C20.5 20.5 19.4148 19.5 18 19.5C16.5 19.5 15.5 21.5 14 21.5C12.5 21.5 11.5 19.5 10 19.5C8.5 19.5 7.5 21.5 6 21.5C4.5 21.5 3.5 20.5 3.5 20.5"
+    stroke="currentColor" stroke-linecap="round" />
+</svg>
+
+</div>
+</a></li>
+
+</ul>
+<div class="tab-content">
+<div class="tab-pane active" id="hydro_sensor_pq">
+<div class="hydro-map-image">
+<a href="/de/seen-und-fluesse/messstationen-zustand">
+<img alt="Abfluss und Wasserstand" loading="lazy" src="/web-hydro-maps/hydro_sensor_pq.png" />
+</a>
+<div class="tabbed-map-controls" data-controller="web--hydro--tabbed-map-component--map-controls-component">
+<div class="map-controls map-control-tabs">
+<a aria-label="Interaktive Karte anzeigen" class="btn btn-default map-control" data-placement="left" data-toggle="tooltip" href="/de/seen-und-fluesse/messstationen-zustand" title="Interaktive Karte anzeigen">
+<span class="glyphicon glyphicon-eye-open"></span>
+</a>
+<button aria-label="Info" class="btn btn-default map-control" data-action="click-&gt;web--hydro--tabbed-map-component--map-controls-component#toggle" data-web--hydro--tabbed-map-component--map-controls-component-target="button" type="button">
+<span class="icon icon--list"></span>
+</button>
+</div>
+<div class="map-legend" data-web--hydro--tabbed-map-component--map-controls-component-target="legend" id="#&lt;Web::Hydro::MapInfo:0x00007e5f6d2889d0&gt;_legend" style="visibility: hidden;">
+<h2 class="map-legend-title">Abfluss und Wasserstand</h2>
+<div>
+<div class="map-legend-row">
+<img alt="Sehr hoch" class="mr-2" src="/assets/map-symbols/aktuelle_abfluesse_wasserstaende.square.5.svg">
+<div>Sehr hoch</div>
+</div>
+<div class="map-legend-row">
+<img alt="Hoch" class="mr-2" src="/assets/map-symbols/aktuelle_abfluesse_wasserstaende.square.4.svg">
+<div>Hoch</div>
+</div>
+<div class="map-legend-row">
+<img alt="Durchschnittlich" class="mr-2" src="/assets/map-symbols/aktuelle_abfluesse_wasserstaende.square.3.svg">
+<div>Durchschnittlich</div>
+</div>
+<div class="map-legend-row">
+<img alt="Tief" class="mr-2" src="/assets/map-symbols/aktuelle_abfluesse_wasserstaende.square.2.svg">
+<div>Tief</div>
+</div>
+<div class="map-legend-row">
+<img alt="Sehr tief" class="mr-2" src="/assets/map-symbols/aktuelle_abfluesse_wasserstaende.square.1.svg">
+<div>Sehr tief</div>
+</div>
+<div class="map-legend-row">
+<img alt="Keine aktuellen Daten verfügbar" class="mr-2" src="/assets/map-symbols/square_keine_daten.svg">
+<div>Keine aktuellen Daten verfügbar</div>
+</div>
+<div class="map-legend-row">
+<img alt="Keine Einordnung möglich" class="mr-2" src="/assets/map-symbols/square_keine_einordnung.svg">
+<div>Keine Einordnung möglich</div>
+</div>
+<div class="map-legend-row">
+<img alt="Fliessgewässer" class="mr-2" src="/assets/map-symbols/fluss_white.svg">
+<div>Fliessgewässer</div>
+</div>
+<div class="map-legend-row">
+<img alt="Seen" class="mr-2" src="/assets/map-symbols/see_white.svg">
+<div>Seen</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="hydro-map-image-title">
+<h3>
+Abfluss und Wasserstand
+</h3>
+</div>
+</div>
+</div>
+<div class="tab-pane" id="hydro_sensor_temperature">
+<div class="hydro-map-image">
+<a href="/de/seen-und-fluesse/messstationen-temperatur">
+<img alt="Wassertemperatur" loading="lazy" src="/web-hydro-maps/hydro_sensor_temperature.png" />
+</a>
+<div class="tabbed-map-controls" data-controller="web--hydro--tabbed-map-component--map-controls-component">
+<div class="map-controls map-control-tabs">
+<a aria-label="Interaktive Karte anzeigen" class="btn btn-default map-control" data-placement="left" data-toggle="tooltip" href="/de/seen-und-fluesse/messstationen-temperatur" title="Interaktive Karte anzeigen">
+<span class="glyphicon glyphicon-eye-open"></span>
+</a>
+<button aria-label="Info" class="btn btn-default map-control" data-action="click-&gt;web--hydro--tabbed-map-component--map-controls-component#toggle" data-web--hydro--tabbed-map-component--map-controls-component-target="button" type="button">
+<span class="icon icon--list"></span>
+</button>
+</div>
+<div class="map-legend" data-web--hydro--tabbed-map-component--map-controls-component-target="legend" id="#&lt;Web::Hydro::MapInfo:0x00007e5f6d288930&gt;_legend" style="visibility: hidden;">
+<h2 class="map-legend-title">Wassertemperatur</h2>
+<div>
+<div class="map-legend-row">
+<img alt="&gt; 25 °C" class="mr-2" src="/assets/map-symbols/temperature.river.6.svg">
+<div>&gt; 25 °C</div>
+</div>
+<div class="map-legend-row">
+<img alt="20-25 °C" class="mr-2" src="/assets/map-symbols/temperature.river.5.svg">
+<div>20-25 °C</div>
+</div>
+<div class="map-legend-row">
+<img alt="15-20 °C" class="mr-2" src="/assets/map-symbols/temperature.river.4.svg">
+<div>15-20 °C</div>
+</div>
+<div class="map-legend-row">
+<img alt="10-15 °C" class="mr-2" src="/assets/map-symbols/temperature.river.3.svg">
+<div>10-15 °C</div>
+</div>
+<div class="map-legend-row">
+<img alt=" 5-10 °C" class="mr-2" src="/assets/map-symbols/temperature.river.2.svg">
+<div> 5-10 °C</div>
+</div>
+<div class="map-legend-row">
+<img alt="&lt; 5 °C" class="mr-2" src="/assets/map-symbols/temperature.river.1.svg">
+<div>&lt; 5 °C</div>
+</div>
+<div class="map-legend-row">
+<img alt="Keine aktuellen Daten verfügbar" class="mr-2" src="/assets/map-symbols/fluss_keine_daten.svg">
+<div>Keine aktuellen Daten verfügbar</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="hydro-map-image-title">
+<h3>
+Wassertemperatur
+</h3>
+</div>
+</div>
+</div>
+<div class="tab-pane" id="hydro_sensor_pq_groundwater">
+<div class="hydro-map-image">
+<a href="/de/grundwasser/messstationen-grundwasserstand">
+<img alt="Grundwasserstand" loading="lazy" src="/web-hydro-maps/hydro_sensor_pq_groundwater.png" />
+</a>
+<div class="tabbed-map-controls" data-controller="web--hydro--tabbed-map-component--map-controls-component">
+<div class="map-controls map-control-tabs">
+<a aria-label="Interaktive Karte anzeigen" class="btn btn-default map-control" data-placement="left" data-toggle="tooltip" href="/de/grundwasser/messstationen-grundwasserstand" title="Interaktive Karte anzeigen">
+<span class="glyphicon glyphicon-eye-open"></span>
+</a>
+<button aria-label="Info" class="btn btn-default map-control" data-action="click-&gt;web--hydro--tabbed-map-component--map-controls-component#toggle" data-web--hydro--tabbed-map-component--map-controls-component-target="button" type="button">
+<span class="icon icon--list"></span>
+</button>
+</div>
+<div class="map-legend" data-web--hydro--tabbed-map-component--map-controls-component-target="legend" id="#&lt;Web::Hydro::MapInfo:0x00007e5f6d2887a0&gt;_legend" style="visibility: hidden;">
+<h2 class="map-legend-title">Grundwasserstand</h2>
+<div>
+<div class="map-legend-row">
+<img alt="Hoch" class="mr-2" src="/assets/map-symbols/pq_groundwater.level_3.svg">
+<div>Hoch</div>
+</div>
+<div class="map-legend-row">
+<img alt="Normal" class="mr-2" src="/assets/map-symbols/pq_groundwater.level_2.svg">
+<div>Normal</div>
+</div>
+<div class="map-legend-row">
+<img alt="Tief" class="mr-2" src="/assets/map-symbols/pq_groundwater.level_1.svg">
+<div>Tief</div>
+</div>
+<div class="map-legend-row">
+<img alt="Steigend" class="mr-2" src="/assets/map-symbols/pq_groundwater.up.svg">
+<div>Steigend</div>
+</div>
+<div class="map-legend-row">
+<img alt="Keine Tendenz" class="mr-2" src="/assets/map-symbols/pq_groundwater.right.svg">
+<div>Keine Tendenz</div>
+</div>
+<div class="map-legend-row">
+<img alt="Fallend" class="mr-2" src="/assets/map-symbols/pq_groundwater.down.svg">
+<div>Fallend</div>
+</div>
+<div class="map-legend-row">
+<img alt="Keine aktuellen Daten verfügbar" class="mr-2" src="/assets/map-symbols/square_keine_daten.svg">
+<div>Keine aktuellen Daten verfügbar</div>
+</div>
+<div class="map-legend-row">
+<img alt="Keine Einordnung möglich" class="mr-2" src="/assets/map-symbols/square_keine_einordnung.svg">
+<div>Keine Einordnung möglich</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="hydro-map-image-title">
+<h3>
+Grundwasserstand
+</h3>
+</div>
+</div>
+</div>
+<div class="tab-pane" id="hydro_sensor_temperature_groundwater">
+<div class="hydro-map-image">
+<a href="/de/grundwasser/messstationen-temperatur">
+<img alt="Grundwassertemperatur" loading="lazy" src="/web-hydro-maps/hydro_sensor_temperature_groundwater.png" />
+</a>
+<div class="tabbed-map-controls" data-controller="web--hydro--tabbed-map-component--map-controls-component">
+<div class="map-controls map-control-tabs">
+<a aria-label="Interaktive Karte anzeigen" class="btn btn-default map-control" data-placement="left" data-toggle="tooltip" href="/de/grundwasser/messstationen-temperatur" title="Interaktive Karte anzeigen">
+<span class="glyphicon glyphicon-eye-open"></span>
+</a>
+<button aria-label="Info" class="btn btn-default map-control" data-action="click-&gt;web--hydro--tabbed-map-component--map-controls-component#toggle" data-web--hydro--tabbed-map-component--map-controls-component-target="button" type="button">
+<span class="icon icon--list"></span>
+</button>
+</div>
+<div class="map-legend" data-web--hydro--tabbed-map-component--map-controls-component-target="legend" id="#&lt;Web::Hydro::MapInfo:0x00007e5f6d2886b0&gt;_legend" style="visibility: hidden;">
+<h2 class="map-legend-title">Grundwassertemperatur</h2>
+<div>
+<div class="map-legend-row">
+<img alt="Hoch" class="mr-2" src="/assets/map-symbols/temperature_groundwater.3.svg">
+<div>Hoch</div>
+</div>
+<div class="map-legend-row">
+<img alt="Normal" class="mr-2" src="/assets/map-symbols/temperature_groundwater.2.svg">
+<div>Normal</div>
+</div>
+<div class="map-legend-row">
+<img alt="Tief" class="mr-2" src="/assets/map-symbols/temperature_groundwater.1.svg">
+<div>Tief</div>
+</div>
+<div class="map-legend-row">
+<img alt="Keine aktuellen Daten verfügbar" class="mr-2" src="/assets/map-symbols/fluss_keine_daten.svg">
+<div>Keine aktuellen Daten verfügbar</div>
+</div>
+<div class="map-legend-row">
+<img alt="Keine Einordnung möglich" class="mr-2" src="/assets/map-symbols/fluss_keine_einordnung.svg">
+<div>Keine Einordnung möglich</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="hydro-map-image-title">
+<h3>
+Grundwassertemperatur
+</h3>
+</div>
+</div>
+</div>
+<div class="tab-pane" id="hydro_sensor_warn_level">
+<div class="hydro-map-image">
+<a href="/de/seen-und-fluesse/messstationen-gefahrenstufen">
+<img alt="Vergleich mit Gefahrenstufe" loading="lazy" src="/web-hydro-maps/hydro_sensor_warn_level.png" />
+</a>
+<div class="tabbed-map-controls" data-controller="web--hydro--tabbed-map-component--map-controls-component">
+<div class="map-controls map-control-tabs">
+<a aria-label="Interaktive Karte anzeigen" class="btn btn-default map-control" data-placement="left" data-toggle="tooltip" href="/de/seen-und-fluesse/messstationen-gefahrenstufen" title="Interaktive Karte anzeigen">
+<span class="glyphicon glyphicon-eye-open"></span>
+</a>
+<button aria-label="Info" class="btn btn-default map-control" data-action="click-&gt;web--hydro--tabbed-map-component--map-controls-component#toggle" data-web--hydro--tabbed-map-component--map-controls-component-target="button" type="button">
+<span class="icon icon--list"></span>
+</button>
+</div>
+<div class="map-legend" data-web--hydro--tabbed-map-component--map-controls-component-target="legend" id="#&lt;Web::Hydro::MapInfo:0x00007e5f6d288570&gt;_legend" style="visibility: hidden;">
+<h2 class="map-legend-title">Vergleich mit Gefahrenstufe</h2>
+<div>
+<div class="map-legend-row">
+<img alt="Stufe 5: Sehr grosse Gefahr" class="mr-2" src="/assets/map-symbols/gs5.square.svg">
+<div>Stufe 5: Sehr grosse Gefahr</div>
+</div>
+<div class="map-legend-row">
+<img alt="Stufe 4: Grosse Gefahr" class="mr-2" src="/assets/map-symbols/gs4.square.svg">
+<div>Stufe 4: Grosse Gefahr</div>
+</div>
+<div class="map-legend-row">
+<img alt="Stufe 3: Erhebliche Gefahr" class="mr-2" src="/assets/map-symbols/gs3.square.svg">
+<div>Stufe 3: Erhebliche Gefahr</div>
+</div>
+<div class="map-legend-row">
+<img alt="Stufe 2: Mässige Gefahr" class="mr-2" src="/assets/map-symbols/gs2.square.svg">
+<div>Stufe 2: Mässige Gefahr</div>
+</div>
+<div class="map-legend-row">
+<img alt="Stufe 1: Keine oder geringe Gefahr" class="mr-2" src="/assets/map-symbols/gs1.square.svg">
+<div>Stufe 1: Keine oder geringe Gefahr</div>
+</div>
+<div class="map-legend-row">
+<img alt="Keine aktuellen Daten verfügbar" class="mr-2" src="/assets/map-symbols/square_keine_daten.svg">
+<div>Keine aktuellen Daten verfügbar</div>
+</div>
+<div class="map-legend-row">
+<img alt="Fliessgewässer" class="mr-2" src="/assets/map-symbols/fluss_white.svg">
+<div>Fliessgewässer</div>
+</div>
+<div class="map-legend-row">
+<img alt="Seen" class="mr-2" src="/assets/map-symbols/see_white.svg">
+<div>Seen</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="hydro-map-image-title">
+<h3>
+Vergleich mit Gefahrenstufe
+</h3>
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+<div class="col col-sm-3">
+<div class="list-group-header">
+<h2 class="pull-left">Hochwasser-Ausblick</h2>
+<a class="icon icon--before icon--eye hidden-print pull-right" href="/de/hydro-preview">Ansehen</a>
+</div>
+<div class="weekly-forecast-teaser-day level-1 chance-active">
+<div class="indicator">1</div>
+<div class="text">
+<a href="/de/hydro-preview"><h4>Dienstag</h4>
+<p>27.10.26</p>
+</a></div>
+</div>
+<div class="weekly-forecast-teaser-day level-1 chance-active">
+<div class="indicator">1</div>
+<div class="text">
+<a href="/de/hydro-preview"><h4>Mittwoch</h4>
+<p>28.10.26</p>
+</a></div>
+</div>
+<div class="weekly-forecast-teaser-day level-1 chance-active">
+<div class="indicator">1</div>
+<div class="text">
+<a href="/de/hydro-preview"><h4>Donnerstag</h4>
+<p>29.10.26</p>
+</a></div>
+</div>
+<div class="weekly-forecast-teaser-day level-1 chance-active">
+<div class="indicator">1</div>
+<div class="text">
+<a href="/de/hydro-preview"><h4>Freitag</h4>
+<p>30.10.26</p>
+</a></div>
+</div>
+<div class="weekly-forecast-teaser-legend">
+<h4>Legende</h4>
+<p class="high">Hohe Eintretenswahrscheinlichkeit</p>
+<p class="low">Niedrige Eintretenswahrscheinlichkeit</p>
+</div>
+
+</div>
+</div>
+<div class="row mobile-reorder">
+<div class="col col-sm-9 mobile-reorder-2">
+<div class="list-group-header">
+<h2 class="pull-left">News</h2>
+<a class="icon icon--before icon--list hidden-print pull-right" href="/de/news">Alle</a>
+</div>
+<div class="row">
+<div class="col-sm-6">
+<img alt="Sommer 2026: Trockenheit und ihre Folgen" class="mb-4" src="https://www.hydrodaten.admin.ch/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MTkyOTg5OTYsInB1ciI6ImJsb2JfaWQifX0=--3b441f2d951f6cfefd01995d3168ca18d5a07e12/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJwbmciLCJyZXNpemVfdG9fZml0IjpbNjQwLDQ4MF19LCJwdXIiOiJ2YXJpYXRpb24ifX0=--0618a6c8f6ab0bd88c36220cc49c26170671fe33/trockenheit_adaptplus_web.png" />
+<span class="caption">16.10.2026</span>
+<h3><a href="/de/news/47-sommer-2026-trockenheit-und-ihre-folgen">Sommer 2026: Trockenheit und ihre Folgen</a></h3>
+<div class="truncate-text-3">
+<p class="mb-0">Dieses Dossier bündelt häufige Fragen und Antworten zur Trockenheit im Sommer 2026, zu ihren Auswirkungen sowie zum Umgang damit. Da sich die Lage laufend und regional unterschiedlich entwickeln kann, finden sich aktuelle Informationen auf der Nationalen Trockenheitsplattform sowie bei den zuständigen Kantonen und Gemeinden.</p>
+</div>
+
+</div>
+<div class="col-sm-6">
+<img alt="Hydrologisches Jahrbuch der Schweiz 2025" class="mb-4" src="https://www.hydrodaten.admin.ch/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MTg4MTY3NjksInB1ciI6ImJsb2JfaWQifX0=--79e4ac5b77a1494409565080faba9ed6c736ab2e/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJwbmciLCJyZXNpemVfdG9fZml0IjpbNjQwLDQ4MF19LCJwdXIiOiJ2YXJpYXRpb24ifX0=--0618a6c8f6ab0bd88c36220cc49c26170671fe33/teaser-hydro-jahrbuch-2025.png" />
+<span class="caption">18.09.2026</span>
+<h3><a href="/de/news/46-hydrologisches-jahrbuch-der-schweiz-2025">Hydrologisches Jahrbuch der Schweiz 2025</a></h3>
+<div class="truncate-text-3">
+<p class="mb-0">Abfluss, Wasserstand und Wasserqualität der Schweizer Gewässer</p>
+</div>
+
+</div>
+</div>
+</div>
+<div class="col col-sm-3 mobile-reorder-1">
+<div class="list-group-header">
+<h2 class="pull-left">Bulletins</h2>
+</div>
+<div class="groundwater-bulletin-teaser">
+<h3><a href="/de/grundwasser/bulletin">Grundwasserbulletin</a></h3>
+<p class="truncate-text-3 pre-line" title="Die Grundwasserstände und Quellabflüsse liegen schweizweit im normalen bis tiefen Berei...">Die Grundwasserstände und Quellabflüsse liegen schweizweit im normalen bis tiefen Berei...</p>
+<div class="text-muted">21.10.2026 17:47 Uhr</div>
+</div>
+
+<div class="ng-bulletin-teaser">
+<h3><a href="/de/naturgefahrenbulletin">Naturgefahrenbulletin</a></h3>
+<p class="truncate-text-3 pre-line" title="Zurzeit ist kein aktuelles Naturgefahrenbulletin verfügbar.">Zurzeit ist kein aktuelles Naturgefahrenbulletin verfügbar.</p>
+
+</div>
+
+<div class="drought-bulletin-teaser">
+<h3><a href="/de/bulletin">Trockenheitsbulletin</a></h3>
+<p class="truncate-text-3 pre-line">Die Trockenheitssituation entspannt sich langsam, aber bleibt lokal weiterhin angespannt</p>
+<div class="text-muted">22.10.2026 17:00 Uhr</div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<footer>
+<h2 class="sr-only">Footer</h2>
+<div class="container-fluid" style="margin-bottom: 2rem">
+<h3>Informiert bleiben</h3>
+<nav aria-label="Informiert bleiben" class="links-social">
+<ul>
+<li><a target="_blank" rel="noopener noreferrer" class="icon icon--before icon--twitter" href="https://twitter.com/bafuCH">Twitter</a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="icon icon--before icon--youtube" href="https://www.youtube.com/user/bafuCH/">Youtube</a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="icon icon--before icon--linkedin" href="https://www.linkedin.com/company/federal-office-for-the-environment">LinkedIn</a></li>
+<li><a target="_blank" rel="noopener noreferrer" class="icon icon--before icon--facebook" href="https://www.facebook.com/BAFU.OFEV.UFAM">Facebook</a></li>
+</ul>
+</nav>
+</div>
+<div class="footer-address">
+<span class="hidden-xs">Bundesamt für Umwelt BAFU</span>
+<nav aria-label="Footer" class="pull-right">
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.admin.ch/gov/de/start/rechtliches.html">Rechtliches</a></li>
+<li><a href="/de/impressum">Impressum</a></li>
+</ul>
+</nav>
+</div>
+</footer>
+
+</div>
+<script src="/assets/styleguide/js/vendors.min.js"></script>
+<script src="/assets/styleguide/js/main.min.js"></script>
+</body>
+</html>
