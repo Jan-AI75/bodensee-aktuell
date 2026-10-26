@@ -10,14 +10,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          mkdir -p out7
+          mkdir -p out8
           UA="Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1"
-          curl -sSL -A "$UA" "https://www.bodensee-hochwasser.info/lagebericht.php" -o out7/lage.html || true
-          curl -sSL -A "$UA" "https://www.hydrodaten.admin.ch/de/seen-und-fluesse/stationen-und-daten/2032" -o out7/bafu2032.html || true
-          curl -sSL -A "$UA" "https://www.hydrodaten.admin.ch/de/2032.html" -o out7/bafu2032b.html || true
-          curl -sSL "https://api.open-meteo.com/v1/forecast?latitude=47.55,47.45,46.85,46.80,47.08,47.30&longitude=9.68,9.65,9.53,9.83,9.90,9.40&daily=precipitation_sum,temperature_2m_mean,snowfall_sum&forecast_days=7&timezone=Europe%2FBerlin" -o out7/om.json || true
-          curl -sSI -H "Origin: https://jan-ai75.github.io" "https://api.open-meteo.com/v1/forecast?latitude=47.55&longitude=9.68&daily=precipitation_sum&forecast_days=7" -o out7/om_cors.txt || true
-          ls -la out7
+          for u in plots/p_forecast/2032_p_forecast_de.json plots/p_forecast/2032_p_forecast_de plots/p_forecast/2032_p_forecast_de.png; do curl -sSL -A "$UA" "https://www.hydrodaten.admin.ch/$u" -o "out8/$(basename $u)" -w "%{http_code} %{content_type} $u\n" || true; done
+          curl -sSI -H "Origin: https://jan-ai75.github.io" "https://www.hydrodaten.admin.ch/plots/p_forecast/2032_p_forecast_de.json" -o out8/cors.txt || true
+          ls -la out8
       - run: |
           git config user.name probe; git config user.email probe@users.noreply.github.com
-          git add out7 && git commit -m probe-results && git push
+          git add out8 && git commit -m probe-results && git push
