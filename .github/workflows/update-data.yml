@@ -10,13 +10,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Messwerte der letzten 31 Tage laden
+      - name: Wasserstand Konstanz (PEGELONLINE)
+        continue-on-error: true
         run: |
           curl -fsS --retry 3 "https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations/aa9179c1-17ef-4c61-a48a-74193fa7bfdf/W/measurements.json?start=P31D" -o data.tmp
           python3 -c "import json;d=json.load(open('data.tmp'));assert len(d)>100" && mv data.tmp data.json
+      - name: Wassertemperatur Lindau (GKD Bayern)
+        continue-on-error: true
+        env:
+          TZ: Europe/Berlin
+        run: python3 scripts/update_temp.py
       - name: Speichern
         run: |
+          rm -f data.tmp
           git config user.name "pegel-bot"
           git config user.email "pegel-bot@users.noreply.github.com"
-          git add data.json
-          git diff --cached --quiet || (git commit -m "Pegeldaten $(date -u +%FT%TZ)" && git push)
+          git add data.json temp.json
+          git diff --cached --quiet || (git commit -m "Daten $(date -u +%FT%TZ)" && git push)

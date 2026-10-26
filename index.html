@@ -15,9 +15,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
+/* Layout: eine Spalte fürs Handy — Umschalter Wasserstand/Temperatur, Hero mit Skala, Vergleichszeilen, 30-Tage-Verlauf, Jahresgang */
 :root{
   --bg:#eef3f4; --surface:#ffffff; --fg:#0f2a33; --muted:#5a7480; --line:#cfdde1;
-  --lake:#1f6f8b; --lake-soft:#cfe6ee; --mean:#b07a2a; --up:#2c7a4b; --down:#b4472f;
+  --lake:#1f6f8b; --lake-soft:#cfe6ee; --mean:#b07a2a; --band:#ead9bd; --up:#2c7a4b; --down:#b4472f;
+  --warm:#c2552f; --cool:#2f6fb4;
   --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
   --body:"IBM Plex Sans",system-ui,-apple-system,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
@@ -25,7 +27,8 @@
 }
 @media (prefers-color-scheme: dark){:root{
   --bg:#0b1a20; --surface:#11252d; --fg:#e3eef1; --muted:#8aa5ae; --line:#24404a;
-  --lake:#5fb6d3; --lake-soft:#173a47; --mean:#e0a957; --up:#6cc890; --down:#ee8a72; color-scheme:dark}}
+  --lake:#5fb6d3; --lake-soft:#173a47; --mean:#e0a957; --band:#3a3222; --up:#6cc890; --down:#ee8a72;
+  --warm:#f0916c; --cool:#7fb2ec; color-scheme:dark}}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.45;
@@ -35,10 +38,14 @@ header{display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
 h1{font-family:var(--display);font-weight:700;font-size:1.6rem;margin:0;letter-spacing:-.01em}
 .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 button.refresh{font:500 .8rem var(--body);color:var(--lake);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:7px 12px;cursor:pointer}
-button.refresh:focus-visible{outline:2px solid var(--lake);outline-offset:2px}
+button:focus-visible{outline:2px solid var(--lake);outline-offset:2px}
 button.refresh[disabled]{opacity:.6}
+.seg{display:grid;grid-template-columns:1fr 1fr;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:4px;gap:4px}
+.seg button{font:600 .9rem var(--body);border:0;border-radius:9px;padding:9px 8px;background:transparent;color:var(--muted);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:1px}
+.seg button small{font:500 .78rem var(--mono);font-variant-numeric:tabular-nums}
+.seg button[aria-selected="true"]{background:var(--lake);color:var(--surface)}
 .status{font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:6px}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--up)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--up);flex:none}
 .status.stale .dot{background:var(--mean)}
 .hero{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;background:var(--surface);border-radius:14px;padding:18px;border:1px solid var(--line)}
 .big{font-family:var(--display);font-weight:700;font-size:4.2rem;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.03em}
@@ -46,14 +53,17 @@ button.refresh[disabled]{opacity:.6}
 .nhn{font-family:var(--mono);font-size:.82rem;color:var(--muted);margin-top:6px}
 .state{display:inline-block;margin-top:10px;padding:3px 10px;border-radius:999px;font-size:.8rem;font-weight:600;background:color-mix(in srgb,var(--down) 15%,transparent);color:var(--down)}
 .state.ok{background:color-mix(in srgb,var(--up) 15%,transparent);color:var(--up)}
+.state.warm{background:color-mix(in srgb,var(--warm) 15%,transparent);color:var(--warm)}
+.state.cool{background:color-mix(in srgb,var(--cool) 15%,transparent);color:var(--cool)}
 .rows{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
 .row{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;padding:13px 16px;border-top:1px solid var(--line)}
 .row:first-child{border-top:0}
-.row .lbl{font-weight:500}
+.row .lbl{font-weight:500;min-width:0}
 .row .lbl span{display:block;font-size:.78rem;color:var(--muted);font-weight:400;font-family:var(--mono)}
 .row .val{font-family:var(--mono);color:var(--muted);font-variant-numeric:tabular-nums;font-size:.9rem}
-.delta{font-family:var(--mono);font-weight:500;font-variant-numeric:tabular-nums;min-width:5.5ch;text-align:right;font-size:1.05rem}
+.delta{font-family:var(--mono);font-weight:500;font-variant-numeric:tabular-nums;min-width:6ch;text-align:right;font-size:1.05rem}
 .pos{color:var(--up)} .neg{color:var(--down)} .zero{color:var(--muted)}
+.tpos{color:var(--warm)} .tneg{color:var(--cool)}
 .row.mean{background:color-mix(in srgb,var(--mean) 9%,var(--surface))}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 12px 10px}
 .card h2{font-family:var(--display);font-weight:500;font-size:1.05rem;margin:0 4px 2px}
@@ -62,48 +72,84 @@ svg{display:block;width:100%;height:auto}
 svg text{font-family:var(--mono);font-size:10px;fill:var(--muted)}
 .legend{display:flex;gap:16px;flex-wrap:wrap;margin:6px 4px 0;font-size:.78rem;color:var(--muted)}
 .legend i{display:inline-block;width:14px;height:3px;border-radius:2px;vertical-align:middle;margin-right:6px}
+.legend i.box{height:10px;width:14px;border-radius:2px}
+.view{display:grid;gap:16px}
+[hidden]{display:none!important}
 footer{font-size:.75rem;color:var(--muted);line-height:1.5}
 footer a{color:var(--lake)}
+@media (prefers-reduced-motion: no-preference){.seg button{transition:background .15s,color .15s}}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
     <div>
-      <div class="eyebrow">Bodensee · Obersee · Pegel 906</div>
+      <div class="eyebrow" id="eyebrow">Bodensee · Obersee</div>
       <h1>Pegel Konstanz</h1>
     </div>
     <button class="refresh" id="refresh" type="button">Aktualisieren</button>
   </header>
+
+  <div class="seg" role="tablist" aria-label="Ansicht">
+    <button type="button" role="tab" id="tab-w" aria-selected="true" aria-controls="view-w">Wasserstand<small id="tab-w-val">–</small></button>
+    <button type="button" role="tab" id="tab-t" aria-selected="false" aria-controls="view-t">Temperatur<small id="tab-t-val">–</small></button>
+  </div>
+
   <div class="status" id="status"><span class="dot"></span><span id="statusText">Lade aktuelle Werte …</span></div>
 
-  <section class="hero">
-    <svg id="staff" viewBox="0 0 64 210" width="64" aria-label="Pegellatte"></svg>
-    <div>
-      <div class="eyebrow">Wasserstand aktuell</div>
-      <div class="big" id="cur">–<small>cm</small></div>
-      <div class="nhn" id="nhn"></div>
-      <div class="state" id="state"></div>
-    </div>
-  </section>
+  <!-- Wasserstand -->
+  <div class="view" id="view-w" role="tabpanel" aria-labelledby="tab-w">
+    <section class="hero">
+      <svg id="staff" viewBox="0 0 64 210" width="64" aria-label="Pegellatte"></svg>
+      <div>
+        <div class="eyebrow">Wasserstand · Pegel 906</div>
+        <div class="big" id="cur">–<small>cm</small></div>
+        <div class="nhn" id="nhn"></div>
+        <div class="state" id="state"></div>
+      </div>
+    </section>
+    <section class="rows" id="rows"></section>
+    <section class="card">
+      <h2>Letzte 30 Tage</h2>
+      <p class="sub">Verlauf in Stundenwerten, gestrichelt das mittlere Niveau zum gleichen Datum</p>
+      <svg id="chart31" viewBox="0 0 360 200"></svg>
+      <div class="legend"><span><i style="background:var(--lake)"></i>Gemessen</span><span><i style="background:var(--mean)"></i>Mittel</span></div>
+    </section>
+    <section class="card">
+      <h2>Jahresgang</h2>
+      <p class="sub">Mittlerer Verlauf übers Jahr und Lage von heute</p>
+      <svg id="chartYear" viewBox="0 0 360 200"></svg>
+    </section>
+  </div>
 
-  <section class="rows" id="rows"></section>
-
-  <section class="card">
-    <h2>Letzte 30 Tage</h2>
-    <p class="sub">Verlauf in Stundenwerten, gestrichelt das mittlere Niveau zum gleichen Datum</p>
-    <svg id="chart31" viewBox="0 0 360 200"></svg>
-    <div class="legend"><span><i style="background:var(--lake)"></i>Gemessen</span><span><i style="background:var(--mean)"></i>Mittel</span></div>
-  </section>
-
-  <section class="card">
-    <h2>Jahresgang</h2>
-    <p class="sub">Mittlerer Verlauf übers Jahr und Lage von heute</p>
-    <svg id="chartYear" viewBox="0 0 360 200"></svg>
-  </section>
+  <!-- Temperatur -->
+  <div class="view" id="view-t" role="tabpanel" aria-labelledby="tab-t" hidden>
+    <section class="hero">
+      <svg id="thermo" viewBox="0 0 64 210" width="64" aria-label="Thermometer"></svg>
+      <div>
+        <div class="eyebrow">Wassertemperatur · Lindau</div>
+        <div class="big" id="tcur">–<small>°C</small></div>
+        <div class="nhn" id="tsub"></div>
+        <div class="state" id="tstate"></div>
+      </div>
+    </section>
+    <section class="rows" id="trows"></section>
+    <section class="card">
+      <h2>Letzte 30 Tage</h2>
+      <p class="sub">Tagesmittel, gestrichelt das Mittel 2004–<span class="ylast"></span>, Fläche zeigt kältestes bis wärmstes Jahr</p>
+      <svg id="tchart31" viewBox="0 0 360 200"></svg>
+      <div class="legend"><span><i style="background:var(--warm)"></i><span class="ycur"></span></span><span><i style="background:var(--mean)"></i>Mittel</span><span><i class="box" style="background:var(--band)"></i>Spanne</span></div>
+    </section>
+    <section class="card">
+      <h2>Jahresgang</h2>
+      <p class="sub">Mittlerer Verlauf, Spanne der Jahre und dieses Jahr</p>
+      <svg id="tchartYear" viewBox="0 0 360 200"></svg>
+    </section>
+  </div>
 
   <footer>
-    Messwerte live von <a href="https://www.pegelonline.wsv.de/gast/stammdaten?pegelnr=906" target="_blank" rel="noopener">PEGELONLINE (WSV)</a>, Pegelnull 391,89 m ü. NHN. Mittelwasser MW 341 cm, MNW 262 cm (1902–2006, <a href="https://www.bodensee-hochwasser.info/pdf/W-Kennwerte-Obersee.pdf" target="_blank" rel="noopener">IGKB-Kennwerte</a>). Das Mittel je Kalendertag ist eine Näherung aus typischen Monatswerten, angeglichen an MW 341 cm, und kann um einige Zentimeter von der amtlichen Tagesstatistik abweichen.
+    Wasserstand live von <a href="https://www.pegelonline.wsv.de/gast/stammdaten?pegelnr=906" target="_blank" rel="noopener">PEGELONLINE (WSV)</a>, Pegelnull 391,89 m ü. NHN. MW 341 cm, MNW 262 cm (1902–2006, <a href="https://www.bodensee-hochwasser.info/pdf/W-Kennwerte-Obersee.pdf" target="_blank" rel="noopener">IGKB</a>). Das Wasserstandsmittel je Kalendertag ist eine Näherung aus typischen Monatswerten.<br>
+    Wassertemperatur: Messstelle Lindau des <a href="https://www.gkd.bayern.de/de/seen/wassertemperatur/bayern/lindau-20001001" target="_blank" rel="noopener">Gewässerkundlichen Dienstes Bayern</a> (Konstanz misst keine Temperatur). Vergleichswerte sind Tagesmittel; das Mittel je Kalendertag ist aus den Messjahren seit 2004 berechnet. Temperaturdaten werden etwa alle 30 Minuten übernommen.
   </footer>
 </div>
 
@@ -112,24 +158,65 @@ const API = "https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations/aa9
 const MW = 341, MNW = 262, ZERO = 391.89;
 const MONTH_MEAN = [296,289,296,319,361,403,411,391,363,339,319,303]; // Näherung, Monatsmitte
 const DAY = 864e5;
-const STORE = "pegel-kn-v1";
+const STORE = "pegel-kn-v1", TSTORE = "pegel-kn-temp-v1", VSTORE = "pegel-kn-view";
 
-// Fallback: Tageswerte (bis 21.10. 0:00 Uhr, ab 22.10. Morgenwerte), Stand 26.10.2026 23:30
+// Fallback Wasserstand, Stand 26.10.2026 23:30
 const SNAPSHOT = (() => {
-  const d = {"2026-09-20":261,"2026-09-21":260,"2026-09-22":260,"2026-09-23":258,"2026-09-24":257,"2026-09-25":256,
-    "2026-09-26":255,"2026-09-27":254,"2026-09-28":254,"2026-09-29":252,"2026-09-30":252,"2026-10-01":251,
+  const d = {"2026-09-26":255,"2026-09-27":254,"2026-09-28":254,"2026-09-29":252,"2026-09-30":252,"2026-10-01":251,
     "2026-10-02":250,"2026-10-03":250,"2026-10-04":250,"2026-10-05":248,"2026-10-06":248,"2026-10-07":248,
     "2026-10-08":247,"2026-10-09":249,"2026-10-10":250,"2026-10-11":251,"2026-10-12":250,"2026-10-13":250,
     "2026-10-14":251,"2026-10-15":249,"2026-10-16":250,"2026-10-17":250,"2026-10-18":250,"2026-10-19":249,
-    "2026-10-20":249,"2026-10-21":249,"2026-10-22":248,"2026-10-23":250,"2026-10-24":249,"2026-10-25":248,
-    "2026-10-26":249};
+    "2026-10-20":249,"2026-10-21":249,"2026-10-22":248,"2026-10-23":250,"2026-10-24":249,"2026-10-25":248,"2026-10-26":249};
   const series = Object.keys(d).sort().map(k => ({t: new Date(k+"T00:00:00"+(k>="2026-10-25"?"+01:00":"+02:00")).getTime(), v: d[k]}));
-  series.push({t: new Date("2026-10-26T21:00:00+01:00").getTime(), v: 250});
   series.push({t: new Date("2026-10-26T23:30:00+01:00").getTime(), v: 250});
-  return {series, fetchedAt: series.at(-1).t};
+  return {series};
 })();
 
+const fmtD = d => d.toLocaleDateString("de-DE",{day:"2-digit",month:"2-digit"});
+const fmtT = d => d.toLocaleTimeString("de-DE",{hour:"2-digit",minute:"2-digit"});
+const fmtC = v => v.toFixed(1).replace(".",",");
+const sgn = v => (Math.round(v)>0?"+":Math.round(v)<0?"−":"±") + Math.abs(Math.round(v));
+const sgnC = v => { const r = Math.round(v*10)/10; return (r>0?"+":r<0?"−":"±") + fmtC(Math.abs(r)); };
+const cls = v => Math.round(v)>0?"pos":Math.round(v)<0?"neg":"zero";
+const clsT = v => Math.round(v*10)>0?"tpos":Math.round(v*10)<0?"tneg":"zero";
+const NS = "http://www.w3.org/2000/svg";
+function el(tag, attrs, parent, text){ const e=document.createElementNS(NS,tag); for(const k in attrs) e.setAttribute(k,attrs[k]); if(text!=null) e.textContent=text; parent.appendChild(e); return e; }
 function doy(d){return (Date.UTC(d.getFullYear(),d.getMonth(),d.getDate()) - Date.UTC(d.getFullYear(),0,1))/DAY;}
+function load(k){ try{ const j = JSON.parse(localStorage.getItem(k)); return j || null; }catch(e){ return null; } }
+function save(k,v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+
+/* ---------- Ansicht umschalten ---------- */
+let view = "w";
+function setView(v){
+  view = v;
+  document.getElementById("tab-w").setAttribute("aria-selected", v==="w");
+  document.getElementById("tab-t").setAttribute("aria-selected", v==="t");
+  document.getElementById("view-w").hidden = v!=="w";
+  document.getElementById("view-t").hidden = v!=="t";
+  document.getElementById("eyebrow").textContent = v==="w" ? "Bodensee · Obersee" : "Bodensee · Wassertemperatur";
+  try{ localStorage.setItem(VSTORE, v); }catch(e){}
+  showStatus();
+}
+document.getElementById("tab-w").addEventListener("click", ()=>setView("w"));
+document.getElementById("tab-t").addEventListener("click", ()=>setView("t"));
+
+const statusInfo = {w:{text:"Lade aktuelle Werte …",live:true}, t:{text:"Lade aktuelle Werte …",live:true}};
+function showStatus(){
+  const s = statusInfo[view];
+  document.getElementById("status").classList.toggle("stale", !s.live);
+  document.getElementById("statusText").textContent = s.text;
+}
+
+function axes(svg,x0,x1,y0,y1,lo,hi,step,fmt){
+  const Y = v => y1 - (v-lo)/(hi-lo)*(y1-y0);
+  for(let v=Math.ceil(lo/step)*step; v<=hi+1e-9; v+=step){
+    el("line",{x1:x0,x2:x1,y1:Y(v),y2:Y(v),stroke:"var(--line)","stroke-width":1},svg);
+    el("text",{x:x0-6,y:Y(v)+3,"text-anchor":"end"},svg,fmt?fmt(v):v);
+  }
+  return Y;
+}
+
+/* ---------- Wasserstand ---------- */
 function meanFor(d){
   const y = d.getFullYear(), t = doy(d);
   const mids = MONTH_MEAN.map((_,i)=>doy(new Date(y,i,15)));
@@ -140,51 +227,34 @@ function meanFor(d){
   }
   return MW;
 }
-const fmtD = d => d.toLocaleDateString("de-DE",{day:"2-digit",month:"2-digit"});
-const fmtT = d => d.toLocaleTimeString("de-DE",{hour:"2-digit",minute:"2-digit"});
-const sgn = v => (Math.round(v)>0?"+":Math.round(v)<0?"−":"±") + Math.abs(Math.round(v));
-const cls = v => Math.round(v)>0?"pos":Math.round(v)<0?"neg":"zero";
-const NS = "http://www.w3.org/2000/svg";
-function el(tag, attrs, parent, text){ const e=document.createElementNS(NS,tag); for(const k in attrs) e.setAttribute(k,attrs[k]); if(text!=null) e.textContent=text; parent.appendChild(e); return e; }
 function nearest(series, t, tol){
   let best=null, bd=Infinity;
   for(const p of series){ const dd=Math.abs(p.t-t); if(dd<bd){bd=dd;best=p;} }
   return bd <= tol ? best : null;
 }
-
-function render(data, live){
+function renderW(data, live){
   const s = data.series; const last = s.at(-1);
   const now = new Date(last.t);
   const today = new Date(now.getFullYear(),now.getMonth(),now.getDate());
   const cur = last.v, meanToday = meanFor(now);
-
   document.getElementById("cur").innerHTML = `${Math.round(cur)}<small>cm</small>`;
+  document.getElementById("tab-w-val").textContent = `${Math.round(cur)} cm`;
   document.getElementById("nhn").textContent = `${(ZERO + cur/100).toFixed(2).replace(".",",")} m ü. NHN`;
   const st = document.getElementById("state");
   st.classList.toggle("ok", cur >= MNW);
   st.textContent = cur < MNW ? `Niedrigwasser · ${Math.round(MNW-cur)} cm unter MNW` : "Im üblichen Bereich";
-
-  const status = document.getElementById("status");
-  status.classList.toggle("stale", !live);
   const when = `${fmtD(now)}, ${fmtT(now)} Uhr`;
-  document.getElementById("statusText").textContent = live
-    ? `Live · Messung vom ${when}`
-    : `Keine Verbindung · letzter bekannter Stand vom ${when}`;
-
-  const tol = 3*3600e3;
+  statusInfo.w = {live, text: live ? `Live · Messung vom ${when}` : `Keine Verbindung · letzter bekannter Stand vom ${when}`};
+  showStatus();
   const rows = [["Vor einem Tag",1],["Vor einer Woche",7],["Vor einem Monat",30]].map(([l,n])=>{
-    const p = nearest(s, last.t - n*DAY, n===1 ? tol : 12*3600e3);
+    const p = nearest(s, last.t - n*DAY, n===1 ? 3*3600e3 : 12*3600e3);
     if(!p) return "";
     return `<div class="row"><div class="lbl">${l}<span>${fmtD(new Date(p.t))}, ${fmtT(new Date(p.t))}</span></div><div class="val">${Math.round(p.v)} cm</div><div class="delta ${cls(cur-p.v)}">${sgn(cur-p.v)}</div></div>`;
   }).join("");
   document.getElementById("rows").innerHTML = rows +
     `<div class="row mean"><div class="lbl">Mittel am ${fmtD(today)}<span>langjährig, Näherung</span></div><div class="val">${Math.round(meanToday)} cm</div><div class="delta ${cls(cur-meanToday)}">${sgn(cur-meanToday)}</div></div>`;
-
-  drawStaff(cur, meanToday);
-  draw31(s);
-  drawYear(s, now, cur, meanToday);
+  drawStaff(cur, meanToday); draw31(s); drawYear(s, now, cur, meanToday);
 }
-
 function drawStaff(cur, meanToday){
   const s = document.getElementById("staff"); s.innerHTML = "";
   const lo=200, hi=450, top=6, bot=204;
@@ -200,20 +270,9 @@ function drawStaff(cur, meanToday){
   el("text",{x:46,y:y(meanToday)-3,"font-size":"8",fill:"var(--mean)"},s,"Ø");
   el("path",{d:`M44 ${y(cur)} l8 -5 v10z`,fill:"var(--lake)"},s);
 }
-
-function axes(svg,x0,x1,y0,y1,lo,hi,step){
-  const Y = v => y1 - (v-lo)/(hi-lo)*(y1-y0);
-  for(let v=Math.ceil(lo/step)*step; v<=hi; v+=step){
-    el("line",{x1:x0,x2:x1,y1:Y(v),y2:Y(v),stroke:"var(--line)","stroke-width":1},svg);
-    el("text",{x:x0-6,y:Y(v)+3,"text-anchor":"end"},svg,v);
-  }
-  return Y;
-}
-
 function draw31(series){
   const svg = document.getElementById("chart31"); svg.innerHTML = "";
   const tEnd = series.at(-1).t, tStart = tEnd - 30*DAY;
-  // thin to hourly
   const pts = []; let lastH = -1;
   for(const p of series){ if(p.t < tStart) continue; const h = Math.floor(p.t/3600e3); if(h!==lastH){pts.push(p); lastH=h;} }
   if(pts.at(-1) !== series.at(-1)) pts.push(series.at(-1));
@@ -235,7 +294,6 @@ function draw31(series){
   [0,1,2,3,4].forEach(i=>{ const t = t0 + (tEnd-t0)*i/4;
     el("text",{x:X(t),y:192,"text-anchor":i===0?"start":i===4?"end":"middle"},svg,fmtD(new Date(t))); });
 }
-
 function drawYear(series, now, cur, meanToday){
   const svg = document.getElementById("chartYear"); svg.innerHTML = "";
   const y = now.getFullYear(), lo=220, hi=440;
@@ -260,35 +318,173 @@ function drawYear(series, now, cur, meanToday){
   ["J","F","M","A","M","J","J","A","S","O","N","D"].forEach((m,i)=>el("text",{x:X(doy(new Date(y,i,15))),y:192,"text-anchor":"middle"},svg,m));
 }
 
-function loadStored(){ try{ const j = JSON.parse(localStorage.getItem(STORE)); return j && j.series && j.series.length ? j : null; }catch(e){ return null; } }
-function saveStored(d){ try{ localStorage.setItem(STORE, JSON.stringify(d)); }catch(e){} }
+/* ---------- Wassertemperatur ---------- */
+// temp.json: {start:"YYYY-MM-DD", daily:[Tagesmittel|null], current:{t:"YYYY-MM-DDTHH:MM" (Ortszeit), v}, updated}
+function tempModel(j){
+  const [sy,sm,sd] = j.start.split("-").map(Number);
+  const start = new Date(sy,sm-1,sd);
+  const idx = d => Math.round((new Date(d.getFullYear(),d.getMonth(),d.getDate()) - start)/DAY);
+  const at = d => { const i = idx(d); return i>=0 && i<j.daily.length ? j.daily[i] : null; };
+  const [cd,ct] = j.current.t.split("T"); const [cy,cm,cdd] = cd.split("-").map(Number); const [ch,cmi] = ct.split(":").map(Number);
+  const now = new Date(cy,cm-1,cdd,ch,cmi);
+  const year = now.getFullYear();
+  // Klimatologie je Kalendertag: Mittel der Jahre (±3 Tage geglättet), dazu kältestes/wärmstes Jahr
+  const climo = d => {
+    const per = [];
+    for(let y = sy; y < year; y++){
+      const vals = [];
+      for(let k=-3;k<=3;k++){ const v = at(new Date(y,d.getMonth(),d.getDate()+k)); if(v!=null) vals.push(v); }
+      if(vals.length >= 4) per.push(vals.reduce((a,b)=>a+b,0)/vals.length);
+    }
+    if(per.length < 5) return null;
+    return {mean: per.reduce((a,b)=>a+b,0)/per.length, min: Math.min(...per), max: Math.max(...per), n: per.length};
+  };
+  return {start, at, now, year, climo, cur: j.current.v, firstYear: sy};
+}
+function renderT(j, live){
+  const m = tempModel(j);
+  const {now, cur} = m;
+  const today = new Date(now.getFullYear(),now.getMonth(),now.getDate());
+  const c = m.climo(today);
+  document.querySelectorAll(".ylast").forEach(e=>e.textContent = m.year-1);
+  document.querySelectorAll(".ycur").forEach(e=>e.textContent = m.year);
+  document.getElementById("tcur").innerHTML = `${fmtC(cur)}<small>°C</small>`;
+  document.getElementById("tab-t-val").textContent = `${fmtC(cur)} °C`;
+  const todayMean = m.at(today);
+  document.getElementById("tsub").textContent = todayMean!=null ? `Tagesmittel heute ${fmtC(todayMean)} °C` : `Messung ${fmtT(now)} Uhr`;
+  const st = document.getElementById("tstate");
+  st.className = "state";
+  if(c){
+    const dd = cur - c.mean;
+    if(dd > 1){ st.classList.add("warm"); st.textContent = `Wärmer als üblich · ${sgnC(dd)} °C`; }
+    else if(dd < -1){ st.classList.add("cool"); st.textContent = `Kühler als üblich · ${sgnC(dd)} °C`; }
+    else { st.classList.add("ok"); st.textContent = "Im üblichen Bereich"; }
+  } else st.textContent = "";
+  const when = `${fmtD(now)}, ${fmtT(now)} Uhr`;
+  statusInfo.t = {live, text: live ? `Messung Lindau vom ${when}` : `Keine Verbindung · letzter bekannter Stand vom ${when}`};
+  showStatus();
+  const row = (l, sub, v, cssExtra="") => v==null ? "" :
+    `<div class="row ${cssExtra}"><div class="lbl">${l}<span>${sub}</span></div><div class="val">${fmtC(v)} °C</div><div class="delta ${clsT(cur-v)}">${sgnC(cur-v)}</div></div>`;
+  const back = n => { const d = new Date(today); d.setDate(d.getDate()-n); return d; };
+  const ly = new Date(today); ly.setFullYear(ly.getFullYear()-1);
+  let html = "";
+  html += row("Vor einem Tag", `${fmtD(back(1))}, Tagesmittel`, m.at(back(1)));
+  html += row("Vor einer Woche", `${fmtD(back(7))}, Tagesmittel`, m.at(back(7)));
+  html += row("Vor einem Monat", `${fmtD(back(30))}, Tagesmittel`, m.at(back(30)));
+  html += row("Vor einem Jahr", `${fmtD(ly)}${ly.getFullYear()}, Tagesmittel`, m.at(ly));
+  if(c) html += row(`Mittel am ${fmtD(today)}`, `${m.firstYear}–${m.year-1}, ${c.n} Jahre`, c.mean, "mean");
+  document.getElementById("trows").innerHTML = html;
+  drawThermo(cur, c);
+  drawT31(m, today, cur);
+  drawTYear(m, today, cur, c);
+}
+function drawThermo(cur, c){
+  const s = document.getElementById("thermo"); s.innerHTML = "";
+  const lo=0, hi=28, top=8, bot=176;
+  const y = v => bot - (Math.max(lo,Math.min(hi,v))-lo)/(hi-lo)*(bot-top);
+  el("rect",{x:24,y:top-2,width:16,height:bot-top+10,rx:8,fill:"var(--surface)",stroke:"var(--line)"},s);
+  el("circle",{cx:32,cy:192,r:13,fill:"var(--warm)"},s);
+  el("rect",{x:28,y:y(cur),width:8,height:192-y(cur),rx:4,fill:"var(--warm)"},s);
+  for(let v=lo; v<=hi; v+=2){
+    const big = v%10===0;
+    el("line",{x1:big?40:40,x2:big?48:44,y1:y(v),y2:y(v),stroke:"var(--fg)","stroke-width":big?1.2:.6,opacity:big?.7:.35},s);
+    if(big) el("text",{x:20,y:y(v)+3,"text-anchor":"end","font-size":"9"},s,v+"°");
+  }
+  if(c){
+    el("line",{x1:16,x2:50,y1:y(c.mean),y2:y(c.mean),stroke:"var(--mean)","stroke-width":2,"stroke-dasharray":"4 2"},s);
+    el("text",{x:52,y:y(c.mean)+3,"font-size":"8",fill:"var(--mean)"},s,"Ø");
+  }
+}
+function drawT31(m, today, cur){
+  const svg = document.getElementById("tchart31"); svg.innerHTML = "";
+  const days = []; for(let n=30;n>=0;n--){ const d = new Date(today); d.setDate(d.getDate()-n); days.push(d); }
+  const obs = days.map(d=>({d, v: m.at(d)}));
+  if(obs[obs.length-1].v==null) obs[obs.length-1].v = cur;
+  const cl = days.map(d=>({d, c: m.climo(d)}));
+  const all = obs.filter(o=>o.v!=null).map(o=>o.v).concat(cl.filter(x=>x.c).flatMap(x=>[x.c.min,x.c.max]), [cur]);
+  const lo = Math.floor(Math.min(...all)-1), hi = Math.ceil(Math.max(...all)+1);
+  const x0=36,x1=350,y0=10,y1=176;
+  const step = (hi-lo) > 12 ? 4 : 2;
+  const Y = axes(svg,x0,x1,y0,y1,lo,hi,step,v=>v+"°");
+  const X = i => x0 + i/30*(x1-x0);
+  const band = cl.map((x,i)=>x.c?[X(i),Y(x.c.max)]:null).filter(Boolean);
+  const bandLo = cl.map((x,i)=>x.c?[X(i),Y(x.c.min)]:null).filter(Boolean).reverse();
+  if(band.length>1) el("path",{d:"M"+band.concat(bandLo).map(p=>p[0].toFixed(1)+" "+p[1].toFixed(1)).join("L")+"Z",fill:"var(--band)",opacity:.8},svg);
+  const meanPts = cl.map((x,i)=>x.c?`${X(i).toFixed(1)} ${Y(x.c.mean).toFixed(1)}`:null).filter(Boolean);
+  if(meanPts.length>1) el("path",{d:"M"+meanPts.join("L"),fill:"none",stroke:"var(--mean)","stroke-width":1.8,"stroke-dasharray":"5 3"},svg);
+  let d="", pen=false;
+  obs.forEach((o,i)=>{ if(o.v==null){pen=false;return;} d += `${pen?"L":"M"}${X(i).toFixed(1)} ${Y(o.v).toFixed(1)}`; pen=true; });
+  el("path",{d,fill:"none",stroke:"var(--warm)","stroke-width":2.2,"stroke-linejoin":"round"},svg);
+  el("circle",{cx:X(30),cy:Y(cur),r:4,fill:"var(--warm)",stroke:"var(--surface)","stroke-width":2},svg);
+  [0,7.5,15,22.5,30].forEach((i,k)=>el("text",{x:X(i),y:192,"text-anchor":k===0?"start":k===4?"end":"middle"},svg,fmtD(days[Math.round(i)])));
+}
+function drawTYear(m, today, cur, c){
+  const svg = document.getElementById("tchartYear"); svg.innerHTML = "";
+  const y = m.year, lo=0, hi=28;
+  const x0=36,x1=350,y0=10,y1=176;
+  const Y = axes(svg,x0,x1,y0,y1,lo,hi,7,v=>v+"°");
+  const X = t => x0 + t/364*(x1-x0);
+  const up=[], dn=[], mean=[];
+  for(let t=0;t<=364;t+=4){ const cc = m.climo(new Date(y,0,1+t)); if(!cc) continue; up.push(`${X(t).toFixed(1)} ${Y(cc.max).toFixed(1)}`); dn.push(`${X(t).toFixed(1)} ${Y(cc.min).toFixed(1)}`); mean.push(`${X(t).toFixed(1)} ${Y(cc.mean).toFixed(1)}`); }
+  if(up.length>1){
+    el("path",{d:"M"+up.concat(dn.reverse()).join("L")+"Z",fill:"var(--band)",opacity:.8},svg);
+    el("path",{d:"M"+mean.join("L"),fill:"none",stroke:"var(--mean)","stroke-width":2},svg);
+  }
+  let d="", pen=false;
+  for(let t=0;t<=doy(today);t++){ const v = m.at(new Date(y,0,1+t)); if(v==null){pen=false;continue;} d += `${pen?"L":"M"}${X(t).toFixed(1)} ${Y(v).toFixed(1)}`; pen=true; }
+  if(d) el("path",{d,fill:"none",stroke:"var(--warm)","stroke-width":2.2,"stroke-linejoin":"round"},svg);
+  const tx = X(doy(today));
+  el("circle",{cx:tx,cy:Y(cur),r:4.5,fill:"var(--warm)",stroke:"var(--surface)","stroke-width":2},svg);
+  if(c){
+    el("circle",{cx:tx,cy:Y(c.mean),r:3.5,fill:"var(--mean)"},svg);
+    const right = tx < x0 + 60;
+    el("text",{x:right?tx+8:tx-8,y:Math.min(Y(cur),Y(c.mean))-8,"text-anchor":right?"start":"end",fill:"var(--fg)","font-weight":"500"},svg,sgnC(cur-c.mean)+" °C");
+  }
+  ["J","F","M","A","M","J","J","A","S","O","N","D"].forEach((mm,i)=>el("text",{x:X(doy(new Date(y,i,15))),y:192,"text-anchor":"middle"},svg,mm));
+}
 
+/* ---------- Laden ---------- */
+async function getJSON(url){
+  const ctrl = new AbortController(); const to = setTimeout(()=>ctrl.abort(), 15000);
+  try{ const r = await fetch(url, {signal: ctrl.signal, cache: "no-store"}); if(!r.ok) throw new Error("HTTP " + r.status); return await r.json(); }
+  finally{ clearTimeout(to); }
+}
+async function refreshW(){
+  try{
+    let arr;
+    try{ arr = await getJSON(`${API}/measurements.json?start=P31D`); }
+    catch(e){ arr = await getJSON(`data.json?t=${Date.now()}`); } // Kopie, die GitHub alle 30 Min. aktualisiert
+    const series = arr.map(m => ({t: new Date(m.timestamp).getTime(), v: m.value})).filter(p => isFinite(p.v)).sort((a,b)=>a.t-b.t);
+    if(!series.length) throw new Error("leer");
+    const data = {series}; save(STORE, data); renderW(data, true);
+  }catch(e){ renderW(load(STORE)?.series?.length ? load(STORE) : SNAPSHOT, false); }
+}
+async function refreshT(){
+  try{
+    const j = await getJSON(`temp.json?t=${Date.now()}`);
+    if(!j || !j.daily || !j.current) throw new Error("leer");
+    save(TSTORE, j); renderT(j, true);
+  }catch(e){
+    const j = load(TSTORE);
+    if(j && j.daily) renderT(j, false);
+    else { statusInfo.t = {live:false, text:"Temperaturdaten nicht erreichbar"}; showStatus(); }
+  }
+}
 let busy = false;
 async function refresh(){
   if(busy) return; busy = true;
   const btn = document.getElementById("refresh"); btn.disabled = true; btn.textContent = "Lädt …";
-  try{
-    const get = async (url) => {
-      const ctrl = new AbortController(); const to = setTimeout(()=>ctrl.abort(), 15000);
-      try{ const r = await fetch(url, {signal: ctrl.signal, cache: "no-store"}); if(!r.ok) throw new Error("HTTP " + r.status); return await r.json(); }
-      finally{ clearTimeout(to); }
-    };
-    let arr;
-    try{ arr = await get(`${API}/measurements.json?start=P31D`); }
-    catch(e){ arr = await get(`data.json?t=${Date.now()}`); } // Kopie, die GitHub alle 30 Min. aktualisiert
-    const series = arr.map(m => ({t: new Date(m.timestamp).getTime(), v: m.value})).filter(p => isFinite(p.v)).sort((a,b)=>a.t-b.t);
-    if(!series.length) throw new Error("leer");
-    const data = {series, fetchedAt: Date.now()};
-    saveStored(data); render(data, true);
-  }catch(e){
-    render(loadStored() || SNAPSHOT, false);
-  }finally{
-    busy = false; btn.disabled = false; btn.textContent = "Aktualisieren";
-  }
+  try{ await Promise.all([refreshW(), refreshT()]); }
+  finally{ busy = false; btn.disabled = false; btn.textContent = "Aktualisieren"; }
 }
 
-render(loadStored() || SNAPSHOT, false);
-document.getElementById("statusText").textContent = "Lade aktuelle Werte …";
+let startView = "w";
+try{ startView = localStorage.getItem(VSTORE) || "w"; }catch(e){}
+if(location.hash === "#temperatur") startView = "t";
+renderW(load(STORE)?.series?.length ? load(STORE) : SNAPSHOT, false);
+const tCached = load(TSTORE); if(tCached && tCached.daily) renderT(tCached, false);
+statusInfo.w.text = statusInfo.t.text = "Lade aktuelle Werte …"; statusInfo.w.live = statusInfo.t.live = true;
+setView(startView === "t" ? "t" : "w");
 document.getElementById("refresh").addEventListener("click", refresh);
 document.addEventListener("visibilitychange", () => { if(document.visibilityState === "visible") refresh(); });
 setInterval(() => { if(document.visibilityState === "visible") refresh(); }, 15*60*1000);
