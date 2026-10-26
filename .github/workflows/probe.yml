@@ -10,16 +10,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          mkdir -p out
-          P=https://www.pegelonline.wsv.de/webservices/rest-api/v2
-          curl -sS "$P/stations/aa9179c1-17ef-4c61-a48a-74193fa7bfdf.json?includeTimeseries=true" -o out/kn_station.json || true
-          curl -sS "$P/stations.json?timeseries=WT&includeTimeseries=true&includeCurrentMeasurement=true" -o out/pegelonline_wt.json || true
-          curl -sSI -H "Origin: https://jan-ai75.github.io" "$P/stations/aa9179c1-17ef-4c61-a48a-74193fa7bfdf/W.json" -o out/cors_headers.txt || true
-          curl -sSL "https://www.gkd.bayern.de/de/seen/wassertemperatur/bodensee/lindau-20001001/messwerte/tabelle" -o out/gkd_lindau.html || true
-          curl -sSL "https://www.nid.bayern.de/wassertemperatur/bodensee/lindau-20001001" -o out/nid_lindau.html || true
-          curl -sSL "https://vowis.vorarlberg.at/seewasserstand" -o out/vowis.html || true
-          curl -sSL "https://api.existenz.ch/apiv1/hydro/locations" -o out/existenz_locations.json || true
-          ls -la out
+          mkdir -p out2
+          UA="Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1"
+          G=https://www.gkd.bayern.de/de/seen/wassertemperatur/bayern/lindau-20001001
+          for u in messwerte messwerte/tabelle jahreswerte monatswerte gesamtzeitraum download; do curl -sSL -A "$UA" -H "Accept-Language: de" "$G/$u" -o "out2/gkd_$(echo $u|tr / _).html" || true; done
+          curl -sSL -A "$UA" "https://www.nid.bayern.de/wassertemperatur/bayern/lindau-20001001/tabelleZweiMonate" -o out2/nid_tab.html || true
+          curl -sSL -A "$UA" "https://vowis.vorarlberg.at/seewasserstand" -o out2/vowis.html || true
+          curl -sSL "https://api.existenz.ch/apiv1/hydro/latest?locations=2032,2043&app=pegelkn" -o out2/existenz_latest.json || true
+          curl -sSI -H "Origin: https://jan-ai75.github.io" "https://api.existenz.ch/apiv1/hydro/latest?locations=2032" -o out2/existenz_cors.txt || true
+          ls -la out2
       - run: |
           git config user.name probe; git config user.email probe@users.noreply.github.com
-          git add out && git commit -m probe-results && git push
+          git add out2 && git commit -m probe-results && git push
