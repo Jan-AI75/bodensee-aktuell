@@ -10,11 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          mkdir -p out8
-          UA="Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1"
-          for u in plots/p_forecast/2032_p_forecast_de.json plots/p_forecast/2032_p_forecast_de plots/p_forecast/2032_p_forecast_de.png; do curl -sSL -A "$UA" "https://www.hydrodaten.admin.ch/$u" -o "out8/$(basename $u)" -w "%{http_code} %{content_type} $u\n" || true; done
-          curl -sSI -H "Origin: https://jan-ai75.github.io" "https://www.hydrodaten.admin.ch/plots/p_forecast/2032_p_forecast_de.json" -o out8/cors.txt || true
-          ls -la out8
+          mkdir -p out9
+          python3 scripts/update_outlook.py && mv outlook.json out9/
+          ls -la out9
       - run: |
           git config user.name probe; git config user.email probe@users.noreply.github.com
-          git add out8 && git commit -m probe-results && git push
+          git add out9 && git commit -m probe-results && git push
