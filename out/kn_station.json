@@ -1,0 +1,28 @@
+{
+  "uuid": "aa9179c1-17ef-4c61-a48a-74193fa7bfdf",
+  "number": "906",
+  "shortname": "KONSTANZ",
+  "longname": "KONSTANZ",
+  "km": 0.0,
+  "agency": "REGIERUNGSPRÄSIDIUM FREIBURG",
+  "longitude": 9.181039,
+  "latitude": 47.660750,
+  "voiceServiceNumber": "+49 228 286527 008",
+  "water": {
+    "shortname": "BODENSEE",
+    "longname": "BODENSEE"
+  },
+  "timeseries": [
+    {
+      "shortname": "W",
+      "longname": "WASSERSTAND ROHDATEN",
+      "unit": "cm",
+      "equidistance": 15,
+      "gaugeZero": {
+        "unit": "m. ü. NHN",
+        "value": 391.89,
+        "validFrom": "2004-04-14"
+      }
+    }
+  ]
+}

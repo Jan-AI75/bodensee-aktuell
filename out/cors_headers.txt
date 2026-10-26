@@ -1,0 +1,21 @@
+HTTP/1.1 200 200
+Date: Mon, 26 Oct 2026 23:07:37 GMT
+Server: Apache
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET,OPTIONS
+Cache-Control: max-age=55, must-revalidate, no-transform, proxy-revalidate
+Expires: Mon, 26 Oct 2026 23:08:32 GMT
+Strict-Transport-Security: max-age=31536000 ; includeSubDomains
+X-XSS-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+X-Content-Type-Options: nosniff
+Content-Type: application/json;charset=UTF-8
+Vary: Accept-Encoding
+Content-Security-Policy: object-src 'none'; img-src 'self' https://pegelonline.wsv.de/ https://via.bund.de/ https://www.wettergefahren.de/DWD/wetter/radar/Webradar_Deutschland.jpg https://www.bafg.de/php/deutsches-eck.jpg; script-src 'self' 'unsafe-eval' https://pegelonline.wsv.de/; worker-src 'self' data: blob:; frame-ancestors 'self' https://pegelonline.wsv.de/
+X-Content-Security-Policy: object-src 'none'; img-src 'self' https://pegelonline.wsv.de/ https://via.bund.de/ https://www.wettergefahren.de/DWD/wetter/radar/Webradar_Deutschland.jpg https://www.bafg.de/php/deutsches-eck.jpg; script-src 'self' 'unsafe-eval' https://pegelonline.wsv.de/; worker-src 'self' data: blob:; frame-ancestors 'self' https://pegelonline.wsv.de/
+Referrer-Policy: origin-when-cross-origin
+Access-Control-Expose-Headers: Content-Security-Policy, Location
+Access-Control-Max-Age: 600
+Set-Cookie: 1dc1b3622afc4a4a55c7c7b29953c00ee0b54c869a082e0a1955011150f897b6=7ce2a3d96e2490b0308f31889ee9e7a726e16d4255c30184adc09f0bf96a1a125b9440db;expires=Tue, 27-Oct-2026 00:07:33 GMT;path=/;secure;httponly
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+

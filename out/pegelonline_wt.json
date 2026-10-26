@@ -1,0 +1,3652 @@
+[
+  {
+    "uuid": "28ec91e8-90c0-44d1-8fd2-b0b64c00c43b",
+    "number": "126013",
+    "shortname": "ABBENFLETH SPERRWERK",
+    "longname": "ABBENFLETH SPERRWERK",
+    "km": 2.95,
+    "agency": "STANDORT HAMBURG",
+    "longitude": 9.494307,
+    "latitude": 53.668963,
+    "water": {
+      "shortname": "BSE",
+      "longname": "BÜTZFLETHER SÜDERELBE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 11.4
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "0e0dbcc9-0a7d-494a-bc92-52e56a7fffe2",
+    "number": "586270",
+    "shortname": "NEUE MÜHLE SCHLEUSE OP",
+    "longname": "NEUE MÜHLE SCHLEUSE OP",
+    "km": 9.56,
+    "agency": "STANDORT BERLIN",
+    "longitude": 13.651758,
+    "latitude": 52.296816,
+    "voiceServiceNumber": "+49 228 286527 011",
+    "water": {
+      "shortname": "DAW",
+      "longname": "DAHME-WASSERSTRASSE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 10.7
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "9f12c405-35ac-4d90-9b7b-023be355867e",
+    "number": "10091008",
+    "shortname": "PASSAU DONAU",
+    "longname": "PASSAU DONAU",
+    "km": 2226.7,
+    "agency": "STANDORT REGENSBURG",
+    "longitude": 13.459076,
+    "latitude": 48.576133,
+    "voiceServiceNumber": "+49 228 286527 022",
+    "water": {
+      "shortname": "DONAU",
+      "longname": "DONAU"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 11.5
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "e6d68ab7-5c27-4f25-896f-11dbf04056cd",
+    "number": "10089006",
+    "shortname": "VILSHOFEN",
+    "longname": "VILSHOFEN",
+    "km": 2249.5,
+    "agency": "STANDORT REGENSBURG",
+    "longitude": 13.182429,
+    "latitude": 48.637297,
+    "voiceServiceNumber": "+49 228 286527 026",
+    "water": {
+      "shortname": "DONAU",
+      "longname": "DONAU"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 12.7
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "53d40547-8a09-4b25-988c-2e6d8d8d98ee",
+    "number": "10081004",
+    "shortname": "DEGGENDORF",
+    "longname": "DEGGENDORF",
+    "km": 2284.4,
+    "agency": "STANDORT REGENSBURG",
+    "longitude": 12.962350,
+    "latitude": 48.824944,
+    "voiceServiceNumber": "+49 228 286527 028",
+    "water": {
+      "shortname": "DONAU",
+      "longname": "DONAU"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 10.9
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "7644f1d7-3198-4313-9340-abefd459a4f3",
+    "number": "10062000",
+    "shortname": "SCHWABELWEIS",
+    "longname": "SCHWABELWEIS",
+    "km": 2376.5,
+    "agency": "STANDORT REGENSBURG",
+    "longitude": 12.138693,
+    "latitude": 49.023583,
+    "voiceServiceNumber": "+49 228 286527 031",
+    "water": {
+      "shortname": "DONAU",
+      "longname": "DONAU"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 10.0
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "e476bcad-b898-4f68-9c26-4f1a1159dff6",
+    "number": "10056302",
+    "shortname": "OBERNDORF",
+    "longname": "OBERNDORF",
+    "km": 2397.4,
+    "agency": "STANDORT REGENSBURG",
+    "longitude": 12.014893,
+    "latitude": 48.946969,
+    "voiceServiceNumber": "+49 228 286527 033",
+    "water": {
+      "shortname": "DONAU",
+      "longname": "DONAU"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 15.2
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "86c5688f-2fac-4d58-a245-ad8ce14cafbf",
+    "number": "9520020",
+    "shortname": "LEXFÄHRE OBERWASSER",
+    "longname": "LEXFÄHRE OBERWASSER",
+    "km": 26.09,
+    "agency": "STANDORT TÖNNING",
+    "longitude": 9.436143,
+    "latitude": 54.222472,
+    "voiceServiceNumber": "+49 228 286527 061",
+    "water": {
+      "shortname": "EIDER",
+      "longname": "EIDER"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-26T23:56:00+01:00",
+          "value": 9.9
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "7f01fbd8-653c-40ba-8ed0-57386a9b4557",
+    "number": "9520030",
+    "shortname": "LEXFÄHRE UNTERWASSER",
+    "longname": "LEXFÄHRE UNTERWASSER",
+    "km": 26.09,
+    "agency": "STANDORT TÖNNING",
+    "longitude": 9.435676,
+    "latitude": 54.223219,
+    "voiceServiceNumber": "+49 228 286527 060",
+    "water": {
+      "shortname": "EIDER",
+      "longname": "EIDER"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-26T23:56:00+01:00",
+          "value": 9.7
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "61394669-3f1b-44e5-ae37-50fd2512f4fa",
+    "number": "9520040",
+    "shortname": "NORDFELD OBERWASSER",
+    "longname": "NORDFELD OBERWASSER",
+    "km": 78.19,
+    "agency": "STANDORT TÖNNING",
+    "longitude": 9.139643,
+    "latitude": 54.338733,
+    "voiceServiceNumber": "+49 228 286527 062",
+    "water": {
+      "shortname": "EIDER",
+      "longname": "EIDER"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 10.0
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "cb93548e-c1ce-43f6-b3a1-6903f8835b33",
+    "number": "9520050",
+    "shortname": "NORDFELD UNTERWASSER",
+    "longname": "NORDFELD UNTERWASSER",
+    "km": 78.312,
+    "agency": "STANDORT TÖNNING",
+    "longitude": 9.138247,
+    "latitude": 54.339462,
+    "voiceServiceNumber": "+49 228 286527 063",
+    "water": {
+      "shortname": "EIDER",
+      "longname": "EIDER"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-23T00:25:00+02:00",
+          "value": 10.9
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "00e386ac-e35c-4a6e-80dd-f8cd8a9e7a62",
+    "number": "9520070",
+    "shortname": "TÖNNING",
+    "longname": "TÖNNING",
+    "km": 99.8,
+    "agency": "STANDORT TÖNNING",
+    "longitude": 8.950149,
+    "latitude": 54.314683,
+    "voiceServiceNumber": "+49 228 286527 065",
+    "water": {
+      "shortname": "EIDER",
+      "longname": "EIDER"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:01:00+01:00",
+          "value": 9.9
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "8ac85e6c-6167-496c-b16f-fa94f81cd94a",
+    "number": "9520081",
+    "shortname": "EIDER-SPERRWERK BP",
+    "longname": "EIDER-SPERRWERK BP",
+    "km": 110.1,
+    "agency": "STANDORT TÖNNING",
+    "longitude": 8.849594,
+    "latitude": 54.265866,
+    "voiceServiceNumber": "+49 228 286527 066",
+    "water": {
+      "shortname": "EIDER",
+      "longname": "EIDER"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 9.7
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "81c95d3a-3193-4e9c-a411-adf97c751a43",
+    "number": "126017",
+    "shortname": "HAHNÖFER SAND WEST SIEL",
+    "longname": "HAHNÖFER SAND WEST SIEL",
+    "km": 641.5,
+    "agency": "STANDORT HAMBURG",
+    "longitude": 9.690490,
+    "latitude": 53.548238,
+    "water": {
+      "shortname": "ELBE",
+      "longname": "ELBE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 11.5
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "1c80e441-a1d7-400c-b569-e038c9876a4f",
+    "number": "71160198",
+    "shortname": "D1 HANSKALBSAND OBERFLÄCHE",
+    "longname": "D1 HANSKALBSAND OBERFLÄCHE",
+    "km": 643.0,
+    "agency": "STANDORT HAMBURG",
+    "longitude": 9.672075,
+    "latitude": 53.565711,
+    "water": {
+      "shortname": "ELBE",
+      "longname": "ELBE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 5,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 12.2
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "599c23b1-4550-41e3-a7e7-3056989927f1",
+    "number": "5970010",
+    "shortname": "HETLINGEN",
+    "longname": "HETLINGEN",
+    "km": 650.5,
+    "agency": "STANDORT HAMBURG",
+    "longitude": 9.584318,
+    "latitude": 53.609411,
+    "voiceServiceNumber": "+49 228 286527 120",
+    "water": {
+      "shortname": "ELBE",
+      "longname": "ELBE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 11.8
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "6d43098c-632d-4e89-996f-98b1c99e5630",
+    "number": "126015",
+    "shortname": "TWIELENFLETH SIEL",
+    "longname": "TWIELENFLETH SIEL",
+    "km": 650.7,
+    "agency": "STANDORT HAMBURG",
+    "longitude": 9.567137,
+    "latitude": 53.598754,
+    "water": {
+      "shortname": "ELBE",
+      "longname": "ELBE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 10.5
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "7398029b-c6a1-484f-b1f6-1afe568ee1e2",
+    "number": "5970026",
+    "shortname": "GRAUERORT REEDE",
+    "longname": "GRAUERORT REEDE",
+    "km": 660.738,
+    "agency": "STANDORT HAMBURG",
+    "longitude": 9.494796,
+    "latitude": 53.679150,
+    "voiceServiceNumber": "+49 228 286527 123",
+    "water": {
+      "shortname": "ELBE",
+      "longname": "ELBE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:02:00+01:00",
+          "value": 12.3
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "3ed90357-4b01-4119-b1c5-bd2c62871e7b",
+    "number": "5970025",
+    "shortname": "KOLLMAR",
+    "longname": "KOLLMAR",
+    "km": 666.9,
+    "agency": "STANDORT HAMBURG",
+    "longitude": 9.459762,
+    "latitude": 53.731123,
+    "voiceServiceNumber": "+49 228 286527 125",
+    "water": {
+      "shortname": "ELBE",
+      "longname": "ELBE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:02:00+01:00",
+          "value": 14.1
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "8c20b4dc-1540-4b14-8c88-0e1d87de22c4",
+    "number": "5970031",
+    "shortname": "KRAUTSAND REEDE",
+    "longname": "KRAUTSAND REEDE",
+    "km": 671.787,
+    "agency": "STANDORT HAMBURG",
+    "longitude": 9.391187,
+    "latitude": 53.754705,
+    "voiceServiceNumber": "+49 228 286527 126",
+    "water": {
+      "shortname": "ELBE",
+      "longname": "ELBE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:02:00+01:00",
+          "value": 11.8
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "1f1bbed7-c1fa-45b4-90d3-df94b50ad631",
+    "number": "5970035",
+    "shortname": "GLÜCKSTADT",
+    "longname": "GLÜCKSTADT",
+    "km": 674.0,
+    "agency": "STANDORT HAMBURG",
+    "longitude": 9.409430,
+    "latitude": 53.784361,
+    "voiceServiceNumber": "+49 228 286527 127",
+    "water": {
+      "shortname": "ELBE",
+      "longname": "ELBE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:02:00+01:00",
+          "value": 28.0
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "f973fb71-4a44-4603-8b13-25002dd6dbd8",
+    "number": "126005",
+    "shortname": "SCHÖNEWORTH SIEL",
+    "longname": "SCHÖNEWORTH SIEL",
+    "km": 685.1,
+    "agency": "STANDORT HAMBURG",
+    "longitude": 9.288201,
+    "latitude": 53.846897,
+    "water": {
+      "shortname": "ELBE",
+      "longname": "ELBE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 10.8
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "64c37072-db97-4e08-8981-c67f0282de5c",
+    "number": "587510",
+    "shortname": "ZERBEN OP",
+    "longname": "ZERBEN OP",
+    "km": 344.686,
+    "agency": "STANDORT BRANDENBURG",
+    "longitude": 11.957395,
+    "latitude": 52.339613,
+    "voiceServiceNumber": "+49 228 286527 136",
+    "water": {
+      "shortname": "EHK",
+      "longname": "ELBE-HAVEL-KANAL"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 10.7
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "a36c123d-6940-464c-b972-8c330c944de4",
+    "number": "587717",
+    "shortname": "Roßdorf",
+    "longname": "ROSSDORF",
+    "km": 368.45,
+    "agency": "STANDORT BRANDENBURG",
+    "voiceServiceNumber": "+49 228 286527 140",
+    "water": {
+      "shortname": "EHK",
+      "longname": "ELBE-HAVEL-KANAL"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 15,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 10.6
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "bf7bb8e8-e81f-4655-9e84-28738feae936",
+    "number": "9669040",
+    "shortname": "BÜSSAU UP",
+    "longname": "BÜSSAU UP",
+    "km": 3.4,
+    "agency": "STANDORT LAUENBURG",
+    "longitude": 10.625385,
+    "latitude": 53.817549,
+    "voiceServiceNumber": "+49 228 286527 144",
+    "water": {
+      "shortname": "ELK",
+      "longname": "ELBE-LÜBECK-KANAL"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 10.4
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "46644438-83d6-4da8-a2a1-1deb2cb67561",
+    "number": "9660050",
+    "shortname": "MÖLLN",
+    "longname": "MÖLLN",
+    "km": 26.772,
+    "agency": "STANDORT LAUENBURG",
+    "longitude": 10.674800,
+    "latitude": 53.624454,
+    "voiceServiceNumber": "+49 228 286527 146",
+    "water": {
+      "shortname": "ELK",
+      "longname": "ELBE-LÜBECK-KANAL"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 11.2
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "9cf795ce-8bdf-494b-b8c6-ef1bfb89c08b",
+    "number": "90100101",
+    "shortname": "WITTINGEN",
+    "longname": "WITTINGEN",
+    "km": 39.0,
+    "agency": "UELZEN",
+    "longitude": 10.664477,
+    "latitude": 52.727727,
+    "voiceServiceNumber": "+49 228 286527 148",
+    "water": {
+      "shortname": "ESK",
+      "longname": "ELBESEITENKANAL"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-26T22:00:00+01:00",
+          "value": 8.6
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "728bd3e3-23f2-41c6-8ac5-4cfa223a5a7e",
+    "number": "90100111",
+    "shortname": "UELZEN OW",
+    "longname": "UELZEN OW",
+    "km": 60.38,
+    "agency": "UELZEN",
+    "longitude": 10.614720,
+    "latitude": 52.909337,
+    "voiceServiceNumber": "+49 228 286527 149",
+    "water": {
+      "shortname": "ESK",
+      "longname": "ELBESEITENKANAL"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-26T22:00:00+01:00",
+          "value": 10.7
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "0d0082cf-0b4b-4c8b-8e97-5d37b511916b",
+    "number": "90100110",
+    "shortname": "UELZEN UW",
+    "longname": "UELZEN UW",
+    "km": 60.98,
+    "agency": "UELZEN",
+    "longitude": 10.612311,
+    "latitude": 52.914527,
+    "voiceServiceNumber": "+49 228 286527 150",
+    "water": {
+      "shortname": "ESK",
+      "longname": "ELBESEITENKANAL"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-26T22:00:00+01:00",
+          "value": 11.1
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "c7364d1e-6139-4575-84cb-b420d21275c4",
+    "number": "90100121",
+    "shortname": "LÜNEBURG OW",
+    "longname": "LÜNEBURG OW",
+    "km": 104.0,
+    "agency": "UELZEN",
+    "longitude": 10.485459,
+    "latitude": 53.272488,
+    "voiceServiceNumber": "+49 228 286527 152",
+    "water": {
+      "shortname": "ESK",
+      "longname": "ELBESEITENKANAL"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-26T22:00:00+01:00",
+          "value": 10.1
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "d18033cd-9cf6-4800-9176-57758bb444dc",
+    "number": "90100120",
+    "shortname": "LÜNEBURG UW",
+    "longname": "LÜNEBURG UW",
+    "km": 106.3,
+    "agency": "UELZEN",
+    "longitude": 10.488563,
+    "latitude": 53.293428,
+    "voiceServiceNumber": "+49 228 286527 153",
+    "water": {
+      "shortname": "ESK",
+      "longname": "ELBESEITENKANAL"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-26T22:00:00+01:00",
+          "value": 11.3
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "8a08c920-c911-43e5-90dd-27d4d4e757d0",
+    "number": "5950080",
+    "shortname": "BUXTEHUDE",
+    "longname": "BUXTEHUDE",
+    "km": 0.71,
+    "agency": "STANDORT HAMBURG",
+    "longitude": 9.703369,
+    "latitude": 53.480450,
+    "voiceServiceNumber": "+49 228 286527 172",
+    "water": {
+      "shortname": "ESTE",
+      "longname": "ESTE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 9.9
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "227b83f7-1302-4d7e-8d70-899036ff4ce2",
+    "number": "5950082",
+    "shortname": "ESTE INNERES SPERRWERK AP",
+    "longname": "ESTE INNERES SPERRWERK AP",
+    "km": 1.0,
+    "agency": "STANDORT HAMBURG",
+    "longitude": 9.776752,
+    "latitude": 53.533025,
+    "voiceServiceNumber": "+49 228 286527 174",
+    "water": {
+      "shortname": "ESTE",
+      "longname": "ESTE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 9.5
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "d3e21e8a-99ce-4033-8db6-9d0f0648beb3",
+    "number": "126006",
+    "shortname": "FREIBURG SPERRWERK",
+    "longname": "FREIBURG SPERRWERK",
+    "km": 0.45,
+    "agency": "STANDORT HAMBURG",
+    "longitude": 9.295079,
+    "latitude": 53.826926,
+    "water": {
+      "shortname": "Freiburger Hafenpriel",
+      "longname": "FREIBURGER HAFENPRIEL"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 9.9
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "5bb1f56d-7c56-4b01-9da0-2a08a0aaedeb",
+    "number": "581590",
+    "shortname": "LEHNITZ UP",
+    "longname": "LEHNITZ UP",
+    "km": 28.4,
+    "agency": "STANDORT EBERSWALDE",
+    "longitude": 13.280309,
+    "latitude": 52.767405,
+    "voiceServiceNumber": "+49 228 286527 193",
+    "water": {
+      "shortname": "HOW",
+      "longname": "HAVEL-ODER-WASSERSTRASSE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 9.4
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "414dd4ee-b38b-489f-a1fe-19b1d62f3202",
+    "number": "692080",
+    "shortname": "NIEDERFINOW SHW OP",
+    "longname": "NIEDERFINOW SHW OP",
+    "km": 77.4,
+    "agency": "STANDORT EBERSWALDE",
+    "longitude": 13.936478,
+    "latitude": 52.850069,
+    "voiceServiceNumber": "+49 228 286527 195",
+    "water": {
+      "shortname": "HOW",
+      "longname": "HAVEL-ODER-WASSERSTRASSE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 11.7
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "3404a6e5-8dfe-42b1-90f6-c0c3741b6ac8",
+    "number": "603310",
+    "shortname": "HOHENSAATEN WEST BP",
+    "longname": "HOHENSAATEN WEST BP",
+    "km": 92.7,
+    "agency": "STANDORT EBERSWALDE",
+    "longitude": 14.149328,
+    "latitude": 52.874259,
+    "voiceServiceNumber": "+49 228 286527 197",
+    "water": {
+      "shortname": "HOW",
+      "longname": "HAVEL-ODER-WASSERSTRASSE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 9.5
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "99309d3e-58d6-4200-b212-c8499467b4ce",
+    "number": "603400",
+    "shortname": "HOHENSAATEN WEST AP",
+    "longname": "HOHENSAATEN WEST AP",
+    "km": 93.0,
+    "agency": "STANDORT EBERSWALDE",
+    "longitude": 14.151791,
+    "latitude": 52.876694,
+    "voiceServiceNumber": "+49 228 286527 198",
+    "water": {
+      "shortname": "HOW",
+      "longname": "HAVEL-ODER-WASSERSTRASSE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 8.8
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "4ee515f9-8cfb-4835-8460-8dde0b978fbe",
+    "number": "603410",
+    "shortname": "SCHWEDT SCHLEUSE BP",
+    "longname": "SCHWEDT SCHLEUSE BP",
+    "km": 123.5,
+    "agency": "STANDORT EBERSWALDE",
+    "longitude": 14.321855,
+    "latitude": 53.068883,
+    "voiceServiceNumber": "+49 228 286527 199",
+    "water": {
+      "shortname": "HOW",
+      "longname": "HAVEL-ODER-WASSERSTRASSE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 9.8
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "bb62b28f-9947-42b1-92e4-743a1e0c4a76",
+    "number": "5940060",
+    "shortname": "FAHRENHOLZ UP",
+    "longname": "FAHRENHOLZ UP",
+    "km": 17.71,
+    "agency": "STANDORT LAUENBURG",
+    "longitude": 10.315493,
+    "latitude": 53.360317,
+    "voiceServiceNumber": "+49 228 286527 214",
+    "water": {
+      "shortname": "ILMENAU",
+      "longname": "ILMENAU"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 10.1
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "855205e7-1cc9-4c5f-a2c2-7d5d84011708",
+    "number": "42800218",
+    "shortname": "HERZHAUSEN",
+    "longname": "HERZHAUSEN",
+    "km": 1.3,
+    "agency": "HANN-MÜNDEN",
+    "longitude": 8.888815,
+    "latitude": 51.193032,
+    "voiceServiceNumber": "+49 228 286527 217",
+    "water": {
+      "shortname": "ITTER EDER",
+      "longname": "ITTER ZUR EDER"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 15,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 10.7
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "f77317d9-654f-4f51-925e-004c592049da",
+    "number": "9440030",
+    "shortname": "WHV NEUER VORHAFEN",
+    "longname": "WHV NEUER VORHAFEN",
+    "km": 4.053,
+    "agency": "WILHELMSHAVEN",
+    "longitude": 8.160729,
+    "latitude": 53.530306,
+    "voiceServiceNumber": "+49 228 286527 219",
+    "water": {
+      "shortname": "JADE",
+      "longname": "JADE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:02:00+01:00",
+          "value": 12.2
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "53c277c3-7ddb-4281-9937-97dcfe3753fa",
+    "number": "5970023",
+    "shortname": "KRÜCKAU-SPERRWERK BP",
+    "longname": "KRÜCKAU-SPERRWERK BP",
+    "km": 10.5,
+    "agency": "STANDORT HAMBURG",
+    "longitude": 9.526956,
+    "latitude": 53.716258,
+    "voiceServiceNumber": "+49 228 286527 232",
+    "water": {
+      "shortname": "KRÜCKAU",
+      "longname": "KRÜCKAU"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 10.8
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "32807065-b887-49f0-935a-80033e5f3cb0",
+    "number": "25800200",
+    "shortname": "Leun neu",
+    "longname": "LEUN NEU",
+    "km": 25.1,
+    "agency": "STANDORT KOBLENZ",
+    "longitude": 8.355230,
+    "latitude": 50.545120,
+    "voiceServiceNumber": "+49 228 286527 238",
+    "water": {
+      "shortname": "LAHN",
+      "longname": "LAHN"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 15,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 10.5
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "3244d787-f884-40ae-9752-ad3507309edc",
+    "number": "5960020",
+    "shortname": "HORNEBURG",
+    "longname": "HORNEBURG",
+    "km": 0.25,
+    "agency": "STANDORT HAMBURG",
+    "longitude": 9.591135,
+    "latitude": 53.512274,
+    "voiceServiceNumber": "+49 228 286527 271",
+    "water": {
+      "shortname": "LÜHE",
+      "longname": "LÜHE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 9.6
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "259dcb4a-2366-45a6-a448-b06a8941ae16",
+    "number": "126016",
+    "shortname": "LÜHORT LFK",
+    "longname": "LÜHORT LFK",
+    "km": 12.6,
+    "agency": "STANDORT HAMBURG",
+    "longitude": 9.633672,
+    "latitude": 53.571375,
+    "water": {
+      "shortname": "LÜHE",
+      "longname": "LÜHE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 12.0
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "db1684c1-7ffc-4e8a-b8cf-8240a0d03519",
+    "number": "24900108",
+    "shortname": "RAUNHEIM",
+    "longname": "RAUNHEIM",
+    "km": 12.213,
+    "agency": "ASCHAFFENBURG",
+    "longitude": 8.448287,
+    "latitude": 50.016157,
+    "voiceServiceNumber": "+49 228 286527 274",
+    "water": {
+      "shortname": "MAIN",
+      "longname": "MAIN"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 12.0
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "66ff3eb4-513b-478b-abd2-2f5126ea66fd",
+    "number": "24700404",
+    "shortname": "FRANKFURT OSTHAFEN",
+    "longname": "FRANKFURT OSTHAFEN",
+    "km": 37.591,
+    "agency": "ASCHAFFENBURG",
+    "longitude": 8.714995,
+    "latitude": 50.105737,
+    "voiceServiceNumber": "+49 228 286527 275",
+    "water": {
+      "shortname": "MAIN",
+      "longname": "MAIN"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 12.2
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "27eed51b-c0a4-417e-926b-bb4194bfb341",
+    "number": "24700335",
+    "shortname": "KROTZENBURG",
+    "longname": "KROTZENBURG",
+    "km": 63.23,
+    "agency": "ASCHAFFENBURG",
+    "longitude": 8.953596,
+    "latitude": 50.079717,
+    "voiceServiceNumber": "+49 228 286527 278",
+    "water": {
+      "shortname": "MAIN",
+      "longname": "MAIN"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 12.2
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "4627475d-ccda-4d53-8f13-28527c49eaf5",
+    "number": "24700325",
+    "shortname": "MAINFLINGEN",
+    "longname": "MAINFLINGEN",
+    "km": 76.43,
+    "agency": "ASCHAFFENBURG",
+    "longitude": 9.033733,
+    "latitude": 50.015365,
+    "voiceServiceNumber": "+49 228 286527 279",
+    "water": {
+      "shortname": "MAIN",
+      "longname": "MAIN"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 11.3
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "3ef81fc0-33dc-4f67-8bb8-3f66975292d5",
+    "number": "24700323",
+    "shortname": "KLEINOSTHEIM_WUK",
+    "longname": "KLEINOSTHEIM_WUK",
+    "km": 77.8,
+    "agency": "ASCHAFFENBURG",
+    "longitude": 9.040709,
+    "latitude": 50.008238,
+    "water": {
+      "shortname": "MAIN",
+      "longname": "MAIN"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR",
+        "unit": "°C",
+        "equidistance": 15,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 12.2
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "3c7cfb10-c866-404b-b11c-0d79986f865a",
+    "number": "24700302",
+    "shortname": "OBERNAU",
+    "longname": "OBERNAU",
+    "km": 92.385,
+    "agency": "ASCHAFFENBURG",
+    "longitude": 9.129075,
+    "latitude": 49.933800,
+    "voiceServiceNumber": "+49 228 286527 280",
+    "water": {
+      "shortname": "MAIN",
+      "longname": "MAIN"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 11.8
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "355b02d2-c578-46d9-a56b-8046d470cb95",
+    "number": "24700200",
+    "shortname": "KLEINHEUBACH",
+    "longname": "KLEINHEUBACH",
+    "km": 121.7,
+    "agency": "ASCHAFFENBURG",
+    "longitude": 9.225244,
+    "latitude": 49.716138,
+    "voiceServiceNumber": "+49 228 286527 281",
+    "water": {
+      "shortname": "MAIN",
+      "longname": "MAIN"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 11.7
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "a919f57f-8378-42d8-82f8-b87eaf008641",
+    "number": "24700109",
+    "shortname": "FAULBACH",
+    "longname": "FAULBACH",
+    "km": 146.6,
+    "agency": "ASCHAFFENBURG",
+    "longitude": 9.438827,
+    "latitude": 49.784985,
+    "voiceServiceNumber": "+49 228 286527 282",
+    "water": {
+      "shortname": "MAIN",
+      "longname": "MAIN"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 11.8
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "0e065a22-9a0b-4f1d-b813-22fe6321bb1a",
+    "number": "24709089",
+    "shortname": "WERTHEIM",
+    "longname": "WERTHEIM",
+    "km": 156.96,
+    "agency": "ASCHAFFENBURG",
+    "longitude": 9.518304,
+    "latitude": 49.760945,
+    "voiceServiceNumber": "+49 228 286527 283",
+    "water": {
+      "shortname": "MAIN",
+      "longname": "MAIN"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 11.5
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "1ed983c3-114c-4fcc-a1db-61d336cf045f",
+    "number": "24500100",
+    "shortname": "STEINBACH",
+    "longname": "STEINBACH",
+    "km": 200.52,
+    "agency": "SCHWEINFURT",
+    "longitude": 9.602081,
+    "latitude": 50.011050,
+    "voiceServiceNumber": "+49 228 286527 284",
+    "water": {
+      "shortname": "MAIN",
+      "longname": "MAIN"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 11.5
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "915d76e1-3bf9-4e37-9a9a-4d144cd771cc",
+    "number": "24300600",
+    "shortname": "WÜRZBURG",
+    "longname": "WÜRZBURG",
+    "km": 251.97,
+    "agency": "SCHWEINFURT",
+    "longitude": 9.925969,
+    "latitude": 49.796209,
+    "voiceServiceNumber": "+49 228 286527 285",
+    "water": {
+      "shortname": "MAIN",
+      "longname": "MAIN"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 11.2
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "3de69bf8-dcbb-4afb-a15b-a8683a6a689c",
+    "number": "24300406",
+    "shortname": "ASTHEIM",
+    "longname": "ASTHEIM",
+    "km": 311.22,
+    "agency": "SCHWEINFURT",
+    "remark": "",
+    "longitude": 10.217656,
+    "latitude": 49.858410,
+    "voiceServiceNumber": "+49 228 286527 286",
+    "water": {
+      "shortname": "MAIN",
+      "longname": "MAIN"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 11.5
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "42ecae60-eeb3-4b41-9721-46b3f12d04b8",
+    "number": "24300304",
+    "shortname": "SCHWEINFURT NEUER HAFEN",
+    "longname": "SCHWEINFURT NEUER HAFEN",
+    "km": 330.78,
+    "agency": "SCHWEINFURT",
+    "longitude": 10.221858,
+    "latitude": 50.030983,
+    "voiceServiceNumber": "+49 228 286527 287",
+    "water": {
+      "shortname": "MAIN",
+      "longname": "MAIN"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 10.7
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "a77aad00-caa0-44a2-95cb-8afd9c4ff00c",
+    "number": "24300202",
+    "shortname": "TRUNSTADT",
+    "longname": "TRUNSTADT",
+    "km": 378.44,
+    "agency": "SCHWEINFURT",
+    "longitude": 10.755205,
+    "latitude": 49.929696,
+    "voiceServiceNumber": "+49 228 286527 288",
+    "water": {
+      "shortname": "MAIN",
+      "longname": "MAIN"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 9.9
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "ff02f181-491c-4925-ad13-07edd2ddb3f1",
+    "number": "24300042",
+    "shortname": "BAMBERG",
+    "longname": "BAMBERG",
+    "km": 7.31,
+    "agency": "STANDORT NÜRNBERG",
+    "remark": "",
+    "longitude": 10.906809,
+    "latitude": 49.881997,
+    "voiceServiceNumber": "+49 228 286527 289",
+    "water": {
+      "shortname": "MDK",
+      "longname": "MAIN-DONAU-KANAL"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-26T23:00:00+01:00",
+          "value": 11.3
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "bec8a6a5-c3de-4322-856a-870ceb992fe4",
+    "number": "31010020",
+    "shortname": "BRAMSCHE",
+    "longname": "BRAMSCHE",
+    "km": 31.95,
+    "agency": "MINDEN",
+    "longitude": 7.978173,
+    "latitude": 52.396167,
+    "voiceServiceNumber": "+49 228 286527 315",
+    "water": {
+      "shortname": "MLK",
+      "longname": "MITTELLANDKANAL"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-26T22:00:00+01:00",
+          "value": 11.6
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "6760b547-a7e7-408a-b3aa-529fe376bfcd",
+    "number": "31010030",
+    "shortname": "BAD ESSEN",
+    "longname": "BAD ESSEN",
+    "km": 60.8,
+    "agency": "MINDEN",
+    "longitude": 8.342520,
+    "latitude": 52.324541,
+    "voiceServiceNumber": "+49 228 286527 317",
+    "water": {
+      "shortname": "MLK",
+      "longname": "MITTELLANDKANAL"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-26T22:00:00+01:00",
+          "value": 11.1
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "ac970eb0-f5cf-4db0-90f0-e281f5d4775c",
+    "number": "31010041",
+    "shortname": "HAHLEN",
+    "longname": "HAHLEN",
+    "km": 98.09,
+    "agency": "MINDEN",
+    "longitude": 8.868901,
+    "latitude": 52.297311,
+    "voiceServiceNumber": "+49 228 286527 319",
+    "water": {
+      "shortname": "MLK",
+      "longname": "MITTELLANDKANAL"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-26T22:00:00+01:00",
+          "value": 45.0
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "8bccd43b-ed6f-4ed8-ae6e-80ad7e330658",
+    "number": "31010045",
+    "shortname": "WESER",
+    "longname": "WESER",
+    "km": 102.5,
+    "agency": "MINDEN",
+    "longitude": 8.932229,
+    "latitude": 52.303606,
+    "water": {
+      "shortname": "MLK",
+      "longname": "MITTELLANDKANAL"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-26T22:00:00+01:00",
+          "value": 10.6
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "d2c8f60e-fda4-4744-9017-9c727fdcfe1f",
+    "number": "31010042",
+    "shortname": "BERENBUSCH",
+    "longname": "BERENBUSCH",
+    "km": 106.732,
+    "agency": "MINDEN",
+    "longitude": 8.990630,
+    "latitude": 52.294948,
+    "voiceServiceNumber": "+49 228 286527 320",
+    "water": {
+      "shortname": "MLK",
+      "longname": "MITTELLANDKANAL"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-26T22:00:00+01:00",
+          "value": 10.2
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "516c4814-d70b-47bf-99bf-a76844b94e5e",
+    "number": "31010050",
+    "shortname": "LOHNDE",
+    "longname": "LOHNDE",
+    "km": 150.1,
+    "agency": "BRAUNSCHWEIG",
+    "longitude": 9.564151,
+    "latitude": 52.399312,
+    "voiceServiceNumber": "+49 228 286527 326",
+    "water": {
+      "shortname": "MLK",
+      "longname": "MITTELLANDKANAL"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-26T22:00:00+01:00",
+          "value": 11.3
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "dd41a7d6-9b11-4ec4-9518-388266750cfa",
+    "number": "31010060",
+    "shortname": "ANDERTEN UW",
+    "longname": "ANDERTEN UW",
+    "km": 173.425,
+    "agency": "BRAUNSCHWEIG",
+    "longitude": 9.858777,
+    "latitude": 52.366715,
+    "voiceServiceNumber": "+49 228 286527 328",
+    "water": {
+      "shortname": "MLK",
+      "longname": "MITTELLANDKANAL"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-26T22:00:00+01:00",
+          "value": 12.0
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "bc20d819-1782-4588-885d-129f21a27cf9",
+    "number": "31010061",
+    "shortname": "ANDERTEN OW",
+    "longname": "ANDERTEN OW",
+    "km": 174.96,
+    "agency": "BRAUNSCHWEIG",
+    "longitude": 9.869744,
+    "latitude": 52.354677,
+    "voiceServiceNumber": "+49 228 286527 329",
+    "water": {
+      "shortname": "MLK",
+      "longname": "MITTELLANDKANAL"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-26T22:00:00+01:00",
+          "value": 8.6
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "42b865fb-5dd8-4204-a7aa-260704d69e21",
+    "number": "31010080",
+    "shortname": "THUNE",
+    "longname": "THUNE",
+    "km": 222.85,
+    "agency": "BRAUNSCHWEIG",
+    "longitude": 10.517134,
+    "latitude": 52.335237,
+    "voiceServiceNumber": "+49 228 286527 332",
+    "water": {
+      "shortname": "MLK",
+      "longname": "MITTELLANDKANAL"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-26T22:00:00+01:00",
+          "value": 11.5
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "a8604e8f-9330-4431-8cf6-0a68fc793c82",
+    "number": "31010092",
+    "shortname": "SÜLFELD OW",
+    "longname": "SÜLFELD OW",
+    "km": 235.7,
+    "agency": "UELZEN",
+    "longitude": 10.647378,
+    "latitude": 52.416830,
+    "voiceServiceNumber": "+49 228 286527 333",
+    "water": {
+      "shortname": "MLK",
+      "longname": "MITTELLANDKANAL"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-26T22:00:00+01:00",
+          "value": 10.4
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "892183d6-3a28-4347-afb4-bc89602ca927",
+    "number": "31010091",
+    "shortname": "SÜLFELD UW",
+    "longname": "SÜLFELD UW",
+    "km": 238.0,
+    "agency": "UELZEN",
+    "longitude": 10.678298,
+    "latitude": 52.425073,
+    "voiceServiceNumber": "+49 228 286527 334",
+    "water": {
+      "shortname": "MLK",
+      "longname": "MITTELLANDKANAL"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-26T22:00:00+01:00",
+          "value": 12.7
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "90d92801-c13c-4b1a-8885-83d1a07d6db8",
+    "number": "3101013",
+    "shortname": "HALDENSLEBEN",
+    "longname": "HALDENSLEBEN",
+    "km": 300.9,
+    "agency": "UELZEN",
+    "longitude": 11.408772,
+    "latitude": 52.277922,
+    "voiceServiceNumber": "+49 228 286527 338",
+    "water": {
+      "shortname": "MLK",
+      "longname": "MITTELLANDKANAL"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-26T22:00:00+01:00",
+          "value": 9.8
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "abd34ee6-a578-4639-b73d-fa4e08f40345",
+    "number": "26500150",
+    "shortname": "Ruwer",
+    "longname": "RUWER",
+    "km": 185.94,
+    "agency": "STANDORT TRIER",
+    "longitude": 6.704234,
+    "latitude": 49.783052,
+    "voiceServiceNumber": "+49 228 286527 362",
+    "water": {
+      "shortname": "MOSEL",
+      "longname": "MOSEL"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 15,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 11.5
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "ad3a51da-2e25-4818-b96f-6a6d8a20d803",
+    "number": "596460",
+    "shortname": "DÖMITZ UP",
+    "longname": "DÖMITZ UP",
+    "km": 0.9,
+    "agency": "STANDORT LAUENBURG",
+    "longitude": 11.259947,
+    "latitude": 53.140171,
+    "voiceServiceNumber": "+49 228 286527 369",
+    "water": {
+      "shortname": "MEW",
+      "longname": "MÜRITZ-ELDE-WASSERSTRASSE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 9.7
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "30739ff3-9d71-4e38-991c-0f7a2f54ed2d",
+    "number": "596430",
+    "shortname": "NEU KALLISS OP",
+    "longname": "NEU KALLISS OP",
+    "km": 4.97,
+    "agency": "STANDORT LAUENBURG",
+    "longitude": 11.286382,
+    "latitude": 53.172045,
+    "voiceServiceNumber": "+49 228 286527 371",
+    "water": {
+      "shortname": "MEW",
+      "longname": "MÜRITZ-ELDE-WASSERSTRASSE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 9.6
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "497c29ee-32b2-4535-ac5f-3881a106c793",
+    "number": "596390",
+    "shortname": "MALLISS OP",
+    "longname": "MALLISS OP",
+    "km": 9.507,
+    "agency": "STANDORT LAUENBURG",
+    "longitude": 11.345033,
+    "latitude": 53.190585,
+    "voiceServiceNumber": "+49 228 286527 374",
+    "water": {
+      "shortname": "MEW",
+      "longname": "MÜRITZ-ELDE-WASSERSTRASSE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 9.5
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "956ce5ff-1fc8-461e-ab2e-0ac70758bb46",
+    "number": "596350",
+    "shortname": "GÜRITZ OP",
+    "longname": "GÜRITZ OP",
+    "km": 22.8,
+    "agency": "STANDORT LAUENBURG",
+    "longitude": 11.479835,
+    "latitude": 53.254537,
+    "voiceServiceNumber": "+49 228 286527 376",
+    "water": {
+      "shortname": "MEW",
+      "longname": "MÜRITZ-ELDE-WASSERSTRASSE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 11.1
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "db4a69b2-65ba-4dd8-8b3e-eadf2cc241c6",
+    "number": "596330",
+    "shortname": "GRABOW OP",
+    "longname": "GRABOW OP",
+    "km": 30.849,
+    "agency": "STANDORT LAUENBURG",
+    "longitude": 11.573414,
+    "latitude": 53.283141,
+    "voiceServiceNumber": "+49 228 286527 377",
+    "water": {
+      "shortname": "MEW",
+      "longname": "MÜRITZ-ELDE-WASSERSTRASSE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 9.2
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "c4381eb3-d21f-4bd1-bc1c-66c03b7d8bcf",
+    "number": "596280",
+    "shortname": "NEUSTADT GLEWE OP",
+    "longname": "NEUSTADT GLEWE OP",
+    "km": 46.197,
+    "agency": "STANDORT LAUENBURG",
+    "longitude": 11.589385,
+    "latitude": 53.381670,
+    "voiceServiceNumber": "+49 228 286527 379",
+    "water": {
+      "shortname": "MEW",
+      "longname": "MÜRITZ-ELDE-WASSERSTRASSE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 9.5
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "7bbd90ad-98e9-4415-8040-23500f2e01e7",
+    "number": "596250",
+    "shortname": "LEWITZ OP",
+    "longname": "LEWITZ OP",
+    "km": 50.599,
+    "agency": "STANDORT LAUENBURG",
+    "longitude": 11.601597,
+    "latitude": 53.418394,
+    "voiceServiceNumber": "+49 228 286527 380",
+    "water": {
+      "shortname": "MEW",
+      "longname": "MÜRITZ-ELDE-WASSERSTRASSE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 9.5
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "bccaacb3-a9a5-44aa-b05b-3f29c3c6e38a",
+    "number": "596200",
+    "shortname": "MALCHOW WEHR OP",
+    "longname": "MALCHOW WEHR OP",
+    "km": 65.201,
+    "agency": "STANDORT LAUENBURG",
+    "longitude": 11.765153,
+    "latitude": 53.442437,
+    "voiceServiceNumber": "+49 228 286527 382",
+    "water": {
+      "shortname": "MEW",
+      "longname": "MÜRITZ-ELDE-WASSERSTRASSE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 10.1
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "3dec3921-6f01-4801-b648-a7f3ee33acd3",
+    "number": "5961801",
+    "shortname": "PARCHIM GÜTE",
+    "longname": "PARCHIM GÜTE",
+    "km": 72.567,
+    "agency": "STANDORT LAUENBURG",
+    "longitude": 11.834570,
+    "latitude": 53.425257,
+    "voiceServiceNumber": "+49 228 286527 383",
+    "water": {
+      "shortname": "MEW",
+      "longname": "MÜRITZ-ELDE-WASSERSTRASSE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 9.5
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "541c508a-00bf-4a9d-bd47-17fda98b349d",
+    "number": "596160",
+    "shortname": "NEUBURG OP",
+    "longname": "NEUBURG OP",
+    "km": 83.362,
+    "agency": "STANDORT LAUENBURG",
+    "longitude": 11.930333,
+    "latitude": 53.416021,
+    "voiceServiceNumber": "+49 228 286527 384",
+    "water": {
+      "shortname": "MEW",
+      "longname": "MÜRITZ-ELDE-WASSERSTRASSE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 8.8
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "d75442cf-87f8-4a56-8ee0-8ed7f94fe738",
+    "number": "596140",
+    "shortname": "LÜBZ OP",
+    "longname": "LÜBZ OP",
+    "km": 98.977,
+    "agency": "STANDORT LAUENBURG",
+    "longitude": 12.028492,
+    "latitude": 53.462786,
+    "water": {
+      "shortname": "MEW",
+      "longname": "MÜRITZ-ELDE-WASSERSTRASSE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 9.4
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "06d86c6b-5ed0-475f-805a-a3ceb59af083",
+    "number": "596100",
+    "shortname": "BARKOW OP",
+    "longname": "BARKOW OP",
+    "km": 114.086,
+    "agency": "STANDORT LAUENBURG",
+    "longitude": 12.188887,
+    "latitude": 53.469319,
+    "voiceServiceNumber": "+49 228 286527 387",
+    "water": {
+      "shortname": "MEW",
+      "longname": "MÜRITZ-ELDE-WASSERSTRASSE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 9.8
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "3ffddb2c-4c17-47d1-a7de-e1663d4031b7",
+    "number": "596080",
+    "shortname": "PLAU OP",
+    "longname": "PLAU OP",
+    "km": 120.08,
+    "agency": "STANDORT LAUENBURG",
+    "longitude": 12.261042,
+    "latitude": 53.456765,
+    "voiceServiceNumber": "+49 228 286527 389",
+    "water": {
+      "shortname": "MEW",
+      "longname": "MÜRITZ-ELDE-WASSERSTRASSE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 10.0
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "bd317edd-214a-4e11-a9dc-3cc71a2907c3",
+    "number": "596030",
+    "shortname": "WAREN",
+    "longname": "WAREN",
+    "km": 151.975,
+    "agency": "STANDORT LAUENBURG",
+    "longitude": 12.674194,
+    "latitude": 53.514380,
+    "voiceServiceNumber": "+49 228 286527 390",
+    "water": {
+      "shortname": "MEW",
+      "longname": "MÜRITZ-ELDE-WASSERSTRASSE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 10.7
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "6b3b55e2-edb4-4945-82f4-523a8c4d5cfb",
+    "number": "581030",
+    "shortname": "Diemitz UP",
+    "longname": "DIEMITZ UP",
+    "km": 13.7,
+    "agency": "STANDORT EBERSWALDE",
+    "longitude": 12.861331,
+    "latitude": 53.207993,
+    "voiceServiceNumber": "+49 228 286527 393",
+    "water": {
+      "shortname": "MHW",
+      "longname": "MÜRITZ-HAVEL-WASSERSTRASSE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 15,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 11.2
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "c0ec139b-13b4-4f86-bee3-06665ad81a40",
+    "number": "9510070",
+    "shortname": "HELGOLAND BINNENHAFEN",
+    "longname": "HELGOLAND BINNENHAFEN",
+    "km": 0.0,
+    "agency": "STANDORT TÖNNING",
+    "longitude": 7.889904,
+    "latitude": 54.178894,
+    "voiceServiceNumber": "+49 228 286527 453",
+    "water": {
+      "shortname": "NORDSEE",
+      "longname": "NORDSEE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 14.0
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "2852b9ab-d30e-4d04-ae06-3e946f48a0b1",
+    "number": "9550021",
+    "shortname": "PELLWORM ANLEGER",
+    "longname": "PELLWORM ANLEGER",
+    "km": 0.0,
+    "agency": "STANDORT TÖNNING",
+    "longitude": 8.702016,
+    "latitude": 54.500919,
+    "voiceServiceNumber": "+49 228 286527 452",
+    "water": {
+      "shortname": "NORDSEE",
+      "longname": "NORDSEE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-26T23:57:00+01:00",
+          "value": 10.5
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "9c4c11f2-0548-4555-beac-ecfd36f9bd74",
+    "number": "9570010",
+    "shortname": "WITTDÜN",
+    "longname": "WITTDÜN",
+    "km": 0.0,
+    "agency": "STANDORT TÖNNING",
+    "longitude": 8.383943,
+    "latitude": 54.631760,
+    "voiceServiceNumber": "+49 228 286527 451",
+    "water": {
+      "shortname": "NORDSEE",
+      "longname": "NORDSEE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 12.4
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "5287a3e1-c540-4ab1-b52e-880d124cbc43",
+    "number": "9510095",
+    "shortname": "BÜSUM",
+    "longname": "BÜSUM",
+    "km": 100.0,
+    "agency": "STANDORT TÖNNING",
+    "longitude": 8.859102,
+    "latitude": 54.121761,
+    "voiceServiceNumber": "+49 228 286527 457",
+    "water": {
+      "shortname": "NORDSEE",
+      "longname": "NORDSEE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 10.2
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "e114aeec-c8d9-4d20-8fe1-8822058cb38b",
+    "number": "9530020",
+    "shortname": "HUSUM",
+    "longname": "HUSUM",
+    "km": 100.0,
+    "agency": "STANDORT TÖNNING",
+    "longitude": 9.024770,
+    "latitude": 54.472283,
+    "voiceServiceNumber": "+49 228 286527 461",
+    "water": {
+      "shortname": "NORDSEE",
+      "longname": "NORDSEE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 9.5
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "733755fd-628f-4130-a694-aaba340531ba",
+    "number": "9570050",
+    "shortname": "HÖRNUM",
+    "longname": "HÖRNUM",
+    "km": 100.0,
+    "agency": "STANDORT TÖNNING",
+    "longitude": 8.296035,
+    "latitude": 54.758093,
+    "voiceServiceNumber": "+49 228 286527 458",
+    "water": {
+      "shortname": "NORDSEE",
+      "longname": "NORDSEE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 10.9
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "5e92d73f-e4ea-42c1-9f98-91536c17cdff",
+    "number": "9570070",
+    "shortname": "LIST AUF SYLT",
+    "longname": "LIST AUF SYLT",
+    "km": 100.0,
+    "agency": "STANDORT TÖNNING",
+    "longitude": 8.440409,
+    "latitude": 55.016544,
+    "voiceServiceNumber": "+49 228 286527 456",
+    "water": {
+      "shortname": "NORDSEE",
+      "longname": "NORDSEE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 10.7
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "04acd7e5-3cbc-4cdd-b4a9-f452e868f4d6",
+    "number": "9530010",
+    "shortname": "EIDER-SPERRWERK AP",
+    "longname": "EIDER-SPERRWERK AP",
+    "km": 109.617,
+    "agency": "STANDORT TÖNNING",
+    "longitude": 8.842130,
+    "latitude": 54.265924,
+    "voiceServiceNumber": "+49 228 286527 462",
+    "water": {
+      "shortname": "NORDSEE",
+      "longname": "NORDSEE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 9.7
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "8675aa70-cfbc-471a-8566-dcc851f201d3",
+    "number": "603000",
+    "shortname": "EISENHÜTTENSTADT",
+    "longname": "EISENHÜTTENSTADT",
+    "km": 554.1,
+    "agency": "STANDORT EBERSWALDE",
+    "longitude": 14.687929,
+    "latitude": 52.153171,
+    "voiceServiceNumber": "+49 228 286527 484",
+    "water": {
+      "shortname": "ODER",
+      "longname": "ODER"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 9.3
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "bffdf7f2-6200-42a2-a4bc-a8111e27e043",
+    "number": "603031",
+    "shortname": "FRANKFURT1 (ODER)",
+    "longname": "FRANKFURT1 (ODER)",
+    "km": 585.3,
+    "agency": "STANDORT EBERSWALDE",
+    "longitude": 14.551732,
+    "latitude": 52.357806,
+    "voiceServiceNumber": "+49 228 286527 485",
+    "water": {
+      "shortname": "ODER",
+      "longname": "ODER"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 9.5
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "16258271-ec03-4542-873c-1642c8b654c9",
+    "number": "603040",
+    "shortname": "KIETZ",
+    "longname": "KIETZ",
+    "km": 614.8,
+    "agency": "STANDORT EBERSWALDE",
+    "longitude": 14.630301,
+    "latitude": 52.577595,
+    "voiceServiceNumber": "+49 228 286527 486",
+    "water": {
+      "shortname": "ODER",
+      "longname": "ODER"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 9.4
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "6298a8f9-7c77-4605-a55a-278c61cc8f50",
+    "number": "603050",
+    "shortname": "KIENITZ",
+    "longname": "KIENITZ",
+    "km": 632.9,
+    "agency": "STANDORT EBERSWALDE",
+    "longitude": 14.433642,
+    "latitude": 52.680028,
+    "voiceServiceNumber": "+49 228 286527 487",
+    "water": {
+      "shortname": "ODER",
+      "longname": "ODER"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 9.4
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "f7a639a4-b824-445c-b158-108ebd70cc9a",
+    "number": "603080",
+    "shortname": "HOHENSAATEN-FINOW",
+    "longname": "HOHENSAATEN-FINOW",
+    "km": 665.0,
+    "agency": "STANDORT EBERSWALDE",
+    "longitude": 14.141125,
+    "latitude": 52.864738,
+    "voiceServiceNumber": "+49 228 286527 488",
+    "water": {
+      "shortname": "ODER",
+      "longname": "ODER"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 10.0
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "30bff0df-8333-49ec-8fd7-a2d4c0db1cb1",
+    "number": "603100",
+    "shortname": "STÜTZKOW",
+    "longname": "STÜTZKOW",
+    "km": 680.6,
+    "agency": "STANDORT EBERSWALDE",
+    "longitude": 14.193352,
+    "latitude": 52.983721,
+    "voiceServiceNumber": "+49 228 286527 489",
+    "water": {
+      "shortname": "ODER",
+      "longname": "ODER"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 8.4
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "e28babaa-7801-49a2-9c28-58701549ce5d",
+    "number": "603130",
+    "shortname": "SCHWEDT-ODERBRÜCKE",
+    "longname": "SCHWEDT-ODERBRÜCKE",
+    "km": 690.6,
+    "agency": "STANDORT EBERSWALDE",
+    "longitude": 14.311629,
+    "latitude": 53.035576,
+    "voiceServiceNumber": "+49 228 286527 490",
+    "water": {
+      "shortname": "ODER",
+      "longname": "ODER"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 9.1
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "86d07669-4670-48a1-8f30-7d7b26224ad6",
+    "number": "126004",
+    "shortname": "ACHTHÖFENER FLETH SIEL",
+    "longname": "ACHTHÖFENER FLETH SIEL",
+    "km": 49.1,
+    "agency": "STANDORT HAMBURG",
+    "longitude": 9.163393,
+    "latitude": 53.701581,
+    "water": {
+      "shortname": "OSTE",
+      "longname": "OSTE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 10.0
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "04790e03-4353-4e80-beef-b3ed439484bc",
+    "number": "126003",
+    "shortname": "NEUENSEER SCHLEUSENFLETH SIEL",
+    "longname": "NEUENSEER SCHLEUSENFLETH SIEL",
+    "km": 58.9,
+    "agency": "STANDORT HAMBURG",
+    "longitude": 9.130904,
+    "latitude": 53.780687,
+    "water": {
+      "shortname": "OSTE",
+      "longname": "OSTE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 10.7
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "f44e7220-892e-40b5-8ef4-3da129c2a6ae",
+    "number": "126002",
+    "shortname": "GEVERSDORF BRÜCKE",
+    "longname": "GEVERSDORF BRÜCKE",
+    "km": 64.45,
+    "agency": "STANDORT HAMBURG",
+    "longitude": 9.080458,
+    "latitude": 53.801243,
+    "water": {
+      "shortname": "OSTE",
+      "longname": "OSTE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 10.4
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "9427fafc-7146-4be1-a71e-4e4658236037",
+    "number": "126019",
+    "shortname": "BELUM PEGEL",
+    "longname": "BELUM PEGEL",
+    "km": 69.89,
+    "agency": "STANDORT HAMBURG",
+    "longitude": 9.037131,
+    "latitude": 53.822765,
+    "water": {
+      "shortname": "OSTE",
+      "longname": "OSTE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 11.1
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "575da86f-d975-4837-b6f5-6f19c3a5e4b6",
+    "number": "5970016",
+    "shortname": "UETERSEN",
+    "longname": "UETERSEN",
+    "km": 9.51,
+    "agency": "STANDORT HAMBURG",
+    "longitude": 9.677084,
+    "latitude": 53.678193,
+    "voiceServiceNumber": "+49 228 286527 537",
+    "water": {
+      "shortname": "PINNAU",
+      "longname": "PINNAU"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 10.7
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "26259e8f-7d2d-47e0-8851-0257542b63b3",
+    "number": "5970018",
+    "shortname": "PINNAU-SPERRWERK BP",
+    "longname": "PINNAU-SPERRWERK BP",
+    "km": 18.1,
+    "agency": "STANDORT HAMBURG",
+    "longitude": 9.558759,
+    "latitude": 53.671167,
+    "voiceServiceNumber": "+49 228 286527 538",
+    "water": {
+      "shortname": "PINNAU",
+      "longname": "PINNAU"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 10.7
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "5e10e1e7-9115-4bd7-ad57-e2062f516891",
+    "number": "580412",
+    "shortname": "POTSDAM",
+    "longname": "POTSDAM",
+    "km": 26.63,
+    "agency": "STANDORT BRANDENBURG",
+    "longitude": 13.072071,
+    "latitude": 52.399887,
+    "voiceServiceNumber": "+49 228 286527 539",
+    "water": {
+      "shortname": "PHv",
+      "longname": "POTSDAMER HAVEL"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 11.6
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "752a8c5a-5f2a-4575-af2f-d825cffc6eb3",
+    "number": "126010",
+    "shortname": "RUTHENSTROM-SPERRWERK",
+    "longname": "RUTHENSTROM-SPERRWERK",
+    "km": 3.64,
+    "agency": "STANDORT HAMBURG",
+    "longitude": 9.419407,
+    "latitude": 53.719960,
+    "water": {
+      "shortname": "RuS",
+      "longname": "RUTHENSTROM"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 9.6
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "31dfddc7-80a5-45ff-907b-7bf2c1d825c5",
+    "number": "570620",
+    "shortname": "RISCHMÜHLE OP",
+    "longname": "RISCHMÜHLE OP",
+    "km": 115.26,
+    "agency": "STANDORT DRESDEN",
+    "longitude": 12.002255,
+    "latitude": 51.350199,
+    "voiceServiceNumber": "+49 228 286527 639",
+    "water": {
+      "shortname": "SAALE",
+      "longname": "SAALE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 16.5
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "cc57198c-b40f-4c11-ad50-fceae4669a3e",
+    "number": "126014",
+    "shortname": "SCHWINGE-SPERRWERK",
+    "longname": "SCHWINGE-SPERRWERK",
+    "km": 3.6,
+    "agency": "STANDORT HAMBURG",
+    "longitude": 9.514316,
+    "latitude": 53.624852,
+    "water": {
+      "shortname": "Schwinge",
+      "longname": "SCHWINGE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-22T14:31:00+02:00",
+          "value": 13.3
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "15859426-834c-429e-9c41-2e097b717b1d",
+    "number": "5970037",
+    "shortname": "GRÖNHUDE",
+    "longname": "GRÖNHUDE",
+    "km": 5.1,
+    "agency": "STANDORT HAMBURG",
+    "longitude": 9.690579,
+    "latitude": 53.935698,
+    "voiceServiceNumber": "+49 228 286527 675",
+    "water": {
+      "shortname": "STÖR",
+      "longname": "STÖR"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 10.0
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "24c6a014-864b-4d53-bd05-0b49106f5412",
+    "number": "5970038",
+    "shortname": "BREITENBERG",
+    "longname": "BREITENBERG",
+    "km": 11.9,
+    "agency": "STANDORT HAMBURG",
+    "longitude": 9.632319,
+    "latitude": 53.927679,
+    "voiceServiceNumber": "+49 228 286527 676",
+    "water": {
+      "shortname": "STÖR",
+      "longname": "STÖR"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 10.1
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "d863cbc3-5e5e-4095-855c-026f0850dd58",
+    "number": "5970042",
+    "shortname": "ITZEHOE HAFEN",
+    "longname": "ITZEHOE HAFEN",
+    "km": 24.88,
+    "agency": "STANDORT HAMBURG",
+    "longitude": 9.500605,
+    "latitude": 53.924459,
+    "voiceServiceNumber": "+49 228 286527 677",
+    "water": {
+      "shortname": "STÖR",
+      "longname": "STÖR"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 10.0
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "e5b8e9f3-f0cc-4ad7-8707-577ee1b25b3e",
+    "number": "5970040",
+    "shortname": "STÖR-SPERRWERK BP",
+    "longname": "STÖR-SPERRWERK BP",
+    "km": 50.2,
+    "agency": "STANDORT HAMBURG",
+    "longitude": 9.401400,
+    "latitude": 53.826148,
+    "voiceServiceNumber": "+49 228 286527 678",
+    "water": {
+      "shortname": "STÖR",
+      "longname": "STÖR"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 11.4
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "680d5966-273f-4254-aabe-5d4e00e12a24",
+    "number": "596900",
+    "shortname": "SCHWERIN WERDERBRÜCKE",
+    "longname": "SCHWERIN WERDERBRÜCKE",
+    "km": 26.06,
+    "agency": "STANDORT LAUENBURG",
+    "longitude": 11.427446,
+    "latitude": 53.646392,
+    "voiceServiceNumber": "+49 228 286527 687",
+    "water": {
+      "shortname": "STW",
+      "longname": "STÖR-WASSERSTRASSE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 11.5
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "5c735fa8-270e-42c3-b22f-b27418db10cf",
+    "number": "41700105",
+    "shortname": "HELDRA",
+    "longname": "HELDRA",
+    "km": 77.32,
+    "agency": "HANN-MÜNDEN",
+    "longitude": 10.196998,
+    "latitude": 51.125008,
+    "voiceServiceNumber": "+49 228 286527 732",
+    "water": {
+      "shortname": "WERRA",
+      "longname": "WERRA"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 15,
+        "currentMeasurement": {
+          "timestamp": "2026-10-26T23:00:00+01:00",
+          "value": 10.5
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "7e530482-0a13-4728-99db-a376304398b8",
+    "number": "4970035",
+    "shortname": "STROHAUSER PLATE OST",
+    "longname": "STROHAUSER PLATE OST",
+    "km": 1.0,
+    "agency": "BREMERHAVEN",
+    "water": {
+      "shortname": "WESER",
+      "longname": "WESER"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 11.7
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "eba772d4-509e-4fe7-ba51-d9a29b190432",
+    "number": "4970010",
+    "shortname": "ELSFLETH",
+    "longname": "ELSFLETH",
+    "km": 33.325,
+    "agency": "BREMEN",
+    "longitude": 8.481417,
+    "latitude": 53.263946,
+    "voiceServiceNumber": "+49 228 286527 750",
+    "water": {
+      "shortname": "WESER",
+      "longname": "WESER"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 12.0
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "314ef522-a060-4033-ba14-8169dd26bb8d",
+    "number": "43900105",
+    "shortname": "WAHMBECK",
+    "longname": "WAHMBECK",
+    "km": 35.97,
+    "agency": "HANN-MÜNDEN",
+    "longitude": 9.519728,
+    "latitude": 51.625616,
+    "voiceServiceNumber": "+49 228 286527 751",
+    "water": {
+      "shortname": "WESER",
+      "longname": "WESER"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 15,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 7.7
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "7febef93-09ce-49e9-9643-ecb3076ce9a7",
+    "number": "4970020",
+    "shortname": "BRAKE",
+    "longname": "BRAKE",
+    "km": 39.2,
+    "agency": "BREMEN",
+    "longitude": 8.486546,
+    "latitude": 53.315979,
+    "voiceServiceNumber": "+49 228 286527 752",
+    "water": {
+      "shortname": "WESER",
+      "longname": "WESER"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 12.1
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "116572da-c036-4486-ac18-a92932424e30",
+    "number": "4970030",
+    "shortname": "RECHTENFLETH",
+    "longname": "RECHTENFLETH",
+    "km": 46.464,
+    "agency": "BREMERHAVEN",
+    "longitude": 8.500554,
+    "latitude": 53.381162,
+    "voiceServiceNumber": "+49 228 286527 754",
+    "water": {
+      "shortname": "WESER",
+      "longname": "WESER"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 11.9
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "06e6b715-eb03-46ce-adf4-6cafca6368eb",
+    "number": "4970040",
+    "shortname": "NORDENHAM",
+    "longname": "NORDENHAM",
+    "km": 55.811,
+    "agency": "BREMERHAVEN",
+    "longitude": 8.488052,
+    "latitude": 53.464497,
+    "voiceServiceNumber": "+49 228 286527 755",
+    "water": {
+      "shortname": "WESER",
+      "longname": "WESER"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 11.6
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "99dd338d-ef7d-43fd-a4e0-a9103406f0ad",
+    "number": "4970090",
+    "shortname": "BLEXEN ABZ",
+    "longname": "BLEXEN ABZ",
+    "km": 62.46,
+    "agency": "BREMERHAVEN",
+    "longitude": 8.537412,
+    "latitude": 53.517580,
+    "water": {
+      "shortname": "WESER",
+      "longname": "WESER"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 11.4
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "d3f822a0-e201-4a61-8913-589c74818ae0",
+    "number": "4990010",
+    "shortname": "BHV ALTER LEUCHTTURM",
+    "longname": "BHV ALTER LEUCHTTURM",
+    "km": 66.638,
+    "agency": "BREMERHAVEN",
+    "longitude": 8.568175,
+    "latitude": 53.544956,
+    "voiceServiceNumber": "+49 228 286527 756",
+    "water": {
+      "shortname": "WESER",
+      "longname": "WESER"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 11.3
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "78029185-9dfc-4b1b-8695-45ebc2a09cf4",
+    "number": "9460010",
+    "shortname": "ROBBENSÜDSTEERT",
+    "longname": "ROBBENSÜDSTEERT",
+    "km": 79.942,
+    "agency": "BREMERHAVEN",
+    "longitude": 8.445202,
+    "latitude": 53.639224,
+    "voiceServiceNumber": "+49 228 286527 758",
+    "water": {
+      "shortname": "WESER",
+      "longname": "WESER"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 10.8
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "ad3b53f8-8c1b-439f-a0df-9f24827026d5",
+    "number": "9460020",
+    "shortname": "DWARSGAT",
+    "longname": "DWARSGAT",
+    "km": 92.656,
+    "agency": "BREMERHAVEN",
+    "longitude": 8.307616,
+    "latitude": 53.718636,
+    "voiceServiceNumber": "+49 228 286527 759",
+    "water": {
+      "shortname": "WESER",
+      "longname": "WESER"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 11.3
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "c6772c3c-a6bb-4728-9250-a408ab3856bd",
+    "number": "9460040",
+    "shortname": "LEUCHTTURM ALTE WESER",
+    "longname": "LEUCHTTURM ALTE WESER",
+    "km": 115.0,
+    "agency": "BREMERHAVEN",
+    "longitude": 8.127572,
+    "latitude": 53.863269,
+    "voiceServiceNumber": "+49 228 286527 761",
+    "water": {
+      "shortname": "WESER",
+      "longname": "WESER"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 11.6
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "fa886080-4271-4684-9999-1b6862a20ac1",
+    "number": "45700207",
+    "shortname": "HAMELN WEHRBERGEN",
+    "longname": "HAMELN WEHRBERGEN",
+    "km": 139.68,
+    "agency": "HANN-MÜNDEN",
+    "longitude": 9.306544,
+    "latitude": 52.123731,
+    "voiceServiceNumber": "+49 228 286527 762",
+    "water": {
+      "shortname": "WESER",
+      "longname": "WESER"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 15,
+        "currentMeasurement": {
+          "timestamp": "2026-10-26T23:15:00+01:00",
+          "value": 9.5
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "44bb934c-4250-4e1b-ad70-0fbd8bb3eadd",
+    "number": "603510",
+    "shortname": "GARTZ",
+    "longname": "GARTZ",
+    "km": 8.0,
+    "agency": "STANDORT EBERSWALDE",
+    "longitude": 14.394265,
+    "latitude": 53.206332,
+    "voiceServiceNumber": "+49 228 286527 777",
+    "water": {
+      "shortname": "WOD",
+      "longname": "WESTODER"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 60,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 9.7
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "46e61953-4bdd-4045-a14e-a83948514c8a",
+    "number": "603520",
+    "shortname": "MESCHERIN",
+    "longname": "MESCHERIN",
+    "km": 14.1,
+    "agency": "STANDORT EBERSWALDE",
+    "longitude": 14.436433,
+    "latitude": 53.250879,
+    "voiceServiceNumber": "+49 228 286527 778",
+    "water": {
+      "shortname": "WOD",
+      "longname": "WESTODER"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 15,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 9.6
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "5b94e4b9-cc96-433f-abf7-08287137ec54",
+    "number": "126009",
+    "shortname": "DORNBUSCH BRÜCKE",
+    "longname": "DORNBUSCH BRÜCKE",
+    "km": 3.7,
+    "agency": "STANDORT HAMBURG",
+    "longitude": 9.348017,
+    "latitude": 53.737776,
+    "water": {
+      "shortname": "WSE",
+      "longname": "WISCHHAFENER SÜDERELBE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:00:00+01:00",
+          "value": 10.5
+        }
+      }
+    ]
+  },
+  {
+    "uuid": "e0747660-6d75-476a-be0f-73865bf47363",
+    "number": "126008",
+    "shortname": "WISCHHAFEN SPERRWERK",
+    "longname": "WISCHHAFEN SPERRWERK",
+    "km": 10.0,
+    "agency": "STANDORT HAMBURG",
+    "longitude": 9.340786,
+    "latitude": 53.785178,
+    "water": {
+      "shortname": "WSE",
+      "longname": "WISCHHAFENER SÜDERELBE"
+    },
+    "timeseries": [
+      {
+        "shortname": "WT",
+        "longname": "WASSERTEMPERATUR ROHDATEN",
+        "unit": "°C",
+        "equidistance": 1,
+        "currentMeasurement": {
+          "timestamp": "2026-10-27T00:03:00+01:00",
+          "value": 9.3
+        }
+      }
+    ]
+  }
+]
