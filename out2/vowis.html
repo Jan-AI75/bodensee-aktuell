@@ -1,0 +1,1763 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="google" content="notranslate">
+
+	<title>Wasser Online - Bodensee</title>
+
+
+	
+	
+		<script src="/stationswrapper/dist/kartenbundle.min.js?v=fUvCJEeHTmd8pye0hfckjUvcw3mJ_EQ0aspkzN72jEA" defer></script>
+		<script src="/stationswrapper/dist/bootstrap_js.min.js?v=0mb1asHxmvTVM2QtuLSO2HTg7dzbRw_W5wJKKOpZ2Y8" defer></script>
+		<link rel="stylesheet" href="/stationswrapper/dist/leafletstyle.min.css?v=NTqtYezr0ncJPcKjgG90Kr_tSLvQYeGkhZL3SY9nL-M">
+		<link rel="stylesheet" href="/stationswrapper/dist/bootstrap_js.min.css?v=o027eBYaIvRmbceWQ4VpuenzldhyEDxFV3jXl8zsOHE">
+		<link rel="stylesheet" href="/stationswrapper/dist/kartenbundle.min.css?v=qr8KClZHOG_Wju65BNRZDJXXH5Vq0AsgwfQE9Vm6LhI">
+
+	
+
+
+	
+
+	
+</head>
+<!-- iphone hat oben einen Rand vor dem Header -->
+<body class="">	
+	<header>
+
+
+		<nav class="navbar navbar-expand-lg py-0 bkgheader">
+			<div class="container-fluid">
+				<!-- Logo links -->
+				<div class="d-flex align-items-center" style="flex:0 0 auto;">
+					<a class="navbar-brand m-0 text-dark text-dark-emphasis" href="//vorarlberg.at/wasserwirtschaft">
+							<img class="img-fluid img-logo" src="/stationswrapper/images/logo_desktop.png" />
+					</a>
+				</div>
+				<!-- Text mittes -->
+				<div class="d-flex-grow-1 text-center h1 text-light text-opacity-75 text-center align-items-center justify-content-center mb-0">
+					<!-- br wird bei allem das größer wie sm 576 ist ausgeblendet -->
+						Wasser<br class="d-sm-none"/> Online
+				</div>
+
+				<!-- Button rechts -->
+				<div class="d-flex align-items-center justify-content-center" style="flex:0 0 auto;">
+						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleContent" aria-controls="navbarToggleContent" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+				</div>
+
+			</div>
+			
+		</nav>
+		
+
+	
+	
+
+
+
+		<nav class="navbar navbar-expand-lg navbar-light bg-light avlr_nav py-0">
+		<div class="container-fluid">
+			
+			<div class="collapse navbar-collapse me-6 " id="navbarToggleContent">
+				<div class="d-flex text-dark">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+								<a class="nav-link custom-nav-link " href="/stationswrapper">Abfluss</a>
+						</li>
+							<li class="nav-item"><a class="nav-link custom-nav-link " href="/stationswrapper/niederschlag">Niederschlag</a></li>
+							<li class="nav-item"><a class="nav-link custom-nav-link " href="/stationswrapper/grundwasser">Grundwasser</a></li>
+						<li class="nav-item dropdown">
+								<a class="nav-link custom-nav-link dropdown-toggle active" id="navBodenseeDropdown" data-bs-toggle="dropdown" role="button" aria-expanded="false" href="/stationswrapper/bodensee"><span>Bodensee</span></a>
+							<ul class="dropdown-menu" aria-labelledby="navBodenseeDropdown">
+								<li><a class="dropdown-item" href="/stationswrapper/bodensee">Aktuelle Seedaten</a></li>
+								<li><a class="dropdown-item" target="_blank" href="https://bodensee-hochwasser.info/gifs/09057-2001.GIF">Prognose</a></li>
+								<li><a class="dropdown-item" target="_blank" href="https://bodensee-hochwasser.info/">bodensee-hochwasser.info</a></li>
+								<li><a class="dropdown-item" href="/stationswrapper/SeeHistory">Historische Seedaten</a></li>
+							</ul>
+						</li>
+						<li class="nav-item">
+								<a class="nav-link custom-nav-link " href="/stationswrapper/Contact">Kontakt</a>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+	</nav>
+
+	</heade>
+
+	<div class="container-fluid">
+		
+
+
+<!-- https://gist.github.com/fospathi/0ff9f8bb878b6f9c0945b06b62d54d7a -->
+
+
+<div class="see-px">
+	<div class="container-fluid mt-3">
+		<div class="row justify-content-center g-3">
+			
+			<div class="col-12 col-lg-7 px-1 mt-1">
+<div class="card h-100">
+
+	
+		<div class="card-header d-flex flex-wrap justify-content-between align-items-center">
+			<h5 class="mb-0 text-start text-uppercase">Wasserstand  2026</h5>
+			<span>
+			im Vergleich zu 1864 - 2024  (161 Jahre)
+		</span>
+		</div>
+
+	<div class="card-body-chart">
+		<div class="plt_see plt_see_w" id="plt_see_w"></div>
+	</div>
+</div>
+
+			</div>
+
+			<div class="col-12 col-lg-4 px-1  mt-1">
+
+
+
+<div class="card h-100">
+	<div class="card-header text-uppercase fs-6">Aktuelle Werte</div>
+	<div class="card-body card-margin-tb">
+		<div class="row h-100">
+			<div class="col-4 my-auto">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 mb-2 col-lg-12 mb-lg-0 aktuellewerte_container">
+
+
+
+<svg id="svg_wasserstand" class="svg-content" width="100" height="200" version="1.1" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
+
+    <rect id="bg_rect" class="grau" x="34" y="10" width="35" height="139" />
+    <path id="path1" class="path-scale" d="m34.812 14.529 60.188 0.0084" />
+    <rect id="rectAktWert" class="blau opacity-40" transform="scale(-1)" x="-96.389" y="-149" width="65" height="112.04">
+        <animate fill="freeze" attributeName="height" dur="0.5s" values="0;170;18" />
+    </rect>
+    <g id="g23" class="text-style text-scale">
+        <text id="text200" x="71.847702" y="147.23898">200</text>
+        <text id="text300" x="71.890671" y="113.2935">300</text>
+        <text id="text400" x="72.105515" y="80.268501">400</text>
+        <text id="text500" x="72.615646" y="46.588852">500</text>
+        <text id="text600" x="72.615646" y="12.802656">600</text>
+    </g>
+    <rect id="rect_akttextwert" class="blau" x="-25" y="150" width="150" height="50" />
+    <text id="textAktWert" class="text-aktuell  weiss" x="50%" y="170" text-anchor="middle">256 cm</text>
+    <text id="textAbsWert" class="text-aktuell weiss" x="50%" y="195.0" text-anchor="middle">(394,70 m ü.A.)</text>
+    <g id="g1" class="scale-w">
+        <path id="use8" d="m68.313 15.037-16.75 0.0023-2e-6 3.3475h12.563v3.3501h-12.563v3.3341h12.563v3.3661h-12.563v3.35l16.75-0.0023z" />
+        <path id="use10" d="m68.313 48.538-16.75 0.0023-2e-6 3.3475h12.563v3.3501h-12.563v3.3341h12.563v3.3661h-12.563v3.35l16.75-0.0023z" />
+        <path id="use11" d="m68.313 82.034-16.75 0.0023-2e-6 3.3475h12.563v3.3501h-12.563v3.3341h12.563v3.3661h-12.563v3.3501l16.75-2e-3z" />
+        <path id="use14" d="m68.313 115.53-16.75 2e-3 -2e-6 3.3475h12.563v3.35h-12.563v3.3342h12.563v3.3662h-12.563v3.3503l16.75-2e-3z" />
+        <path id="use17" d="m34.812 48.538 16.75-0.0023 4e-6 -3.3475h-12.563v-3.3501h12.563v-3.3343h-12.563v-3.366h12.563v-3.3501l-16.75 0.0023z" />
+        <path id="use19" d="m34.812 82.038 16.75-0.0023 4e-6 -3.3475h-12.563v-3.3501h12.563v-3.3343h-12.563v-3.366h12.563v-3.3501l-16.75 0.0023z" />
+        <path id="use21" d="m34.812 115.53 16.75-2e-3 4e-6 -3.3476h-12.563v-3.3501h12.563v-3.3343h-12.563v-3.366h12.563v-3.3501l-16.75 2e-3z" />
+        <path id="use21-5" d="m34.812 149.03 16.75-2e-3 4e-6 -3.3476h-12.563v-3.3501h12.563v-3.3343h-12.563v-3.366h12.563v-3.3501l-16.75 2e-3z" />
+    </g>
+    <path id="path1-4" class="path-scale" d="m34.812 48.029 61.577 0.0084" />
+    <path id="path1-0" class="path-scale" d="m34.812 81.492 61.577 0.0084" />
+    <path id="path1-9" class="path-scale" d="m34.812 115.02 61.577 9e-3" />
+    <path id="path1-42" class="path-scale" d="m34.812 148.53 61.577 5e-3" />
+    <text id="txtWasserstand" class="text-vertical blau" transform="rotate(-90)" x="-145" y="20">Wasserstand</text>
+</svg>
+					</div>
+					<div class="col-xs-12 col-sm-12 col-lg-12 aktuellewerte_container">
+
+
+
+
+
+<svg id="svg_wt" class="svg-content" width="100" height="180" version="1.1" viewBox="0 0 100 180" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<circle id="path4" class="grau" cx="50" cy="137.44" r="12" />
+	<rect id="rect1" class="grau" x="42" y="17.92" width="16" height="115.75" />
+	<path id="rect22" class="blau opacity-40" d="m46 129.84v1.8672a7 7 0 0 0-3 5.7266 7 7 0 0 0 7 7 7 7 0 0 0 7-7 7 7 0 0 0-3-5.7422v-1.8516h-8z" />
+	<path id="pathSkala" class="path-scale" d="m42.998 23.881 14.003-0.0018" />
+	<text id="text40" class="text-scale" x="62.970703" y="26.089247">40</text>
+	<text id="text30" class="text-scale" x="62.625" y="43.99971">30</text>
+	<text id="text20" class="text-scale" x="62.583984" y="61.910175">20</text>
+	<text id="text10" class="text-scale" x="62.34375" y="79.820641">10</text>
+	<text id="text0" class="text-scale" x="65.882812" y="98.645981">0</text>
+	<text id="text-10" class="text-scale" x="60.533203" y="115.64157">-10</text>
+	<text id="text-20" class="text-scale" x="60.533203" y="133.55203">-20</text>
+	<rect id="rect_txtwert" class="blau" y="150" width="100" height="30" />
+	<text id="textAktWert" class="text-style text-aktuell weiss" x="50" y="170" text-anchor="middle">14,7 °C</text>
+	<use id="use1" transform="translate(-5e-7 106.46)" xlink:href="#pathSkala" />
+	<use id="use3" transform="translate(-5e-7 35.487)" xlink:href="#pathSkala" />
+	<use id="use4" transform="translate(-5e-7 70.975)" xlink:href="#pathSkala" />
+	<path id="path22" class="grau" d="m42 17.921a8 7.9851 0 0 1 8-7.9851 8 7.9851 0 0 1 8 7.9847" style="stroke-width:1.0965" />
+	<use id="use22" transform="translate(-5e-7 53.231)" xlink:href="#pathSkala" />
+	<use id="use23" transform="translate(.0012865 88.718)" xlink:href="#pathSkala" />
+	<use id="use24" transform="translate(-5e-7 17.744)" xlink:href="#pathSkala" />
+	<rect id="rectAktWert" class="blau opacity-40" transform="scale(-1)" x="-54" y="-130" width="8" height="107">
+		<animate fill="freeze" attributeName="height" dur="0.5s" values="0;60" />
+	</rect>
+	<text id="txtWassertemperatur" class="text-style text-vertical blau" transform="rotate(-90)" x="-145" y="20">Wassertemperatur</text>
+</svg>					</div>
+				</div>
+			</div>
+
+
+			<div class="col-4 my-auto">
+				
+				<div class="row">
+					<div class="col-xs-12 col-sm-12  mb-2 col-lg-12 mb-lg-0 aktuellewerte_container">
+
+
+
+<svg id="svg_lt" class="svg-content" width="100" height="180" version="1.1" viewBox="0 0 100 180" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<circle id="path4" class="grau" cx="50" cy="137.44" r="12" />
+	<rect id="rect1" class="grau" x="42" y="17.92" width="16" height="115.75" />
+	<path id="rect22" class="blau opacity-40" d="m46 129.84v1.8672a7 7 0 0 0-3 5.7266 7 7 0 0 0 7 7 7 7 0 0 0 7-7 7 7 0 0 0-3-5.7422v-1.8516h-8z" />
+	<path id="pathSkala" class="path-scale" d="m42.998 23.881 14.003-0.0018" />
+	<text id="text40" class="text-scale" x="62.970703" y="26.089247">40</text>
+	<text id="text30" class="text-scale" x="62.625" y="43.99971">30</text>
+	<text id="text20" class="text-scale" x="62.583984" y="61.910175">20</text>
+	<text id="text10" class="text-scale" x="62.34375" y="79.820641">10</text>
+	<text id="text0" class="text-scale" x="65.882812" y="98.645981">0</text>
+	<text id="text-10" class="text-scale" x="60.533203" y="115.64157">-10</text>
+	<text id="text-20" class="text-scale" x="60.533203" y="133.55203">-20</text>
+	<rect id="rect_txtwert" class="blau" y="150" width="100" height="30" />
+	<text id="textAktWert" class="text-style text-aktuell weiss" x="50" y="170" text-anchor="middle">11,4 °C</text>
+	<use id="use1" transform="translate(-5e-7 106.46)" xlink:href="#pathSkala" />
+	<use id="use3" transform="translate(-5e-7 35.487)" xlink:href="#pathSkala" />
+	<use id="use4" transform="translate(-5e-7 70.975)" xlink:href="#pathSkala" />
+	<path id="path22" class="grau" d="m42 17.921a8 7.9851 0 0 1 8-7.9851 8 7.9851 0 0 1 8 7.9847" style="stroke-width:1.0965" />
+	<use id="use22" transform="translate(-5e-7 53.231)" xlink:href="#pathSkala" />
+	<use id="use23" transform="translate(.0012865 88.718)" xlink:href="#pathSkala" />
+	<use id="use24" transform="translate(-5e-7 17.744)" xlink:href="#pathSkala" />
+	<rect id="rectAktWert" class="blau opacity-40" transform="scale(-1)" x="-54" y="-130" width="8" height="107">
+		<animate fill="freeze" attributeName="height" dur="0.5s" values="0;55" />
+	</rect>
+	<text id="txtLufttemperatur" class="text-style text-vertical blau" transform="rotate(-90)" x="-145" y="20">Lufttemperatur</text>
+</svg>					</div>
+					<div class="col-xs-12 col-sm-12  col-lg-12 aktuellewerte_container">
+
+
+
+
+<svg id="svg_lf" class="svg-content" width="100" height="180" version="1.1" viewBox="0 0 100 180" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+	<rect id="rect1" class="grau" x="40" y="15" width="20" height="129.58" />
+	<path id="pathSkalaLF" class="path-scale" d="m40 15h20" />
+	<rect id="rectAktWert" class="blau opacity-40" transform="scale(-1)" x="-58" y="-144.5" width="16" height="130">
+		<animate fill="freeze" attributeName="height" dur="0.5s" values="0;88" />
+	</rect>
+	<text id="text2" class="text-scale" x="70.478989" y="148.13286">0</text>
+	<text id="text3" class="text-scale" x="66.449219" y="115.88602">25</text>
+	<text id="text4" class="text-scale" x="66.759651" y="81.724304">50</text>
+	<text id="text5" class="text-scale" x="66.449219" y="47.766968">75</text>
+	<text id="text6" class="text-scale" x="62.833984" y="19.291992">100</text>
+	<rect id="rect_txtwert" class="blau" y="150" width="100" height="30" />
+	<text id="txt_aktwert" class="text-style text-aktuell weiss" x="50" y="172.31641" text-anchor="middle">68 %</text>
+	<use id="use8" transform="translate(0 28.999)" xlink:href="#pathSkalaLF" />
+	<use id="use9" transform="translate(0 62.432)" xlink:href="#pathSkalaLF" />
+	<use id="use10" transform="translate(0 95.865)" xlink:href="#pathSkalaLF" />
+	<use id="use7" transform="translate(0 129.3)" xlink:href="#pathSkalaLF" />
+	<text id="txtLuftfeuchte" class="text-style text-vertical blau" transform="rotate(-90)" x="-145" y="25">Luftfeuchte</text>
+</svg>					</div>
+				</div>
+			</div>
+			<div class="col-4 my-auto svg_maxwidth">
+				<div class="row">
+					<div class="col-xs-12 mb-2 col-lg-12 mb-lg-0 aktuellewerte_container">
+
+
+
+<svg id="svg_wg" class="svg-content" width="100" height="180" version="1.1" viewBox="0 0 100 180" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<rect id="rect1" class="grau" x="32" y="2.2256" width="18" height="143.16" />
+	<path id="pathSkalaWG" class="path-scale" d="m32 10.763h18" />
+	<rect id="rectAktWert" class="blau opacity-40" transform="scale(-1)" x="-49" y="-145" width="16" height="135">
+		<animate fill="freeze" attributeName="height" dur="0.5s" values="0;2" />
+	</rect>
+	<text id="text2" class="text-scale" x="66.234375" y="148.44327">0</text>
+	<text id="text3" class="text-scale" x="57.421875" y="115.49437">30</text>
+	<text id="text6" class="text-scale" x="48.609375" y="15.176777">120</text>
+	<rect id="rect6" class="blau" y="150" width="100" height="30" />
+	<text id="textAktWert" class="text-style text-aktuell weiss" x="50" y="170" text-anchor="middle">2 km/h</text>
+	<use id="use8" transform="translate(-4.2105e-7 33.684)" xlink:href="#pathSkalaWG" />
+	<use id="use9" transform="translate(-4.2105e-7 67.369)" xlink:href="#pathSkalaWG" />
+	<use id="use10" transform="translate(-4.2105e-7 101.05)" xlink:href="#pathSkalaWG" />
+	<use id="use7" transform="translate(-4.2105e-7 134.74)" xlink:href="#pathSkalaWG" />
+	<text id="text3-6" class="text-scale" x="57.421875" y="81.81002">60</text>
+	<text id="text3-7" class="text-scale" x="57.421875" y="48.125671">90</text>
+	<text id="txtWindgeschwindigkeit" class="text-style text-vertical blau" transform="rotate(-90)" x="-145" y="20">Wind</text>
+</svg>					</div>
+					<div class="col-xs-12 col-lg-12 aktuellewerte_container">
+
+
+<svg id="svg_wr" class="svg-content" width="100" height="180" version="1.1" viewBox="0 0 100 180" xmlns="http://www.w3.org/2000/svg">
+    <circle id="pathBg" class="grau" cx="61.303" cy="76.658" r="36.587" />
+    <text id="text300" class="text-scale" x="86.466377" y="80.496185">O</text>
+    <text id="text400-8" class="text-scale" x="59.980843" y="51.77615" text-anchor="middle">N</text>
+    <rect id="rect6" class="blau" y="150" width="100" height="30" />
+    <text id="textAktWert" class="text-style text-aktuell weiss" x="50" y="170" text-anchor="middle">183 °</text>
+    <text id="text200" class="text-scale" x="59.980843" y="112.91396" text-anchor="middle" xml:space="default">S</text>
+    <text id="text200-3" class="text-scale" x="25.545887" y="80.851692">W</text>
+    <text id="txtWindrichtung" class="text-style text-vertical blau" transform="rotate(-90)" x="-145" y="20">Windrichtung</text>
+    <path id="path1" d="m53.663 76.774h15.134" style="fill:none;stroke-width:.73173px;stroke:#000" />
+    <path id="path2" d="m61.255 69.35v14.617" style="fill:none;stroke-width:.73173px;stroke:#000" />
+    <g id="g1" transform="rotate(2,61,77)">
+        <path id="path12" d="m64.944 40.178-6.57-0.0573-3.5931 35.596 13.173 0.11488z" style="fill-opacity:.76471;fill:#e5ecff;stroke-width:.41807;stroke:#333" />
+        <circle id="path13" cx="61.303" cy="76.774" r="7.4134" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:.074852;stroke:#4d4d4d" />
+        <path id="path53" d="m54.651 76.394 0.71576-6.8305 11.854 0.10688 0.63408 6.8427z" style="fill-opacity:.76471;fill:#00adff" />
+        <path id="path54" d="m56.53 60.957 9.9085 0.0893-0.56548-6.4343-8.67-0.0783z" style="fill-opacity:.76471;fill:#00adff" />
+        <path id="path55" d="m57.525 46.747 7.919 0.0603-0.56882-6.4981-6.6942-0.0499z" style="fill-opacity:.76471;fill:#00adff" />
+        <path id="path56" d="m61.274 83.831-7.2632 3.6436 5.0623 0.0451-0.0942 11.124 4.3391 0.0386 0.0942-11.124 5.0986-7.4e-4z" style="fill:none;stroke-width:.73236px;stroke:#000" />
+        <path id="path3" d="m61.303 84.187v-14.827" style="fill:none;stroke-width:.1px;stroke:#000" />
+        <path id="path4" d="m53.89 76.774h14.827" style="fill:none;stroke-width:.2px;stroke:#000" />
+    </g>
+</svg>
+
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+</div>
+
+
+			
+			</div>
+			
+
+			<div id="divSeeWt" class="col-12 col-lg-7 px-1 mt-1">
+
+<div class="card h-100 mb-2">
+	<div class="card-header d-flex flex-wrap justify-content-between align-items-center">
+		<h5 class="mb-0 text-start text-uppercase">Wassertemperatur 2026</h5>
+		<span>
+			Tagesmittel der Wassertemperatur  in 0,5 m unter Wasserspiegel im Vergleich der Jahre 1979 bis 2025
+		</span>
+	</div>
+	
+	
+	
+	<div class="card-body-chart card-margin-tb ">
+		
+		<div class="plt_see plt_see_wt" id="plt_see_wt"></div>
+	</div>
+</div>
+			</div>
+
+			<div class="col-12 col-lg-4 px-1 mt-1">
+				<div class="row">
+					<div class="col-12">
+
+<div class="card h-100">
+	<div class="card-header fs-6">MESSWERTE</div>
+	<div class="card-body custom-card-body">
+
+		<div class="col-12">
+		<table id="seemesswerte" class="table table-striped table-bordered table-sm table-responsive-sm mb-0 w-100">
+			<thead>
+				<tr class="fs-7">
+
+					<th rowspan="2" class="d-none d-sm-table-cell txt_center txt_mid">
+						<span class="">Datum</span><br />
+						<span class="fs-8">Uhrzeit[MEZ]</span>
+
+					</th>
+
+					<th class="d-sm-none txt_left txt_center txt_mid">
+						<span class="fs-7">Datum</span> <br />
+						<span>Uhrzeit</span> <br />
+						<span class="fs-9">[MEZ]</span>
+					</th>
+
+
+					<th rowspan="2" class="d-none d-sm-table-cell txt_center txt_mid">
+						<span></span>Wasserstand
+					</th>
+					<th class="d-sm-none txt_right txt_top">Wasser-<br />stand</th>
+
+
+					<th colspan="2" class="d-none d-sm-table-cell txt_center txt_mid">Wassertemperatur</th>
+					<th colspan="2" class="d-sm-none txt_center">Wasser-<br />temp.</th>
+				</tr>
+
+				<tr class="fs-8">
+						<th class="d-none d-sm-table-cell txt_center small">0,5 m</th>
+						<th class="d-none d-sm-table-cell txt_center small">2,5 m</th>
+
+						<th colspan="2"  class="d-sm-none txt_center small"></th>
+						<th class="d-sm-none txt_center small">0,5 m</th>
+						<th class="d-sm-none txt_center small">2,5 m</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td>
+						<span class="fw-semibold">Aktueller Wert</span><br />
+						<span class="fs-8">26.10.2026 23:55</span>
+					</td>
+
+						<td class="zahlen txt_mid">256 cm</td>
+						<td class="zahlen txt_mid">14,7 °C</td>
+						<td class="zahlen txt_mid">14,8 °C</td>
+				</tr>
+
+				<tr>
+					<td>
+						<span class="fw-semibold">Gestern</span><br />
+						<span class="fs-8">26.10.2026</span>
+					</td>
+
+						<td class="zahlen txt_mid">255 cm</td>
+						<td class="zahlen txt_mid">14,6 °C</td>
+						<td class="zahlen txt_mid">14,8 °C</td>
+				</tr>
+
+				<tr>
+					<td >
+						<span class="fw-semibold">Vorwoche</span><br />
+						<span class="fs-8">20.10.2026</span>
+
+					</td>
+
+						<td class="zahlen txt_mid">253 cm</td>
+						<td class="zahlen txt_mid">16,8 °C</td>
+						<td class="zahlen txt_mid">16,7 °C</td>
+				</tr>
+				<tr>
+					<td>
+						<span class="fw-semibold">Vorjahr</span><br />
+						<span class="fs-8">27.10.2025</span>
+					</td>
+
+						<td class="zahlen txt_mid">324 cm</td>
+						<td class="zahlen txt_mid">12,2 °C</td>
+						<td class="zahlen txt_mid">12,5 °C</td>
+				</tr>
+
+
+			</tbody>
+
+		</table>
+		</div>
+		<div class="">Pegelnullpunkt: 392,14 müA</div>
+
+	</div>
+
+</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12 mt-1">
+<div class="card h-100">
+	<div class="card-header">HISTORISCHE DATEN Messreihe: 1864 - 2024</div>
+	<div class="card-body custom-card-body">
+		<div class="row">
+			<div class="col-12 col-xxl-6 tblHistorischeDifferenz">
+				<div class="table-responsive">
+					<table class="table table-striped table-hover table-bordered mw-100">
+						<thead>
+							<tr>
+								<th colspan="2">Messwerte für den 27.10.</th>
+								<th class="txt_center txt_mid">aktuelle Differenz</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Minimal</td>
+								<td class="zahlen">254 cm</td>
+								<td class="zahlen">&#x2B;2 cm</td>
+							</tr>
+							<tr>
+								<td>Mittel</td>
+								<td class="zahlen">334 cm</td>
+								<td class="zahlen">-77 cm</td>
+							</tr>
+							<tr>
+								<td>Maximal</td>
+								<td class="zahlen">434 cm</td>
+								<td class="zahlen">- 178 cm</td>
+							</tr>
+						</tbody>
+
+					</table>
+				</div>
+			</div>
+			
+			<div class="col-12 col-xxl-6 tblHistoryExtrem">
+				<div class="table-responsive">
+					<table class="table table-striped table-hover table-bordered mw-100 ">
+						<thead>
+							<tr>
+								<th colspan="3">Historische Hoch- bzw. Niederwasserstände</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="txt_center">15.02.2006</td>
+								<td class="txt_center">Minimum</td>
+								<td class="zahlen">231 cm</td>
+							</tr>
+							<tr>
+								<td class="txt_center">03.09.1890</td>
+								<td class="txt_center">Maximum</td>
+								<td class="zahlen">581  cm</td>
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+					</div>
+				</div>
+			</div>
+
+
+			
+
+			<div class="col-12 col-lg-7 mt-1">
+
+
+
+
+
+<div class="card h-100">
+	<div class="card-header text-uppercase">Tagesmittelwerte</div>
+	<div class="card-body custom-card-body">
+		<div class="accordion" id="accordionTagesmittel">
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="headingOne">
+					<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+						Wasserstand in cm
+					</button>
+				</h2>
+				<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionTagesmittel">
+					<div class="accordion-body p-0 accordion-body-custom" style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+						<div class="table-responsive">
+								<table class="table table-bordered table-striped table-hover table-sm" style="min-width: 250px;width:100%;">
+									<thead>
+										<tr>
+											<th class="text-center" scope="col">Tag</th>
+											<th class="col-1 text-center" scope="col">Jän</th>
+											<th class="col-1 text-center" scope="col">Feb</th>
+											<th class="col-1 text-center" scope="col">Mär</th>
+											<th class="col-1 text-center" scope="col">Apr</th>
+											<th class="col-1 text-center" scope="col">Mai</th>
+											<th class="col-1 text-center" scope="col">Jun</th>
+											<th class="col-1 text-center" scope="col">Jul</th>
+											<th class="col-1 text-center" scope="col">Aug</th>
+											<th class="col-1 text-center" scope="col">Sep</th>
+											<th class="col-1 text-center" scope="col">Okt</th>
+											<th class="col-1 text-center" scope="col">Nov</th>
+											<th class="col-1 text-center" scope="col">Dez</th>
+										</tr>
+									</thead>
+									<tbody>
+												<tr>
+													<td class="text-center fw-bold">1</td>
+													<td class="text-center">291</td>
+													<td class="text-center">283</td>
+													<td class="text-center">318</td>
+													<td class="text-center">291</td>
+													<td class="text-center">302</td>
+													<td class="text-center">320</td>
+													<td class="text-center">333</td>
+													<td class="text-center">294</td>
+													<td class="text-center">281</td>
+													<td class="text-center">256</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">2</td>
+													<td class="text-center">289</td>
+													<td class="text-center">282</td>
+													<td class="text-center">317</td>
+													<td class="text-center">291</td>
+													<td class="text-center">302</td>
+													<td class="text-center">322</td>
+													<td class="text-center">335</td>
+													<td class="text-center">294</td>
+													<td class="text-center">280</td>
+													<td class="text-center">255</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">3</td>
+													<td class="text-center">288</td>
+													<td class="text-center">281</td>
+													<td class="text-center">316</td>
+													<td class="text-center">290</td>
+													<td class="text-center">302</td>
+													<td class="text-center">327</td>
+													<td class="text-center">335</td>
+													<td class="text-center">292</td>
+													<td class="text-center">280</td>
+													<td class="text-center">255</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">4</td>
+													<td class="text-center">286</td>
+													<td class="text-center">281</td>
+													<td class="text-center">316</td>
+													<td class="text-center">289</td>
+													<td class="text-center">303</td>
+													<td class="text-center">329</td>
+													<td class="text-center">333</td>
+													<td class="text-center">291</td>
+													<td class="text-center">278</td>
+													<td class="text-center">254</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">5</td>
+													<td class="text-center">285</td>
+													<td class="text-center">281</td>
+													<td class="text-center">315</td>
+													<td class="text-center">288</td>
+													<td class="text-center">304</td>
+													<td class="text-center">332</td>
+													<td class="text-center">331</td>
+													<td class="text-center">291</td>
+													<td class="text-center">277</td>
+													<td class="text-center">253</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">6</td>
+													<td class="text-center">285</td>
+													<td class="text-center">280</td>
+													<td class="text-center">315</td>
+													<td class="text-center">289</td>
+													<td class="text-center">306</td>
+													<td class="text-center">333</td>
+													<td class="text-center">329</td>
+													<td class="text-center">290</td>
+													<td class="text-center">276</td>
+													<td class="text-center">252</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">7</td>
+													<td class="text-center">286</td>
+													<td class="text-center">281</td>
+													<td class="text-center">314</td>
+													<td class="text-center">290</td>
+													<td class="text-center">307</td>
+													<td class="text-center">333</td>
+													<td class="text-center">326</td>
+													<td class="text-center">289</td>
+													<td class="text-center">274</td>
+													<td class="text-center">252</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">8</td>
+													<td class="text-center">285</td>
+													<td class="text-center">280</td>
+													<td class="text-center">313</td>
+													<td class="text-center">292</td>
+													<td class="text-center">308</td>
+													<td class="text-center">332</td>
+													<td class="text-center">325</td>
+													<td class="text-center">288</td>
+													<td class="text-center">274</td>
+													<td class="text-center">253</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">9</td>
+													<td class="text-center">287</td>
+													<td class="text-center">280</td>
+													<td class="text-center">311</td>
+													<td class="text-center">293</td>
+													<td class="text-center">308</td>
+													<td class="text-center">333</td>
+													<td class="text-center">323</td>
+													<td class="text-center">286</td>
+													<td class="text-center">274</td>
+													<td class="text-center">255</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">10</td>
+													<td class="text-center">288</td>
+													<td class="text-center">280</td>
+													<td class="text-center">311</td>
+													<td class="text-center">294</td>
+													<td class="text-center">307</td>
+													<td class="text-center">335</td>
+													<td class="text-center">322</td>
+													<td class="text-center">284</td>
+													<td class="text-center">273</td>
+													<td class="text-center">255</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">11</td>
+													<td class="text-center">287</td>
+													<td class="text-center">280</td>
+													<td class="text-center">310</td>
+													<td class="text-center">295</td>
+													<td class="text-center">307</td>
+													<td class="text-center">338</td>
+													<td class="text-center">321</td>
+													<td class="text-center">283</td>
+													<td class="text-center">272</td>
+													<td class="text-center">256</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">12</td>
+													<td class="text-center">286</td>
+													<td class="text-center">282</td>
+													<td class="text-center">310</td>
+													<td class="text-center">297</td>
+													<td class="text-center">309</td>
+													<td class="text-center">340</td>
+													<td class="text-center">318</td>
+													<td class="text-center">282</td>
+													<td class="text-center">271</td>
+													<td class="text-center">255</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">13</td>
+													<td class="text-center">287</td>
+													<td class="text-center">284</td>
+													<td class="text-center">310</td>
+													<td class="text-center">298</td>
+													<td class="text-center">309</td>
+													<td class="text-center">341</td>
+													<td class="text-center">315</td>
+													<td class="text-center">280</td>
+													<td class="text-center">270</td>
+													<td class="text-center">254</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">14</td>
+													<td class="text-center">287</td>
+													<td class="text-center">285</td>
+													<td class="text-center">309</td>
+													<td class="text-center">301</td>
+													<td class="text-center">309</td>
+													<td class="text-center">341</td>
+													<td class="text-center">315</td>
+													<td class="text-center">279</td>
+													<td class="text-center">270</td>
+													<td class="text-center">254</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">15</td>
+													<td class="text-center">287</td>
+													<td class="text-center">286</td>
+													<td class="text-center">310</td>
+													<td class="text-center">302</td>
+													<td class="text-center">308</td>
+													<td class="text-center">340</td>
+													<td class="text-center">315</td>
+													<td class="text-center">278</td>
+													<td class="text-center">270</td>
+													<td class="text-center">255</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">16</td>
+													<td class="text-center">287</td>
+													<td class="text-center">287</td>
+													<td class="text-center">308</td>
+													<td class="text-center">303</td>
+													<td class="text-center">308</td>
+													<td class="text-center">339</td>
+													<td class="text-center">316</td>
+													<td class="text-center">277</td>
+													<td class="text-center">269</td>
+													<td class="text-center">254</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">17</td>
+													<td class="text-center">287</td>
+													<td class="text-center">292</td>
+													<td class="text-center">308</td>
+													<td class="text-center">304</td>
+													<td class="text-center">307</td>
+													<td class="text-center">339</td>
+													<td class="text-center">316</td>
+													<td class="text-center">278</td>
+													<td class="text-center">269</td>
+													<td class="text-center">255</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">18</td>
+													<td class="text-center">286</td>
+													<td class="text-center">295</td>
+													<td class="text-center">307</td>
+													<td class="text-center">304</td>
+													<td class="text-center">307</td>
+													<td class="text-center">339</td>
+													<td class="text-center">315</td>
+													<td class="text-center">280</td>
+													<td class="text-center">267</td>
+													<td class="text-center">255</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">19</td>
+													<td class="text-center">285</td>
+													<td class="text-center">298</td>
+													<td class="text-center">305</td>
+													<td class="text-center">304</td>
+													<td class="text-center">307</td>
+													<td class="text-center">338</td>
+													<td class="text-center">314</td>
+													<td class="text-center">279</td>
+													<td class="text-center">267</td>
+													<td class="text-center">254</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">20</td>
+													<td class="text-center">284</td>
+													<td class="text-center">300</td>
+													<td class="text-center">304</td>
+													<td class="text-center">304</td>
+													<td class="text-center">307</td>
+													<td class="text-center">338</td>
+													<td class="text-center">313</td>
+													<td class="text-center">279</td>
+													<td class="text-center">265</td>
+													<td class="text-center">253</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">21</td>
+													<td class="text-center">284</td>
+													<td class="text-center">302</td>
+													<td class="text-center">303</td>
+													<td class="text-center">305</td>
+													<td class="text-center">308</td>
+													<td class="text-center">337</td>
+													<td class="text-center">312</td>
+													<td class="text-center">282</td>
+													<td class="text-center">264</td>
+													<td class="text-center">254</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">22</td>
+													<td class="text-center">284</td>
+													<td class="text-center">306</td>
+													<td class="text-center">301</td>
+													<td class="text-center">305</td>
+													<td class="text-center">308</td>
+													<td class="text-center">337</td>
+													<td class="text-center">309</td>
+													<td class="text-center">285</td>
+													<td class="text-center">263</td>
+													<td class="text-center">254</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">23</td>
+													<td class="text-center">285</td>
+													<td class="text-center">309</td>
+													<td class="text-center">299</td>
+													<td class="text-center">305</td>
+													<td class="text-center">308</td>
+													<td class="text-center">336</td>
+													<td class="text-center">308</td>
+													<td class="text-center">284</td>
+													<td class="text-center">262</td>
+													<td class="text-center">253</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">24</td>
+													<td class="text-center">284</td>
+													<td class="text-center">312</td>
+													<td class="text-center">298</td>
+													<td class="text-center">305</td>
+													<td class="text-center">308</td>
+													<td class="text-center">337</td>
+													<td class="text-center">306</td>
+													<td class="text-center">282</td>
+													<td class="text-center">261</td>
+													<td class="text-center">253</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">25</td>
+													<td class="text-center">283</td>
+													<td class="text-center">317</td>
+													<td class="text-center">297</td>
+													<td class="text-center">304</td>
+													<td class="text-center">308</td>
+													<td class="text-center">337</td>
+													<td class="text-center">304</td>
+													<td class="text-center">282</td>
+													<td class="text-center">260</td>
+													<td class="text-center">253</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">26</td>
+													<td class="text-center">282</td>
+													<td class="text-center">319</td>
+													<td class="text-center">296</td>
+													<td class="text-center">303</td>
+													<td class="text-center">310</td>
+													<td class="text-center">335</td>
+													<td class="text-center">302</td>
+													<td class="text-center">282</td>
+													<td class="text-center">259</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">27</td>
+													<td class="text-center">282</td>
+													<td class="text-center">319</td>
+													<td class="text-center">295</td>
+													<td class="text-center">303</td>
+													<td class="text-center">312</td>
+													<td class="text-center">334</td>
+													<td class="text-center">301</td>
+													<td class="text-center">282</td>
+													<td class="text-center">259</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">28</td>
+													<td class="text-center">283</td>
+													<td class="text-center">319</td>
+													<td class="text-center">293</td>
+													<td class="text-center">303</td>
+													<td class="text-center">314</td>
+													<td class="text-center">332</td>
+													<td class="text-center">299</td>
+													<td class="text-center">283</td>
+													<td class="text-center">258</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">29</td>
+													<td class="text-center">283</td>
+													<td class="text-center"></td>
+													<td class="text-center">293</td>
+													<td class="text-center">303</td>
+													<td class="text-center">316</td>
+													<td class="text-center">331</td>
+													<td class="text-center">297</td>
+													<td class="text-center">283</td>
+													<td class="text-center">257</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">30</td>
+													<td class="text-center">284</td>
+													<td class="text-center"></td>
+													<td class="text-center">291</td>
+													<td class="text-center">303</td>
+													<td class="text-center">316</td>
+													<td class="text-center">331</td>
+													<td class="text-center">296</td>
+													<td class="text-center">283</td>
+													<td class="text-center">256</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">31</td>
+													<td class="text-center">284</td>
+													<td class="text-center"></td>
+													<td class="text-center">291</td>
+													<td class="text-center"></td>
+													<td class="text-center">317</td>
+													<td class="text-center"></td>
+													<td class="text-center">295</td>
+													<td class="text-center">283</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+											<tr class="fw-bold">
+												<td>Mittel:</td>
+												<td class="text-center">286</td>
+												<td class="text-center">293</td>
+												<td class="text-center">306</td>
+												<td class="text-center">299</td>
+												<td class="text-center">308</td>
+												<td class="text-center">335</td>
+												<td class="text-center">315</td>
+												<td class="text-center">284</td>
+												<td class="text-center">269</td>
+												<td class="text-center">254</td>
+												<td class="text-center"></td>
+												<td class="text-center"></td>
+
+
+											</tr>
+									</tbody>
+								</table>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="headingTwo">
+					<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+						Wassertemperatur in °C
+					</button>
+				</h2>
+				<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionTagesmittel">
+						<div class="accordion-body">
+							<div class="table-responsive">
+								<table class="table table-bordered table-hover table-striped table-sm tblmittelwerte">
+									<thead>
+										<tr>
+											<th class="text-center" scope="col">Tag</th>
+											<th class="col-1 text-center" scope="col">Jän</th>
+											<th class="col-1 text-center" scope="col">Feb</th>
+											<th class="col-1 text-center" scope="col">Mär</th>
+											<th class="col-1 text-center" scope="col">Apr</th>
+											<th class="col-1 text-center" scope="col">Mai</th>
+											<th class="col-1 text-center" scope="col">Jun</th>
+											<th class="col-1 text-center" scope="col">Jul</th>
+											<th class="col-1 text-center" scope="col">Aug</th>
+											<th class="col-1 text-center" scope="col">Sep</th>
+											<th class="col-1 text-center" scope="col">Okt</th>
+											<th class="col-1 text-center" scope="col">Nov</th>
+											<th class="col-1 text-center" scope="col">Dez</th>
+										</tr>
+									</thead>
+									<tbody>
+												<tr>
+													<td class="text-center fw-bold">1</td>
+													<td class="text-center">5,1</td>
+													<td class="text-center">4,9</td>
+													<td class="text-center">7,1</td>
+													<td class="text-center">7,1</td>
+													<td class="text-center">12,0</td>
+													<td class="text-center">22,3</td>
+													<td class="text-center">23,8</td>
+													<td class="text-center">25,2</td>
+													<td class="text-center">23,2</td>
+													<td class="text-center">20,3</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">2</td>
+													<td class="text-center">5,2</td>
+													<td class="text-center">4,8</td>
+													<td class="text-center">6,7</td>
+													<td class="text-center">7,2</td>
+													<td class="text-center">13,7</td>
+													<td class="text-center">21,9</td>
+													<td class="text-center">23,2</td>
+													<td class="text-center">25,6</td>
+													<td class="text-center">23,3</td>
+													<td class="text-center">20,2</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">3</td>
+													<td class="text-center">5,1</td>
+													<td class="text-center">5,1</td>
+													<td class="text-center">6,6</td>
+													<td class="text-center">7,9</td>
+													<td class="text-center">14,5</td>
+													<td class="text-center">20,3</td>
+													<td class="text-center">23,9</td>
+													<td class="text-center">26,4</td>
+													<td class="text-center">23,4</td>
+													<td class="text-center">20,1</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">4</td>
+													<td class="text-center">4,9</td>
+													<td class="text-center">5,0</td>
+													<td class="text-center">6,6</td>
+													<td class="text-center">8,3</td>
+													<td class="text-center">15,5</td>
+													<td class="text-center">19,9</td>
+													<td class="text-center">24,3</td>
+													<td class="text-center">25,8</td>
+													<td class="text-center">23,3</td>
+													<td class="text-center">20,2</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">5</td>
+													<td class="text-center">4,6</td>
+													<td class="text-center">4,9</td>
+													<td class="text-center">6,7</td>
+													<td class="text-center">8,9</td>
+													<td class="text-center">15,4</td>
+													<td class="text-center">20,0</td>
+													<td class="text-center">24,3</td>
+													<td class="text-center">26,1</td>
+													<td class="text-center">23,3</td>
+													<td class="text-center">20,2</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">6</td>
+													<td class="text-center">4,3</td>
+													<td class="text-center">4,9</td>
+													<td class="text-center">7,0</td>
+													<td class="text-center">9,4</td>
+													<td class="text-center">15,1</td>
+													<td class="text-center">20,6</td>
+													<td class="text-center">24,5</td>
+													<td class="text-center">26,4</td>
+													<td class="text-center">23,2</td>
+													<td class="text-center">20,1</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">7</td>
+													<td class="text-center">4,4</td>
+													<td class="text-center">5,2</td>
+													<td class="text-center">7,4</td>
+													<td class="text-center">9,8</td>
+													<td class="text-center">15,2</td>
+													<td class="text-center">20,9</td>
+													<td class="text-center">24,3</td>
+													<td class="text-center">26,0</td>
+													<td class="text-center">23,3</td>
+													<td class="text-center">19,9</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">8</td>
+													<td class="text-center">3,9</td>
+													<td class="text-center">5,4</td>
+													<td class="text-center">8,0</td>
+													<td class="text-center">10,7</td>
+													<td class="text-center">15,6</td>
+													<td class="text-center">21,2</td>
+													<td class="text-center">24,2</td>
+													<td class="text-center">26,0</td>
+													<td class="text-center">23,5</td>
+													<td class="text-center">19,5</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">9</td>
+													<td class="text-center">4,1</td>
+													<td class="text-center">5,4</td>
+													<td class="text-center">8,3</td>
+													<td class="text-center">11,4</td>
+													<td class="text-center">16,6</td>
+													<td class="text-center">20,8</td>
+													<td class="text-center">24,6</td>
+													<td class="text-center">26,3</td>
+													<td class="text-center">23,1</td>
+													<td class="text-center">18,9</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">10</td>
+													<td class="text-center">4,6</td>
+													<td class="text-center">5,3</td>
+													<td class="text-center">8,6</td>
+													<td class="text-center">11,4</td>
+													<td class="text-center">16,9</td>
+													<td class="text-center">19,4</td>
+													<td class="text-center">25,2</td>
+													<td class="text-center">26,2</td>
+													<td class="text-center">22,1</td>
+													<td class="text-center">18,4</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">11</td>
+													<td class="text-center">4,2</td>
+													<td class="text-center">5,4</td>
+													<td class="text-center">8,8</td>
+													<td class="text-center">11,5</td>
+													<td class="text-center">16,5</td>
+													<td class="text-center">18,2</td>
+													<td class="text-center">25,6</td>
+													<td class="text-center">26,1</td>
+													<td class="text-center">21,7</td>
+													<td class="text-center">18,0</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">12</td>
+													<td class="text-center">4,3</td>
+													<td class="text-center">5,4</td>
+													<td class="text-center">8,4</td>
+													<td class="text-center">12,1</td>
+													<td class="text-center">15,8</td>
+													<td class="text-center">17,8</td>
+													<td class="text-center">25,5</td>
+													<td class="text-center">26,1</td>
+													<td class="text-center">21,8</td>
+													<td class="text-center">17,9</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">13</td>
+													<td class="text-center">4,4</td>
+													<td class="text-center">5,5</td>
+													<td class="text-center">8,8</td>
+													<td class="text-center">11,8</td>
+													<td class="text-center">15,3</td>
+													<td class="text-center">18,1</td>
+													<td class="text-center">25,3</td>
+													<td class="text-center">26,1</td>
+													<td class="text-center">21,9</td>
+													<td class="text-center">17,7</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">14</td>
+													<td class="text-center">4,5</td>
+													<td class="text-center">5,7</td>
+													<td class="text-center">8,4</td>
+													<td class="text-center">11,0</td>
+													<td class="text-center">15,1</td>
+													<td class="text-center">19,3</td>
+													<td class="text-center">25,3</td>
+													<td class="text-center">26,3</td>
+													<td class="text-center">22,2</td>
+													<td class="text-center">17,6</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">15</td>
+													<td class="text-center">4,8</td>
+													<td class="text-center">5,5</td>
+													<td class="text-center">7,9</td>
+													<td class="text-center">10,5</td>
+													<td class="text-center">14,8</td>
+													<td class="text-center">19,9</td>
+													<td class="text-center">24,9</td>
+													<td class="text-center">26,5</td>
+													<td class="text-center">22,5</td>
+													<td class="text-center">17,6</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">16</td>
+													<td class="text-center">4,9</td>
+													<td class="text-center">5,4</td>
+													<td class="text-center">7,7</td>
+													<td class="text-center">11,4</td>
+													<td class="text-center">14,0</td>
+													<td class="text-center">19,4</td>
+													<td class="text-center">24,3</td>
+													<td class="text-center">26,3</td>
+													<td class="text-center">22,2</td>
+													<td class="text-center">17,5</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">17</td>
+													<td class="text-center">4,8</td>
+													<td class="text-center">5,2</td>
+													<td class="text-center">7,8</td>
+													<td class="text-center">12,8</td>
+													<td class="text-center">14,3</td>
+													<td class="text-center">19,4</td>
+													<td class="text-center">24,7</td>
+													<td class="text-center">25,6</td>
+													<td class="text-center">21,7</td>
+													<td class="text-center">17,3</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">18</td>
+													<td class="text-center">4,9</td>
+													<td class="text-center">5,1</td>
+													<td class="text-center">8,1</td>
+													<td class="text-center">13,4</td>
+													<td class="text-center">14,9</td>
+													<td class="text-center">20,9</td>
+													<td class="text-center">25,0</td>
+													<td class="text-center">24,9</td>
+													<td class="text-center">21,5</td>
+													<td class="text-center">16,8</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">19</td>
+													<td class="text-center">4,8</td>
+													<td class="text-center">5,1</td>
+													<td class="text-center">8,0</td>
+													<td class="text-center">13,1</td>
+													<td class="text-center">15,4</td>
+													<td class="text-center">22,5</td>
+													<td class="text-center">24,2</td>
+													<td class="text-center">24,9</td>
+													<td class="text-center">21,4</td>
+													<td class="text-center">16,8</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">20</td>
+													<td class="text-center">4,8</td>
+													<td class="text-center">5,0</td>
+													<td class="text-center">8,0</td>
+													<td class="text-center">12,7</td>
+													<td class="text-center">15,8</td>
+													<td class="text-center">22,1</td>
+													<td class="text-center">23,9</td>
+													<td class="text-center">24,8</td>
+													<td class="text-center">21,3</td>
+													<td class="text-center">16,8</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">21</td>
+													<td class="text-center">4,6</td>
+													<td class="text-center">5,0</td>
+													<td class="text-center">8,1</td>
+													<td class="text-center">12,5</td>
+													<td class="text-center">16,1</td>
+													<td class="text-center">22,6</td>
+													<td class="text-center">23,9</td>
+													<td class="text-center">24,0</td>
+													<td class="text-center">21,1</td>
+													<td class="text-center">16,4</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">22</td>
+													<td class="text-center">4,6</td>
+													<td class="text-center">5,3</td>
+													<td class="text-center">8,6</td>
+													<td class="text-center">11,9</td>
+													<td class="text-center">17,4</td>
+													<td class="text-center">23,6</td>
+													<td class="text-center">23,9</td>
+													<td class="text-center">23,2</td>
+													<td class="text-center">20,8</td>
+													<td class="text-center">15,9</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">23</td>
+													<td class="text-center">4,6</td>
+													<td class="text-center">5,8</td>
+													<td class="text-center">8,9</td>
+													<td class="text-center">10,7</td>
+													<td class="text-center">17,6</td>
+													<td class="text-center">24,7</td>
+													<td class="text-center">24,0</td>
+													<td class="text-center">23,2</td>
+													<td class="text-center">20,4</td>
+													<td class="text-center">15,6</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">24</td>
+													<td class="text-center">4,7</td>
+													<td class="text-center">6,4</td>
+													<td class="text-center">9,2</td>
+													<td class="text-center">12,7</td>
+													<td class="text-center">18,3</td>
+													<td class="text-center">25,3</td>
+													<td class="text-center">24,1</td>
+													<td class="text-center">23,4</td>
+													<td class="text-center">20,1</td>
+													<td class="text-center">15,2</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">25</td>
+													<td class="text-center">4,8</td>
+													<td class="text-center">5,9</td>
+													<td class="text-center">8,7</td>
+													<td class="text-center">13,0</td>
+													<td class="text-center">19,4</td>
+													<td class="text-center">26,3</td>
+													<td class="text-center">24,1</td>
+													<td class="text-center">23,3</td>
+													<td class="text-center">20,0</td>
+													<td class="text-center">14,8</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">26</td>
+													<td class="text-center">4,8</td>
+													<td class="text-center">6,0</td>
+													<td class="text-center">8,0</td>
+													<td class="text-center">13,4</td>
+													<td class="text-center">20,5</td>
+													<td class="text-center">26,3</td>
+													<td class="text-center">23,5</td>
+													<td class="text-center">23,5</td>
+													<td class="text-center">19,9</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">27</td>
+													<td class="text-center">4,7</td>
+													<td class="text-center">6,5</td>
+													<td class="text-center">7,6</td>
+													<td class="text-center">14,3</td>
+													<td class="text-center">21,2</td>
+													<td class="text-center">27,1</td>
+													<td class="text-center">23,2</td>
+													<td class="text-center">23,8</td>
+													<td class="text-center">19,9</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">28</td>
+													<td class="text-center">4,8</td>
+													<td class="text-center">7,0</td>
+													<td class="text-center">7,8</td>
+													<td class="text-center">14,9</td>
+													<td class="text-center">21,6</td>
+													<td class="text-center">25,6</td>
+													<td class="text-center">23,8</td>
+													<td class="text-center">23,7</td>
+													<td class="text-center">20,1</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">29</td>
+													<td class="text-center">4,8</td>
+													<td class="text-center"></td>
+													<td class="text-center">7,9</td>
+													<td class="text-center">15,3</td>
+													<td class="text-center">22,4</td>
+													<td class="text-center">24,6</td>
+													<td class="text-center">24,7</td>
+													<td class="text-center">23,3</td>
+													<td class="text-center">20,2</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">30</td>
+													<td class="text-center">4,8</td>
+													<td class="text-center"></td>
+													<td class="text-center">7,4</td>
+													<td class="text-center">12,8</td>
+													<td class="text-center">22,8</td>
+													<td class="text-center">24,7</td>
+													<td class="text-center">25,4</td>
+													<td class="text-center">23,5</td>
+													<td class="text-center">20,3</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+												<tr>
+													<td class="text-center fw-bold">31</td>
+													<td class="text-center">4,8</td>
+													<td class="text-center"></td>
+													<td class="text-center">7,2</td>
+													<td class="text-center"></td>
+													<td class="text-center">22,8</td>
+													<td class="text-center"></td>
+													<td class="text-center">25,4</td>
+													<td class="text-center">23,3</td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+													<td class="text-center"></td>
+												</tr>
+											<tr class="fw-bold">
+												<td class="fw-bold">Mittel:</td>
+												<td class="text-center">4,7</td>
+												<td class="text-center">5,4</td>
+												<td class="text-center">7,9</td>
+												<td class="text-center">11,5</td>
+												<td class="text-center">16,9</td>
+												<td class="text-center">21,8</td>
+												<td class="text-center">24,4</td>
+												<td class="text-center">25,0</td>
+												<td class="text-center">21,8</td>
+												<td class="text-center">18,0</td>
+												<td class="text-center"></td>
+												<td class="text-center"></td>
+											</tr>
+									</tbody>
+								</table>
+
+							</div>
+						</div>
+
+
+					</div>
+				</div>
+
+		</div>
+	</div>
+</div>
+			</div>
+
+			<div class="col-12 col-lg-4 mt-1">
+
+<div class="card h-100">
+	<div class="card-header fs-5">Bodenseemessstation Bregenz</div>
+	<div class="card-subtitle text-uppercase pt-2 px-3 fs-6">Stammdaten</div>
+	<div class="card-body">
+
+		<div class="row">
+			<div class="col-12 justify-content-center">
+				<div class="table-responsive">
+				<table class="table table-hover table-striped table-borderd">
+
+					<tbody>
+						<tr>
+							<td>Stationsname</td><td>Bregenz (Seepegel), 200337</td>
+						</tr>
+						<tr>
+							<td>Gewässer</td><td>Bodensee</td>
+						</tr>
+						<tr>
+							<td>Pegelnullpunkt</td><td>392,14 müA</td>
+						</tr>
+						<tr>
+							<td>Koordinaten</td><td>-44116/263409</td>
+						</tr>
+						<tr>
+							<td>Betreiber</td><td>Wasserwirtschaft Vorarlberg</td>
+						</tr>
+					</tbody>
+				</table>
+				</div>
+			</div>
+
+			<div class="col-12 d-flex justify-content-center">
+					<img id="imgSeepegelKarte"src="https://vowis.vorarlberg.at/stationsinfo/_bodensee/see.aspx" alt="Bregenz Hafen">
+			</div>
+
+			<div class="col-12 mt-1">
+				<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+					<div class="carousel-inner text-center">
+						<div class="carousel-item active">
+							<img src="/stationswrapper/images/see/bregenzerachmuendung_scaled.jpg?v=R1C0KfojwCf6ymuGwwBXYsvOY21PdQTUIEPsFs54jO4" class="d-block mx-auto img-scale-up" alt="...">
+						</div>
+						<div class="carousel-item">
+							<img src="/stationswrapper/images/see/Stele01072022.jpg?v=-IcfVLJPWK7BPHh0j-6WjFD9yemzIaeIopdyoJ_K8a0" class="d-block mx-auto img-scale-up" alt="...">
+						</div>
+						<div class="carousel-item">
+							<img src="/stationswrapper/images/see/P1010779_scaled.JPG?v=1r8AolJqvFOetz7wSVVD6cB0dwqN8Pxh8sIIBpZznEw" class="d-block mx-auto img-scale-up" alt="...">
+						</div>
+						<div class="carousel-item">
+							<img src="/stationswrapper/images/see/P1010152.JPG?v=ksB6f0mMkACP9_aoTSjl-w1gNHN4ZkzjKt3nN6XA0qU" class="d-block mx-auto img-scale-up" alt="...">
+						</div>
+					</div>
+					<button class="carousel-control-prev bg-bodensee" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden"></span>
+					</button>
+					<button class="carousel-control-next bg-bodensee" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden"></span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+			</div>
+
+			<div class="col-12 col-lg-11">
+
+<div class="card jaehrlichkeiten">
+	<div class="card-header text-uppercase">Jährlichkeit HW</div>
+
+	<div class="card-body">
+
+		<div class="row g-0">
+			<div class="col-4 col-md-2">
+				<div class="text-center HW2">
+					<span class="fw-semibold fs-6">HW2</span>
+				</div>
+				<div class="text-center border-bottom">
+					<span class="fs-7 ">460 cm</span>
+				</div>
+				<div class="text-center">
+					<span class="fs-7">396,74 müA</span>
+				</div>
+
+			</div>
+
+			<div class="col-4 col-md-2">
+				<div class="text-center HW10 border-bottom">
+					<span class="fw-semibold fs-6">HW10</span>
+				</div>
+				<div class="text-center border-bottom">
+					<span class="fs-7">512 cm</span>
+				</div>
+				<div class="text-center">
+					<span class="fs-7">397,26 müA</span>
+				</div>
+			</div>
+
+			<div class="col-4 col-md-2">
+				<div class="text-center HW20 border-bottom">
+					<span class="fw-semibold fs-6">HW20</span>
+				</div>
+				<div class="text-center border-bottom">
+					<span class="fs-7 ">531 cm</span>
+				</div>
+				<div class="text-center" ">
+					<span class="fs-7">397,45 müA</span>
+				</div>
+			</div>
+
+			<div class="col-4 col-md-2">
+				<div class="text-center HW30">
+					<span class="fw-semibold fs-6">HW30</span>
+				</div>
+				<div class="text-center border-bottom">
+					<span class="fs-7">540 cm</span>
+				</div>
+				<div class="text-center">
+					<span class="fs-7">397,54 müA</span>
+				</div>
+			</div>
+
+			<div class="col-4 col-md-2">
+				<div class="text-center HW50">
+					<span class="fw-semibold fs-6">HW50</span>
+				</div>
+				<div class="text-center border-bottom">
+					<span class="fs-7">553 cm</span>
+				</div>
+				<div class="text-center">
+					<span class="fs-7">397,67 müA</span>
+				</div>
+			</div>
+
+			<div class="col-4 col-md-2">
+				<div class="text-center HW100">
+					<span class="fw-semibold fs-6">HW100</span>
+				</div>
+				<div class="text-center border-bottom">
+					<span class="fs-7">568 cm</span>
+				</div>
+				<div class="text-center">
+					<span class="fs-7">397,82 müA</span>
+				</div>
+			</div>
+
+
+
+		</div>	</div>
+
+</div>
+			</div>
+
+		</div>
+		
+	</div>
+
+</div>
+
+		<hr />
+		<footer>
+			<div class="container-fluid body-content">
+				<a href="//vorarlberg.at/web/land-vorarlberg/impressum">Impressum</a>
+			</div>
+		</footer>
+	</div>
+
+
+
+
+	
+	
+	
+		<script src="/stationswrapper/dist/bodensee.min.js?v=rwezNkxtXHpUasbIQ0286S_xLAEWdssYw4wvK9snYMI" defer></script>
+		<link rel="stylesheet" href="/stationswrapper/dist/bodensee.min.css?v=c6xMk5JLRwSIds-Xwfl0Q83V4lbseBDoctzqOShsMv8">
+	
+
+</body>
+</html>
