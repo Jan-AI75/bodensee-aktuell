@@ -10,14 +10,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          mkdir -p out4
+          mkdir -p out5
           UA="Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1"
-          G=https://www.gkd.bayern.de/de/seen/wassertemperatur/bayern/lindau-20001001
-          curl -sSL -A "$UA" "$G/messwerte/tabelle?beginn=01.01.1980&ende=27.10.2026" -o out4/all.html || true
-          curl -sSL -A "$UA" "$G/messwerte/tabelle?beginn=01.01.2015&ende=31.12.2015" -o out4/y2015.html || true
-          curl -sSL -A "$UA" "$G/messwerte/tabelle?beginn=01.01.2000&ende=31.12.2000" -o out4/y2000.html || true
-          curl -sSL -A "$UA" "$G/messwerte/tabelle?beginn=01.01.1990&ende=31.12.1990" -o out4/y1990.html || true
-          ls -la out4
+          curl -sSL -A "$UA" "https://www.daten-bw.de/ckan/api/3/action/package_show?id=bodensee-pegelstand-konstanz" -o out5/ckan.json || true
+          curl -sSL "https://api.existenz.ch/apiv1/hydro/daterange?locations=2032&parameters=height&startdate=2025-10-20&enddate=2025-11-03&app=pegelkn" -o out5/rom_2025.json || true
+          curl -sSL "https://api.existenz.ch/apiv1/hydro/daterange?locations=2032&parameters=height&startdate=2026-09-26&enddate=2026-10-27&app=pegelkn" -o out5/rom_2026.json || true
+          curl -sSI -H "Origin: https://jan-ai75.github.io" "https://api.existenz.ch/apiv1/hydro/daterange?locations=2032&parameters=height&startdate=2025-10-26&enddate=2025-10-27" -o out5/cors.txt || true
+          ls -la out5
       - run: |
           git config user.name probe; git config user.email probe@users.noreply.github.com
-          git add out4 && git commit -m probe-results && git push
+          git add out5 && git commit -m probe-results && git push
