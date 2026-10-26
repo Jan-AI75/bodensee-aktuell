@@ -10,15 +10,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          mkdir -p out2
+          mkdir -p out3
           UA="Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1"
           G=https://www.gkd.bayern.de/de/seen/wassertemperatur/bayern/lindau-20001001
-          for u in messwerte messwerte/tabelle jahreswerte monatswerte gesamtzeitraum download; do curl -sSL -A "$UA" -H "Accept-Language: de" "$G/$u" -o "out2/gkd_$(echo $u|tr / _).html" || true; done
-          curl -sSL -A "$UA" "https://www.nid.bayern.de/wassertemperatur/bayern/lindau-20001001/tabelleZweiMonate" -o out2/nid_tab.html || true
-          curl -sSL -A "$UA" "https://vowis.vorarlberg.at/seewasserstand" -o out2/vowis.html || true
-          curl -sSL "https://api.existenz.ch/apiv1/hydro/latest?locations=2032,2043&app=pegelkn" -o out2/existenz_latest.json || true
-          curl -sSI -H "Origin: https://jan-ai75.github.io" "https://api.existenz.ch/apiv1/hydro/latest?locations=2032" -o out2/existenz_cors.txt || true
-          ls -la out2
+          curl -sSL -A "$UA" "$G/tagesmittelwerte/tabelle?beginn=01.01.1990&ende=27.10.2026" -o out3/tmw_all.html || true
+          curl -sSL -A "$UA" "$G/messwerte/tabelle?beginn=25.09.2026&ende=27.10.2026" -o out3/mw_31.html || true
+          curl -sSL -A "$UA" "$G/stammdaten" -o out3/stamm.html || true
+          curl -sSL -A "$UA" "$G/download" -o out3/download.html || true
+          ls -la out3
       - run: |
           git config user.name probe; git config user.email probe@users.noreply.github.com
-          git add out2 && git commit -m probe-results && git push
+          git add out3 && git commit -m probe-results && git push
