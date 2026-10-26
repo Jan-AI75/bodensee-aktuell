@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Pegel Konstanz</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Pegel KN">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#eef3f4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b1a20" media="(prefers-color-scheme: dark)">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAACvUlEQVR4nO3dsWpUQRiA0RtJ7yOIkMrGwoBgEzt9Gx8hWPtCSZc0AcEmvZBXsdhK9CtCbnbm3pxTbpE7kI9/Z2YT9uT1uw8L/M+r0QtgXuIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SKejF7C+h5+3ox799uPFqEc/B5ODJA6SOEjiIImDJA6SOEgn/sueYnKQxEESB8lnK2vy2QovhThI4iCJgyQO0g5PK088Mgw87MzG5CCJgyQO0g73HDYNazE5SOIgiYMkDpI4SDs8rbghXYvJQRIHSRykHe45bBrWYnKQxEESB0kcJHGQdnhacUO6FpODJA6SOEg73HPYNKzF5CCJgyQOkjhI4iDt8LTihnQtJgdJHCRxkHa457BpWIvJQRIHSRwkcZDEQfJNTSSTgyQOkjhIbkjX5JuaeCnEQRIHSRwkcZB2eFrxN6RrMTlI4iCJg7TDPcfWNw33l2fvv/8evYpl2WUc23V/eTZ6CX/xtjKL2cpYTI4ZTJjFgckx2LRlLCbHQDNncbDDOOa/IZ0/iwNvK8e2lTKWXU6OaW0oiwOT40g2V8ayLCdvvv0YvYaVff7yddSjb66v/n3x9tOvx/6ci7vzNZbzVCbHs7u4O5/kl/1Y4jiSLfYhjuPZ3AgRx7FtqA9xDLCVESKOYeZPRByDzdyHOMabdoSIYxYT9iGOicw2QsQxnXn6EAdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkE5HL2B9N9dXo5ewEyYHSRwkcZDEQRIHSRwkcZDEQfoDhhhYA9ZQDgUAAAAASUVORK5CYII=">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAACvUlEQVR4nO3dsWpUQRiA0RtJ7yOIkMrGwoBgEzt9Gx8hWPtCSZc0AcEmvZBXsdhK9CtCbnbm3pxTbpE7kI9/Z2YT9uT1uw8L/M+r0QtgXuIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SKejF7C+h5+3ox799uPFqEc/B5ODJA6SOEjiIImDJA6SOEgn/sueYnKQxEESB8lnK2vy2QovhThI4iCJgyQO0g5PK088Mgw87MzG5CCJgyQO0g73HDYNazE5SOIgiYMkDpI4SDs8rbghXYvJQRIHSRykHe45bBrWYnKQxEESB0kcJHGQdnhacUO6FpODJA6SOEg73HPYNKzF5CCJgyQOkjhI4iDt8LTihnQtJgdJHCRxkHa457BpWIvJQRIHSRwkcZDEQfJNTSSTgyQOkjhIbkjX5JuaeCnEQRIHSRwkcZB2eFrxN6RrMTlI4iCJg7TDPcfWNw33l2fvv/8evYpl2WUc23V/eTZ6CX/xtjKL2cpYTI4ZTJjFgckx2LRlLCbHQDNncbDDOOa/IZ0/iwNvK8e2lTKWXU6OaW0oiwOT40g2V8ayLCdvvv0YvYaVff7yddSjb66v/n3x9tOvx/6ci7vzNZbzVCbHs7u4O5/kl/1Y4jiSLfYhjuPZ3AgRx7FtqA9xDLCVESKOYeZPRByDzdyHOMabdoSIYxYT9iGOicw2QsQxnXn6EAdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkE5HL2B9N9dXo5ewEyYHSRwkcZDEQRIHSRwkcZDEQfoDhhhYA9ZQDgUAAAAASUVORK5CYII=">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#eef3f4; --surface:#ffffff; --fg:#0f2a33; --muted:#5a7480; --line:#cfdde1;
+  --lake:#1f6f8b; --lake-soft:#cfe6ee; --mean:#b07a2a; --up:#2c7a4b; --down:#b4472f;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#0b1a20; --surface:#11252d; --fg:#e3eef1; --muted:#8aa5ae; --line:#24404a;
+  --lake:#5fb6d3; --lake-soft:#173a47; --mean:#e0a957; --up:#6cc890; --down:#ee8a72; color-scheme:dark}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.45;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.wrap{max-width:560px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:16px 32px;display:grid;gap:16px}
+header{display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
+h1{font-family:var(--display);font-weight:700;font-size:1.6rem;margin:0;letter-spacing:-.01em}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+button.refresh{font:500 .8rem var(--body);color:var(--lake);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:7px 12px;cursor:pointer}
+button.refresh:focus-visible{outline:2px solid var(--lake);outline-offset:2px}
+button.refresh[disabled]{opacity:.6}
+.status{font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:6px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--up)}
+.status.stale .dot{background:var(--mean)}
+.hero{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;background:var(--surface);border-radius:14px;padding:18px;border:1px solid var(--line)}
+.big{font-family:var(--display);font-weight:700;font-size:4.2rem;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.03em}
+.big small{font-size:1.2rem;font-weight:500;color:var(--muted);margin-left:4px}
+.nhn{font-family:var(--mono);font-size:.82rem;color:var(--muted);margin-top:6px}
+.state{display:inline-block;margin-top:10px;padding:3px 10px;border-radius:999px;font-size:.8rem;font-weight:600;background:color-mix(in srgb,var(--down) 15%,transparent);color:var(--down)}
+.state.ok{background:color-mix(in srgb,var(--up) 15%,transparent);color:var(--up)}
+.rows{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.row{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;padding:13px 16px;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.row .lbl{font-weight:500}
+.row .lbl span{display:block;font-size:.78rem;color:var(--muted);font-weight:400;font-family:var(--mono)}
+.row .val{font-family:var(--mono);color:var(--muted);font-variant-numeric:tabular-nums;font-size:.9rem}
+.delta{font-family:var(--mono);font-weight:500;font-variant-numeric:tabular-nums;min-width:5.5ch;text-align:right;font-size:1.05rem}
+.pos{color:var(--up)} .neg{color:var(--down)} .zero{color:var(--muted)}
+.row.mean{background:color-mix(in srgb,var(--mean) 9%,var(--surface))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 12px 10px}
+.card h2{font-family:var(--display);font-weight:500;font-size:1.05rem;margin:0 4px 2px}
+.card p.sub{margin:0 4px 8px;color:var(--muted);font-size:.8rem}
+svg{display:block;width:100%;height:auto}
+svg text{font-family:var(--mono);font-size:10px;fill:var(--muted)}
+.legend{display:flex;gap:16px;flex-wrap:wrap;margin:6px 4px 0;font-size:.78rem;color:var(--muted)}
+.legend i{display:inline-block;width:14px;height:3px;border-radius:2px;vertical-align:middle;margin-right:6px}
+footer{font-size:.75rem;color:var(--muted);line-height:1.5}
+footer a{color:var(--lake)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <div class="eyebrow">Bodensee · Obersee · Pegel 906</div>
+      <h1>Pegel Konstanz</h1>
+    </div>
+    <button class="refresh" id="refresh" type="button">Aktualisieren</button>
+  </header>
+  <div class="status" id="status"><span class="dot"></span><span id="statusText">Lade aktuelle Werte …</span></div>
+
+  <section class="hero">
+    <svg id="staff" viewBox="0 0 64 210" width="64" aria-label="Pegellatte"></svg>
+    <div>
+      <div class="eyebrow">Wasserstand aktuell</div>
+      <div class="big" id="cur">–<small>cm</small></div>
+      <div class="nhn" id="nhn"></div>
+      <div class="state" id="state"></div>
+    </div>
+  </section>
+
+  <section class="rows" id="rows"></section>
+
+  <section class="card">
+    <h2>Letzte 30 Tage</h2>
+    <p class="sub">Verlauf in Stundenwerten, gestrichelt das mittlere Niveau zum gleichen Datum</p>
+    <svg id="chart31" viewBox="0 0 360 200"></svg>
+    <div class="legend"><span><i style="background:var(--lake)"></i>Gemessen</span><span><i style="background:var(--mean)"></i>Mittel</span></div>
+  </section>
+
+  <section class="card">
+    <h2>Jahresgang</h2>
+    <p class="sub">Mittlerer Verlauf übers Jahr und Lage von heute</p>
+    <svg id="chartYear" viewBox="0 0 360 200"></svg>
+  </section>
+
+  <footer>
+    Messwerte live von <a href="https://www.pegelonline.wsv.de/gast/stammdaten?pegelnr=906" target="_blank" rel="noopener">PEGELONLINE (WSV)</a>, Pegelnull 391,89 m ü. NHN. Mittelwasser MW 341 cm, MNW 262 cm (1902–2006, <a href="https://www.bodensee-hochwasser.info/pdf/W-Kennwerte-Obersee.pdf" target="_blank" rel="noopener">IGKB-Kennwerte</a>). Das Mittel je Kalendertag ist eine Näherung aus typischen Monatswerten, angeglichen an MW 341 cm, und kann um einige Zentimeter von der amtlichen Tagesstatistik abweichen.
+  </footer>
+</div>
+
+<script>
+const API = "https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations/aa9179c1-17ef-4c61-a48a-74193fa7bfdf/W";
+const MW = 341, MNW = 262, ZERO = 391.89;
+const MONTH_MEAN = [296,289,296,319,361,403,411,391,363,339,319,303]; // Näherung, Monatsmitte
+const DAY = 864e5;
+const STORE = "pegel-kn-v1";
+
+// Fallback: Tageswerte (bis 21.10. 0:00 Uhr, ab 22.10. Morgenwerte), Stand 26.10.2026 23:30
+const SNAPSHOT = (() => {
+  const d = {"2026-09-20":261,"2026-09-21":260,"2026-09-22":260,"2026-09-23":258,"2026-09-24":257,"2026-09-25":256,
+    "2026-09-26":255,"2026-09-27":254,"2026-09-28":254,"2026-09-29":252,"2026-09-30":252,"2026-10-01":251,
+    "2026-10-02":250,"2026-10-03":250,"2026-10-04":250,"2026-10-05":248,"2026-10-06":248,"2026-10-07":248,
+    "2026-10-08":247,"2026-10-09":249,"2026-10-10":250,"2026-10-11":251,"2026-10-12":250,"2026-10-13":250,
+    "2026-10-14":251,"2026-10-15":249,"2026-10-16":250,"2026-10-17":250,"2026-10-18":250,"2026-10-19":249,
+    "2026-10-20":249,"2026-10-21":249,"2026-10-22":248,"2026-10-23":250,"2026-10-24":249,"2026-10-25":248,
+    "2026-10-26":249};
+  const series = Object.keys(d).sort().map(k => ({t: new Date(k+"T00:00:00"+(k>="2026-10-25"?"+01:00":"+02:00")).getTime(), v: d[k]}));
+  series.push({t: new Date("2026-10-26T21:00:00+01:00").getTime(), v: 250});
+  series.push({t: new Date("2026-10-26T23:30:00+01:00").getTime(), v: 250});
+  return {series, fetchedAt: series.at(-1).t};
+})();
+
+function doy(d){return (Date.UTC(d.getFullYear(),d.getMonth(),d.getDate()) - Date.UTC(d.getFullYear(),0,1))/DAY;}
+function meanFor(d){
+  const y = d.getFullYear(), t = doy(d);
+  const mids = MONTH_MEAN.map((_,i)=>doy(new Date(y,i,15)));
+  let x = t < mids[0] ? t + 365 : t;
+  for(let i=0;i<12;i++){
+    const a = mids[i], b = i<11 ? mids[i+1] : mids[0]+365;
+    if (x >= a && x <= b){ const f=(x-a)/(b-a); return MONTH_MEAN[i]+(MONTH_MEAN[(i+1)%12]-MONTH_MEAN[i])*f; }
+  }
+  return MW;
+}
+const fmtD = d => d.toLocaleDateString("de-DE",{day:"2-digit",month:"2-digit"});
+const fmtT = d => d.toLocaleTimeString("de-DE",{hour:"2-digit",minute:"2-digit"});
+const sgn = v => (Math.round(v)>0?"+":Math.round(v)<0?"−":"±") + Math.abs(Math.round(v));
+const cls = v => Math.round(v)>0?"pos":Math.round(v)<0?"neg":"zero";
+const NS = "http://www.w3.org/2000/svg";
+function el(tag, attrs, parent, text){ const e=document.createElementNS(NS,tag); for(const k in attrs) e.setAttribute(k,attrs[k]); if(text!=null) e.textContent=text; parent.appendChild(e); return e; }
+function nearest(series, t, tol){
+  let best=null, bd=Infinity;
+  for(const p of series){ const dd=Math.abs(p.t-t); if(dd<bd){bd=dd;best=p;} }
+  return bd <= tol ? best : null;
+}
+
+function render(data, live){
+  const s = data.series; const last = s.at(-1);
+  const now = new Date(last.t);
+  const today = new Date(now.getFullYear(),now.getMonth(),now.getDate());
+  const cur = last.v, meanToday = meanFor(now);
+
+  document.getElementById("cur").innerHTML = `${Math.round(cur)}<small>cm</small>`;
+  document.getElementById("nhn").textContent = `${(ZERO + cur/100).toFixed(2).replace(".",",")} m ü. NHN`;
+  const st = document.getElementById("state");
+  st.classList.toggle("ok", cur >= MNW);
+  st.textContent = cur < MNW ? `Niedrigwasser · ${Math.round(MNW-cur)} cm unter MNW` : "Im üblichen Bereich";
+
+  const status = document.getElementById("status");
+  status.classList.toggle("stale", !live);
+  const when = `${fmtD(now)}, ${fmtT(now)} Uhr`;
+  document.getElementById("statusText").textContent = live
+    ? `Live · Messung vom ${when}`
+    : `Keine Verbindung · letzter bekannter Stand vom ${when}`;
+
+  const tol = 3*3600e3;
+  const rows = [["Vor einem Tag",1],["Vor einer Woche",7],["Vor einem Monat",30]].map(([l,n])=>{
+    const p = nearest(s, last.t - n*DAY, n===1 ? tol : 12*3600e3);
+    if(!p) return "";
+    return `<div class="row"><div class="lbl">${l}<span>${fmtD(new Date(p.t))}, ${fmtT(new Date(p.t))}</span></div><div class="val">${Math.round(p.v)} cm</div><div class="delta ${cls(cur-p.v)}">${sgn(cur-p.v)}</div></div>`;
+  }).join("");
+  document.getElementById("rows").innerHTML = rows +
+    `<div class="row mean"><div class="lbl">Mittel am ${fmtD(today)}<span>langjährig, Näherung</span></div><div class="val">${Math.round(meanToday)} cm</div><div class="delta ${cls(cur-meanToday)}">${sgn(cur-meanToday)}</div></div>`;
+
+  drawStaff(cur, meanToday);
+  draw31(s);
+  drawYear(s, now, cur, meanToday);
+}
+
+function drawStaff(cur, meanToday){
+  const s = document.getElementById("staff"); s.innerHTML = "";
+  const lo=200, hi=450, top=6, bot=204;
+  const y = v => bot - (Math.max(lo,Math.min(hi,v))-lo)/(hi-lo)*(bot-top);
+  el("rect",{x:22,y:top,width:20,height:bot-top,rx:2,fill:"var(--surface)",stroke:"var(--line)"},s);
+  el("rect",{x:22,y:y(cur),width:20,height:bot-y(cur),fill:"var(--lake)",opacity:.85},s);
+  for(let v=lo; v<=hi; v+=10){
+    const big = v%50===0;
+    el("line",{x1:big?22:32,x2:42,y1:y(v),y2:y(v),stroke:"var(--fg)","stroke-width":big?1.2:.6,opacity:big?.7:.35},s);
+    if(big) el("text",{x:18,y:y(v)+3,"text-anchor":"end","font-size":"9"},s,v);
+  }
+  el("line",{x1:18,x2:50,y1:y(meanToday),y2:y(meanToday),stroke:"var(--mean)","stroke-width":2,"stroke-dasharray":"4 2"},s);
+  el("text",{x:46,y:y(meanToday)-3,"font-size":"8",fill:"var(--mean)"},s,"Ø");
+  el("path",{d:`M44 ${y(cur)} l8 -5 v10z`,fill:"var(--lake)"},s);
+}
+
+function axes(svg,x0,x1,y0,y1,lo,hi,step){
+  const Y = v => y1 - (v-lo)/(hi-lo)*(y1-y0);
+  for(let v=Math.ceil(lo/step)*step; v<=hi; v+=step){
+    el("line",{x1:x0,x2:x1,y1:Y(v),y2:Y(v),stroke:"var(--line)","stroke-width":1},svg);
+    el("text",{x:x0-6,y:Y(v)+3,"text-anchor":"end"},svg,v);
+  }
+  return Y;
+}
+
+function draw31(series){
+  const svg = document.getElementById("chart31"); svg.innerHTML = "";
+  const tEnd = series.at(-1).t, tStart = tEnd - 30*DAY;
+  // thin to hourly
+  const pts = []; let lastH = -1;
+  for(const p of series){ if(p.t < tStart) continue; const h = Math.floor(p.t/3600e3); if(h!==lastH){pts.push(p); lastH=h;} }
+  if(pts.at(-1) !== series.at(-1)) pts.push(series.at(-1));
+  if(pts.length < 2) return;
+  const means = [];
+  for(let t=pts[0].t; t<=tEnd; t+=DAY/2) means.push({t, v: meanFor(new Date(t))});
+  means.push({t:tEnd, v:meanFor(new Date(tEnd))});
+  const all = pts.map(p=>p.v).concat(means.map(m=>m.v));
+  const lo = Math.floor((Math.min(...all)-6)/10)*10, hi = Math.ceil((Math.max(...all)+6)/10)*10;
+  const x0=36,x1=350,y0=10,y1=176;
+  const Y = axes(svg,x0,x1,y0,y1,lo,hi,(hi-lo)>80?20:10);
+  const t0 = pts[0].t;
+  const X = t => x0 + (t-t0)/(tEnd-t0)*(x1-x0);
+  const line = pts.map((p,i)=>`${i?"L":"M"}${X(p.t).toFixed(1)} ${Y(p.v).toFixed(1)}`).join("");
+  el("path",{d:`${line}L${X(tEnd)} ${y1}L${X(t0)} ${y1}Z`,fill:"var(--lake-soft)",opacity:.8},svg);
+  el("path",{d:means.map((m,i)=>`${i?"L":"M"}${X(m.t).toFixed(1)} ${Y(m.v).toFixed(1)}`).join(""),fill:"none",stroke:"var(--mean)","stroke-width":1.8,"stroke-dasharray":"5 3"},svg);
+  el("path",{d:line,fill:"none",stroke:"var(--lake)","stroke-width":2,"stroke-linejoin":"round"},svg);
+  el("circle",{cx:X(tEnd),cy:Y(pts.at(-1).v),r:4,fill:"var(--lake)",stroke:"var(--surface)","stroke-width":2},svg);
+  [0,1,2,3,4].forEach(i=>{ const t = t0 + (tEnd-t0)*i/4;
+    el("text",{x:X(t),y:192,"text-anchor":i===0?"start":i===4?"end":"middle"},svg,fmtD(new Date(t))); });
+}
+
+function drawYear(series, now, cur, meanToday){
+  const svg = document.getElementById("chartYear"); svg.innerHTML = "";
+  const y = now.getFullYear(), lo=220, hi=440;
+  const x0=36,x1=350,y0=10,y1=176;
+  const Y = axes(svg,x0,x1,y0,y1,lo,hi,40);
+  const Yc = v => Y(Math.max(lo,Math.min(hi,v)));
+  const X = t => x0 + t/364*(x1-x0);
+  let d = "";
+  for(let t=0;t<=364;t+=3){ d += `${t?"L":"M"}${X(t).toFixed(1)} ${Y(meanFor(new Date(y,0,1+t))).toFixed(1)}`; }
+  el("path",{d,fill:"none",stroke:"var(--mean)","stroke-width":2},svg);
+  el("line",{x1:x0,x2:x1,y1:Y(MNW),y2:Y(MNW),stroke:"var(--down)","stroke-dasharray":"2 3",opacity:.7},svg);
+  el("text",{x:x1,y:Y(MNW)-4,"text-anchor":"end",fill:"var(--down)"},svg,"MNW 262");
+  const seg = []; let lastD = -1;
+  for(const p of series){ const dt = new Date(p.t); if(dt.getFullYear()!==y) continue; const k = doy(dt); if(k!==lastD){ seg.push(`${X(k).toFixed(1)} ${Yc(p.v).toFixed(1)}`); lastD=k; } }
+  if(seg.length>1) el("path",{d:"M"+seg.join("L"),fill:"none",stroke:"var(--lake)","stroke-width":2.6},svg);
+  const tx = X(doy(now));
+  el("line",{x1:tx,x2:tx,y1:Yc(meanToday),y2:Yc(cur),stroke:"var(--fg)","stroke-width":1,opacity:.5},svg);
+  el("circle",{cx:tx,cy:Yc(cur),r:4.5,fill:"var(--lake)",stroke:"var(--surface)","stroke-width":2},svg);
+  el("circle",{cx:tx,cy:Yc(meanToday),r:3.5,fill:"var(--mean)"},svg);
+  const right = tx < x0 + 60;
+  el("text",{x:right?tx+8:tx-6,y:(Yc(cur)+Yc(meanToday))/2+3,"text-anchor":right?"start":"end",fill:"var(--fg)","font-weight":"500"},svg,sgn(cur-meanToday)+" cm");
+  ["J","F","M","A","M","J","J","A","S","O","N","D"].forEach((m,i)=>el("text",{x:X(doy(new Date(y,i,15))),y:192,"text-anchor":"middle"},svg,m));
+}
+
+function loadStored(){ try{ const j = JSON.parse(localStorage.getItem(STORE)); return j && j.series && j.series.length ? j : null; }catch(e){ return null; } }
+function saveStored(d){ try{ localStorage.setItem(STORE, JSON.stringify(d)); }catch(e){} }
+
+let busy = false;
+async function refresh(){
+  if(busy) return; busy = true;
+  const btn = document.getElementById("refresh"); btn.disabled = true; btn.textContent = "Lädt …";
+  try{
+    const get = async (url) => {
+      const ctrl = new AbortController(); const to = setTimeout(()=>ctrl.abort(), 15000);
+      try{ const r = await fetch(url, {signal: ctrl.signal, cache: "no-store"}); if(!r.ok) throw new Error("HTTP " + r.status); return await r.json(); }
+      finally{ clearTimeout(to); }
+    };
+    let arr;
+    try{ arr = await get(`${API}/measurements.json?start=P31D`); }
+    catch(e){ arr = await get(`data.json?t=${Date.now()}`); } // Kopie, die GitHub alle 30 Min. aktualisiert
+    const series = arr.map(m => ({t: new Date(m.timestamp).getTime(), v: m.value})).filter(p => isFinite(p.v)).sort((a,b)=>a.t-b.t);
+    if(!series.length) throw new Error("leer");
+    const data = {series, fetchedAt: Date.now()};
+    saveStored(data); render(data, true);
+  }catch(e){
+    render(loadStored() || SNAPSHOT, false);
+  }finally{
+    busy = false; btn.disabled = false; btn.textContent = "Aktualisieren";
+  }
+}
+
+render(loadStored() || SNAPSHOT, false);
+document.getElementById("statusText").textContent = "Lade aktuelle Werte …";
+document.getElementById("refresh").addEventListener("click", refresh);
+document.addEventListener("visibilitychange", () => { if(document.visibilityState === "visible") refresh(); });
+setInterval(() => { if(document.visibilityState === "visible") refresh(); }, 15*60*1000);
+refresh();
+</script>
+</body>
+</html>

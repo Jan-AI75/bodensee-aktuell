@@ -1,0 +1,22 @@
+name: Pegeldaten aktualisieren
+on:
+  schedule:
+    - cron: "7,37 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Messwerte der letzten 31 Tage laden
+        run: |
+          curl -fsS --retry 3 "https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations/aa9179c1-17ef-4c61-a48a-74193fa7bfdf/W/measurements.json?start=P31D" -o data.tmp
+          python3 -c "import json;d=json.load(open('data.tmp'));assert len(d)>100" && mv data.tmp data.json
+      - name: Speichern
+        run: |
+          git config user.name "pegel-bot"
+          git config user.email "pegel-bot@users.noreply.github.com"
+          git add data.json
+          git diff --cached --quiet || (git commit -m "Pegeldaten $(date -u +%FT%TZ)" && git push)
