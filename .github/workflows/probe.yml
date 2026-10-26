@@ -1,0 +1,25 @@
+name: probe
+on:
+  push:
+    branches: [probe]
+permissions:
+  contents: write
+jobs:
+  p:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p out
+          P=https://www.pegelonline.wsv.de/webservices/rest-api/v2
+          curl -sS "$P/stations/aa9179c1-17ef-4c61-a48a-74193fa7bfdf.json?includeTimeseries=true" -o out/kn_station.json || true
+          curl -sS "$P/stations.json?timeseries=WT&includeTimeseries=true&includeCurrentMeasurement=true" -o out/pegelonline_wt.json || true
+          curl -sSI -H "Origin: https://jan-ai75.github.io" "$P/stations/aa9179c1-17ef-4c61-a48a-74193fa7bfdf/W.json" -o out/cors_headers.txt || true
+          curl -sSL "https://www.gkd.bayern.de/de/seen/wassertemperatur/bodensee/lindau-20001001/messwerte/tabelle" -o out/gkd_lindau.html || true
+          curl -sSL "https://www.nid.bayern.de/wassertemperatur/bodensee/lindau-20001001" -o out/nid_lindau.html || true
+          curl -sSL "https://vowis.vorarlberg.at/seewasserstand" -o out/vowis.html || true
+          curl -sSL "https://api.existenz.ch/apiv1/hydro/locations" -o out/existenz_locations.json || true
+          ls -la out
+      - run: |
+          git config user.name probe; git config user.email probe@users.noreply.github.com
+          git add out && git commit -m probe-results && git push
