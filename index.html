@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Pegel Konstanz</title>
+<title>Bodensee aktuell</title>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Pegel KN">
+<meta name="apple-mobile-web-app-title" content="Bodensee">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="theme-color" content="#eef3f4" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0b1a20" media="(prefers-color-scheme: dark)">
@@ -47,11 +47,11 @@ button.refresh[disabled]{opacity:.6}
 .status{font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:6px}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--up);flex:none}
 .status.stale .dot{background:var(--mean)}
-.hero{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;background:var(--surface);border-radius:14px;padding:18px;border:1px solid var(--line)}
-.big{font-family:var(--display);font-weight:700;font-size:4.2rem;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.03em}
-.big small{font-size:1.2rem;font-weight:500;color:var(--muted);margin-left:4px}
+.hero{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(10px,3vw,16px);align-items:center;background:var(--surface);border-radius:14px;padding:18px;border:1px solid var(--line)}
+.big{font-family:var(--display);font-weight:700;font-size:clamp(2.6rem,13vw,4.2rem);flex:none;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.03em}
+.big small{font-size:.28em;font-weight:500;color:var(--muted);margin-left:4px}
 .nhn{font-family:var(--mono);font-size:.82rem;color:var(--muted);margin-top:6px}
-.state{display:inline-block;margin-top:10px;padding:3px 10px;border-radius:999px;font-size:.8rem;font-weight:600;background:color-mix(in srgb,var(--down) 15%,transparent);color:var(--down)}
+.state{display:inline-block;margin-top:10px;padding:3px 10px;border-radius:999px;font-size:clamp(.72rem,3.1vw,.8rem);white-space:nowrap;font-weight:600;background:color-mix(in srgb,var(--down) 15%,transparent);color:var(--down)}
 .state.ok{background:color-mix(in srgb,var(--up) 15%,transparent);color:var(--up)}
 .state.warm{background:color-mix(in srgb,var(--warm) 15%,transparent);color:var(--warm)}
 .state.cool{background:color-mix(in srgb,var(--cool) 15%,transparent);color:var(--cool)}
@@ -74,6 +74,21 @@ svg text{font-family:var(--mono);font-size:10px;fill:var(--muted)}
 .legend i{display:inline-block;width:14px;height:3px;border-radius:2px;vertical-align:middle;margin-right:6px}
 .legend i.box{height:10px;width:14px;border-radius:2px}
 .view{display:grid;gap:16px}
+.out{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.out h2{font-family:var(--display);font-weight:500;font-size:1.05rem;margin:0;padding:12px 16px 4px}
+.orow{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:11px 16px;border-top:1px solid var(--line)}
+.out h2 + .orow{border-top:0}
+.orow .ic{font-size:1.15rem;width:1.4em;text-align:center;color:var(--muted);font-family:var(--mono)}
+.orow .lbl{font-weight:500;min-width:0}
+.orow .lbl span{display:block;font-size:.78rem;color:var(--muted);font-weight:400}
+.orow .v{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right;font-weight:500;white-space:nowrap}
+.bigrow{display:flex;align-items:flex-end;gap:clamp(8px,2.5vw,14px);flex-wrap:nowrap;margin-top:2px}
+.fc{display:grid;gap:1px;padding:2px 0 6px clamp(8px,2.5vw,12px);flex:none;border-left:1px solid var(--line);font-variant-numeric:tabular-nums;min-width:0}
+.fc .fl{font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-family:var(--mono)}
+.fc .fv{font:500 clamp(.95rem,4vw,1.15rem)/1.2 var(--mono);white-space:nowrap}
+.fc .fd{font-size:.74rem;color:var(--muted);line-height:1.3;white-space:nowrap}
+.orow .v small{display:block;font-size:.78rem;font-weight:400;color:var(--muted)}
+.out .note{font-size:.75rem;color:var(--muted);padding:8px 16px 12px;border-top:1px solid var(--line)}
 [hidden]{display:none!important}
 footer{font-size:.75rem;color:var(--muted);line-height:1.5}
 footer a{color:var(--lake)}
@@ -84,8 +99,8 @@ footer a{color:var(--lake)}
 <div class="wrap">
   <header>
     <div>
-      <div class="eyebrow" id="eyebrow">Bodensee · Obersee</div>
-      <h1>Pegel Konstanz</h1>
+      <div class="eyebrow" id="eyebrow">Konstanz · Pegelstand</div>
+      <h1>Bodensee aktuell</h1>
     </div>
     <button class="refresh" id="refresh" type="button">Aktualisieren</button>
   </header>
@@ -100,56 +115,61 @@ footer a{color:var(--lake)}
   <!-- Wasserstand -->
   <div class="view" id="view-w" role="tabpanel" aria-labelledby="tab-w">
     <section class="hero">
-      <svg id="staff" viewBox="0 0 64 210" width="64" aria-label="Pegellatte"></svg>
+      <svg id="staff" viewBox="0 0 64 210" width="50" aria-label="Pegellatte"></svg>
       <div>
-        <div class="eyebrow">Wasserstand · Pegel 906</div>
-        <div class="big" id="cur">–<small>cm</small></div>
+        <div class="eyebrow">Wasserstand · Pegel Konstanz (906)</div>
+        <div class="bigrow"><div class="big" id="cur">–<small>cm</small></div><div class="fc" id="wfc" hidden></div></div>
         <div class="nhn" id="nhn"></div>
         <div class="state" id="state"></div>
       </div>
     </section>
     <section class="rows" id="rows"></section>
+    <section class="out" id="wout" hidden></section>
     <section class="card">
       <h2>Letzte 30 Tage</h2>
-      <p class="sub">Verlauf in Stundenwerten, gestrichelt das mittlere Niveau zum gleichen Datum</p>
+      <p class="sub">Verlauf in Stundenwerten, gestrichelt das mittlere Niveau zum gleichen Datum. Rechts der senkrechten Linie die Vorhersage.</p>
       <svg id="chart31" viewBox="0 0 360 200"></svg>
-      <div class="legend"><span><i style="background:var(--lake)"></i>Gemessen</span><span><i style="background:var(--mean)"></i>Mittel</span></div>
+      <div class="legend"><span><i style="background:var(--lake)"></i>Gemessen</span><span><i style="background:var(--mean)"></i>Mittel</span><span><i class="box" style="background:color-mix(in srgb,var(--lake) 25%,transparent)"></i>Vorhersage</span></div>
     </section>
     <section class="card">
       <h2>Jahresgang</h2>
       <p class="sub">Mittlerer Verlauf übers Jahr und Lage von heute</p>
       <svg id="chartYear" viewBox="0 0 360 200"></svg>
+      <div class="legend"><span><i style="background:var(--lake)"></i><span class="ycur"></span></span><span><i style="background:var(--mean)"></i>Mittel</span><span><i style="background:var(--down)"></i>MNW (übliches Jahrestief)</span></div>
     </section>
   </div>
 
   <!-- Temperatur -->
   <div class="view" id="view-t" role="tabpanel" aria-labelledby="tab-t" hidden>
     <section class="hero">
-      <svg id="thermo" viewBox="0 0 64 210" width="64" aria-label="Thermometer"></svg>
+      <svg id="thermo" viewBox="0 0 64 210" width="50" aria-label="Thermometer"></svg>
       <div>
         <div class="eyebrow">Wassertemperatur · Lindau</div>
-        <div class="big" id="tcur">–<small>°C</small></div>
+        <div class="bigrow"><div class="big" id="tcur">–<small>°C</small></div><div class="fc" id="tfc" hidden></div></div>
         <div class="nhn" id="tsub"></div>
         <div class="state" id="tstate"></div>
       </div>
     </section>
     <section class="rows" id="trows"></section>
+    <section class="out" id="tout" hidden></section>
     <section class="card">
       <h2>Letzte 30 Tage</h2>
-      <p class="sub">Tagesmittel, gestrichelt das Mittel 2004–<span class="ylast"></span>, Fläche zeigt kältestes bis wärmstes Jahr</p>
+      <p class="sub">Tagesmittel, gestrichelt das Mittel 2004–<span class="ylast"></span>, Fläche zeigt kältestes bis wärmstes Jahr. Rechts der senkrechten Linie die Abschätzung.</p>
       <svg id="tchart31" viewBox="0 0 360 200"></svg>
-      <div class="legend"><span><i style="background:var(--warm)"></i><span class="ycur"></span></span><span><i style="background:var(--mean)"></i>Mittel</span><span><i class="box" style="background:var(--band)"></i>Spanne</span></div>
+      <div class="legend"><span><i style="background:var(--warm)"></i><span class="ycur"></span></span><span><i style="background:var(--mean)"></i>Mittel</span><span><i class="box" style="background:var(--band)"></i>Spanne</span><span><i style="background:repeating-linear-gradient(90deg,var(--warm) 0 4px,transparent 4px 7px)"></i>Abschätzung</span></div>
     </section>
     <section class="card">
       <h2>Jahresgang</h2>
       <p class="sub">Mittlerer Verlauf, Spanne der Jahre und dieses Jahr</p>
       <svg id="tchartYear" viewBox="0 0 360 200"></svg>
+      <div class="legend"><span><i style="background:var(--warm)"></i><span class="ycur"></span></span><span><i style="background:var(--mean)"></i>Mittel 2004–<span class="ylast"></span></span><span><i class="box" style="background:var(--band)"></i>Spanne</span></div>
     </section>
   </div>
 
   <footer>
-    Wasserstand live von <a href="https://www.pegelonline.wsv.de/gast/stammdaten?pegelnr=906" target="_blank" rel="noopener">PEGELONLINE (WSV)</a>, Pegelnull 391,89 m ü. NHN. MW 341 cm, MNW 262 cm (1902–2006, <a href="https://www.bodensee-hochwasser.info/pdf/W-Kennwerte-Obersee.pdf" target="_blank" rel="noopener">IGKB</a>). Das Wasserstandsmittel je Kalendertag ist eine Näherung aus typischen Monatswerten.<br>
-    Wassertemperatur: Messstelle Lindau des <a href="https://www.gkd.bayern.de/de/seen/wassertemperatur/bayern/lindau-20001001" target="_blank" rel="noopener">Gewässerkundlichen Dienstes Bayern</a> (Konstanz misst keine Temperatur). Vergleichswerte sind Tagesmittel; das Mittel je Kalendertag ist aus den Messjahren seit 2004 berechnet. Temperaturdaten werden etwa alle 30 Minuten übernommen.
+    Wasserstand live von <a href="https://www.pegelonline.wsv.de/gast/stammdaten?pegelnr=906" target="_blank" rel="noopener">PEGELONLINE (WSV)</a>, Pegelnull 391,89 m ü. NHN. MW 341 cm, MNW 262 cm (1902–2006, <a href="https://www.bodensee-hochwasser.info/pdf/W-Kennwerte-Obersee.pdf" target="_blank" rel="noopener">IGKB</a>). Das Wasserstandsmittel je Kalendertag ist eine Näherung aus typischen Monatswerten. Der Vorjahreswert ist das Tagesmittel am <a href="https://www.gkd.bayern.de/de/seen/wasserstand/bayern/lindau-20001001" target="_blank" rel="noopener">Pegel Lindau</a>, auf Konstanz umgerechnet (Lindau liegt im Mittel 3,9 cm tiefer, Abweichung meist unter 1 cm).<br>
+    Wassertemperatur: Messstelle Lindau des <a href="https://www.gkd.bayern.de/de/seen/wassertemperatur/bayern/lindau-20001001" target="_blank" rel="noopener">Gewässerkundlichen Dienstes Bayern</a> (Konstanz misst keine Temperatur). Vergleichswerte sind Tagesmittel; das Mittel je Kalendertag ist aus den Messjahren seit 2004 berechnet. Temperaturdaten werden etwa alle 30 Minuten übernommen.<br>
+    Ausblick: Wasserstandsvorhersage des <a href="https://www.hydrodaten.admin.ch/de/seen-und-fluesse/stationen-und-daten/2032" target="_blank" rel="noopener">BAFU für Romanshorn</a>, Wetter von <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a>.
   </footer>
 </div>
 
@@ -158,7 +178,8 @@ const API = "https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations/aa9
 const MW = 341, MNW = 262, ZERO = 391.89;
 const MONTH_MEAN = [296,289,296,319,361,403,411,391,363,339,319,303]; // Näherung, Monatsmitte
 const DAY = 864e5;
-const STORE = "pegel-kn-v1", TSTORE = "pegel-kn-temp-v1", VSTORE = "pegel-kn-view";
+const STORE = "pegel-kn-v1", TSTORE = "pegel-kn-temp-v1", VSTORE = "pegel-kn-view", HSTORE = "pegel-kn-hist-v1", OSTORE = "pegel-kn-outlook-v1";
+let WHIST = null, lastW = null, lastT = null, OUTLOOK = null; // Tagesmittel seit 1990, aus Pegel Lindau auf Konstanz umgerechnet
 
 // Fallback Wasserstand, Stand 26.10.2026 23:30
 const SNAPSHOT = (() => {
@@ -193,7 +214,7 @@ function setView(v){
   document.getElementById("tab-t").setAttribute("aria-selected", v==="t");
   document.getElementById("view-w").hidden = v!=="w";
   document.getElementById("view-t").hidden = v!=="t";
-  document.getElementById("eyebrow").textContent = v==="w" ? "Bodensee · Obersee" : "Bodensee · Wassertemperatur";
+  document.getElementById("eyebrow").textContent = v==="w" ? "Konstanz · Pegelstand" : "Lindau · Wassertemperatur";
   try{ localStorage.setItem(VSTORE, v); }catch(e){}
   showStatus();
 }
@@ -232,7 +253,110 @@ function nearest(series, t, tol){
   for(const p of series){ const dd=Math.abs(p.t-t); if(dd<bd){bd=dd;best=p;} }
   return bd <= tol ? best : null;
 }
+/* ---------- Ausblick ---------- */
+const fmtWd = d => d.toLocaleDateString("de-DE",{weekday:"short", day:"2-digit", month:"2-digit"});
+function slope(pts){ // [[x,y]] -> Steigung je x-Einheit
+  const n = pts.length; if(n < 3) return null;
+  const mx = pts.reduce((a,p)=>a+p[0],0)/n, my = pts.reduce((a,p)=>a+p[1],0)/n;
+  let num=0, den=0; for(const [x,y] of pts){ num += (x-mx)*(y-my); den += (x-mx)**2; }
+  return den ? num/den : null;
+}
+function wxNext(days){ // Summe/Mittel der naechsten Tage ab heute
+  const w = OUTLOOK && OUTLOOK.wx; if(!w) return null;
+  const now = new Date(); const key = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,"0")}-${String(now.getDate()).padStart(2,"0")}`;
+  let i = w.dates.indexOf(key); if(i < 0) return null;
+  const sl = (a) => a.slice(i, i+days);
+  const precip = sl(w.precip).reduce((a,b)=>a+b,0), snow = sl(w.snow).reduce((a,b)=>a+b,0);
+  const air = sl(w.air); return {precip, snow, air, airMean: air.reduce((a,b)=>a+b,0)/air.length, i, n: air.length};
+}
+function rainText(mm, snow){
+  let t = mm < 5 ? "Trocken" : mm < 20 ? "Wenig Regen" : mm < 50 ? "Regen" : "Viel Regen";
+  let sub = mm < 5 ? "kaum Zufluss, See bleibt eher auf dem Niveau" : mm < 20 ? "geringer Einfluss auf den Seespiegel" : mm < 50 ? "leichter Anstieg möglich" : "deutlicher Anstieg wahrscheinlich";
+  if(snow > 10) sub += ", in den Bergen teils als Schnee";
+  return {t, sub};
+}
+function lakeForecast(cur){ // amtliche Vorhersage Romanshorn als Veraenderung auf Konstanz uebertragen
+  const L = OUTLOOK && OUTLOOK.lake; if(!L || !L.median || !L.base) return null;
+  const base = L.base[1], f = v => cur + (v - base)*100;
+  const conv = a => (a||[]).map(([x,v]) => ({t: new Date(x).getTime(), v: f(v)}));
+  const med = conv(L.median), lo = conv(L.p25), hi = conv(L.p75);
+  if(!med.length || med.at(-1).t < Date.now() - DAY) return null; // veraltet
+  const mn = conv(L.min), mx = conv(L.max);
+  return {med, lo, hi, end: med.at(-1), rLo: (mn.length ? mn : lo).at(-1), rHi: (mx.length ? mx : hi).at(-1)};
+}
+function inDays(t){ const a = new Date(), b = new Date(t);
+  const n = Math.round((new Date(b.getFullYear(),b.getMonth(),b.getDate()) - new Date(a.getFullYear(),a.getMonth(),a.getDate()))/DAY);
+  return n === 1 ? "morgen" : `in ${n} Tagen`; }
+function heroForecast(id, arrow, cssCls, value, t, label){
+  const e = document.getElementById(id);
+  if(value == null){ e.hidden = true; return; }
+  e.innerHTML = `<span class="fl">${label}</span><span class="fv ${cssCls}">${arrow}&#8202;${value}</span><span class="fd">${fmtWd(new Date(t))}<br>${inDays(t)}</span>`;
+  e.hidden = false;
+}
+function renderWOut(series, cur){
+  const box = document.getElementById("wout");
+  const last = series.at(-1).t;
+  const wk = series.filter(p => p.t >= last - 7*DAY).map(p => [(p.t-last)/DAY, p.v]);
+  const sl = slope(wk);
+  const fc = lakeForecast(cur);
+  const wx = wxNext(7);
+  let h = `<h2>Ausblick</h2>`;
+  if(fc){
+    const d = fc.end.v - cur, arrow = Math.round(d) > 0 ? "↗" : Math.round(d) < 0 ? "↘" : "→";
+    const a = Math.round(Math.min(fc.rLo.v,fc.rHi.v)), b = Math.round(Math.max(fc.rLo.v,fc.rHi.v));
+    h += `<div class="orow"><div class="ic">${arrow}</div><div class="lbl">Vorhersage bis ${fmtWd(new Date(fc.end.t))}<span>${a===b ? "alle Modellläufe einig" : `Modellläufe zwischen ${a} und ${b} cm`}</span></div><div class="v ${cls(d)}">${Math.round(fc.end.v)} cm<small>${sgn(d)} cm</small></div></div>`;
+  }
+  if(sl != null){
+    const w = sl*7, arrow = Math.abs(w) < 1.5 ? "→" : w > 0 ? "↗" : "↘";
+    h += `<div class="orow"><div class="ic">${arrow}</div><div class="lbl">Trend letzte 7 Tage<span>${Math.abs(w) < 1.5 ? "nahezu unverändert" : w > 0 ? "steigend" : "fallend"}</span></div><div class="v ${cls(w)}">${sgn(w)} cm<small>pro Woche</small></div></div>`;
+  }
+  if(wx){
+    const r = rainText(wx.precip, wx.snow);
+    h += `<div class="orow"><div class="ic">☂</div><div class="lbl">${r.t} im Einzugsgebiet<span>${r.sub}</span></div><div class="v">${fmtC(wx.precip)} mm<small>7 Tage</small></div></div>`;
+  }
+  h += `<div class="note">Vorhersage: amtliches Ensemble des BAFU für den Pegel Romanshorn, als Veränderung auf Konstanz übertragen. Regen: Summe der nächsten 7 Tage, gemittelt über Alpenrhein, Montafon, Prättigau und Bodenseeraum (Open-Meteo).</div>`;
+  box.innerHTML = h; box.hidden = !(fc || sl != null || wx);
+  return fc;
+}
+function tempProjection(m, today, cur){
+  const w = OUTLOOK && OUTLOOK.wx; if(!w) return null;
+  const air = {}; w.dates.forEach((d,i)=>air[d]=w.air[i]);
+  const key = d => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+  // Anpassungsrate k aus den letzten 30 Tagen: dT = k * (Luft - Wasser)
+  let num=0, den=0;
+  for(let n=30;n>=1;n--){ const d = new Date(today); d.setDate(d.getDate()-n); const d2 = new Date(d); d2.setDate(d2.getDate()+1);
+    const t1 = m.at(d), t2 = m.at(d2), a = air[key(d)]; if(t1==null||t2==null||a==null) continue; const x = a - t1; num += (t2-t1)*x; den += x*x; }
+  let k = den > 0 ? num/den : 0.08; k = Math.max(0.02, Math.min(0.3, k));
+  const pts = [{n:0, v:cur}]; let T = cur;
+  for(let n=0;n<7;n++){ const d = new Date(today); d.setDate(d.getDate()+n); const a = air[key(d)]; if(a==null) break; T += k*(a - T); pts.push({n:n+1, v:T}); }
+  return pts.length > 1 ? {pts, k} : null;
+}
+function renderTOut(m, today, cur, proj){
+  const box = document.getElementById("tout");
+  const wk = []; for(let n=7;n>=0;n--){ const d = new Date(today); d.setDate(d.getDate()-n); const v = n===0 ? cur : m.at(d); if(v!=null) wk.push([-n, v]); }
+  const sl = slope(wk);
+  const wx = wxNext(7);
+  let h = `<h2>Ausblick</h2>`;
+  if(proj){
+    const e = proj.pts.at(-1), d = e.v - cur, arrow = Math.round(d*10) > 0 ? "↗" : Math.round(d*10) < 0 ? "↘" : "→";
+    const dd = new Date(today); dd.setDate(dd.getDate()+e.n);
+    h += `<div class="orow"><div class="ic">${arrow}</div><div class="lbl">Abschätzung bis ${fmtWd(dd)}<span>grob, aus der Lufttemperatur</span></div><div class="v ${clsT(d)}">${fmtC(e.v)} °C<small>${sgnC(d)} °C</small></div></div>`;
+  }
+  if(sl != null){
+    const arrow = Math.abs(sl) < 0.05 ? "→" : sl > 0 ? "↗" : "↘";
+    h += `<div class="orow"><div class="ic">${arrow}</div><div class="lbl">Trend letzte 7 Tage<span>${Math.abs(sl) < 0.05 ? "nahezu unverändert" : sl > 0 ? "erwärmt sich" : "kühlt ab"}</span></div><div class="v ${clsT(sl)}">${sgnC(sl)} °C<small>pro Tag</small></div></div>`;
+  }
+  if(wx){
+    const diff = wx.airMean - cur;
+    h += `<div class="orow"><div class="ic">☀</div><div class="lbl">Luft in Lindau<span>nächste 7 Tage, ${diff < -2 ? "deutlich kühler als der See, er kühlt weiter ab" : diff > 2 ? "wärmer als der See, er erwärmt sich eher" : "ähnlich wie der See"}</span></div><div class="v">${fmtC(wx.airMean)} °C<small>Mittel</small></div></div>`;
+  }
+  h += `<div class="note">Die Abschätzung nähert die Wassertemperatur Tag für Tag der vorhergesagten Lufttemperatur an. Wie schnell, ist aus den letzten 30 Tagen bestimmt. Wind und Sonne fehlen darin, daher nur als Richtung verstehen.</div>`;
+  box.innerHTML = h; box.hidden = !(proj || sl != null || wx);
+}
+
 function renderW(data, live){
+  lastW = {data, live};
+  document.querySelectorAll(".ycur").forEach(e=>e.textContent = new Date(data.series.at(-1).t).getFullYear());
   const s = data.series; const last = s.at(-1);
   const now = new Date(last.t);
   const today = new Date(now.getFullYear(),now.getMonth(),now.getDate());
@@ -251,11 +375,22 @@ function renderW(data, live){
     if(!p) return "";
     return `<div class="row"><div class="lbl">${l}<span>${fmtD(new Date(p.t))}, ${fmtT(new Date(p.t))}</span></div><div class="val">${Math.round(p.v)} cm</div><div class="delta ${cls(cur-p.v)}">${sgn(cur-p.v)}</div></div>`;
   }).join("");
-  document.getElementById("rows").innerHTML = rows +
+  let prev = "";
+  if(WHIST){
+    const ly = new Date(today); ly.setFullYear(ly.getFullYear()-1);
+    const [hy,hm,hd] = WHIST.start.split("-").map(Number);
+    const i = Math.round((ly - new Date(hy,hm-1,hd))/DAY);
+    const v = i>=0 && i<WHIST.daily.length ? WHIST.daily[i] : null;
+    if(v!=null) prev = `<div class="row"><div class="lbl">Vorjahr<span>${fmtD(ly)}${ly.getFullYear()}, Tagesmittel</span></div><div class="val">${v} cm</div><div class="delta ${cls(cur-v)}">${sgn(cur-v)}</div></div>`;
+  }
+  document.getElementById("rows").innerHTML = rows + prev +
     `<div class="row mean"><div class="lbl">Mittel am ${fmtD(today)}<span>langjährig, Näherung</span></div><div class="val">${Math.round(meanToday)} cm</div><div class="delta ${cls(cur-meanToday)}">${sgn(cur-meanToday)}</div></div>`;
-  drawStaff(cur, meanToday); draw31(s); drawYear(s, now, cur, meanToday);
+  const fc = renderWOut(s, cur);
+  if(fc){ const d = fc.end.v - cur; heroForecast("wfc", Math.round(d)>0?"↗":Math.round(d)<0?"↘":"→", cls(d), `${Math.round(fc.end.v)} cm`, fc.end.t, "Prognose"); }
+  else heroForecast("wfc", "", "", null);
+  drawStaff(cur, meanToday, fc ? fc.end.v : null); draw31(s, fc); drawYear(s, now, cur, meanToday);
 }
-function drawStaff(cur, meanToday){
+function drawStaff(cur, meanToday, fcv){
   const s = document.getElementById("staff"); s.innerHTML = "";
   const lo=200, hi=450, top=6, bot=204;
   const y = v => bot - (Math.max(lo,Math.min(hi,v))-lo)/(hi-lo)*(bot-top);
@@ -269,28 +404,37 @@ function drawStaff(cur, meanToday){
   el("line",{x1:18,x2:50,y1:y(meanToday),y2:y(meanToday),stroke:"var(--mean)","stroke-width":2,"stroke-dasharray":"4 2"},s);
   el("text",{x:46,y:y(meanToday)-3,"font-size":"8",fill:"var(--mean)"},s,"Ø");
   el("path",{d:`M44 ${y(cur)} l8 -5 v10z`,fill:"var(--lake)"},s);
+  if(fcv!=null && Math.abs(fcv-cur) >= 1) el("path",{d:`M45 ${y(fcv)} l7 -4 v8z`,fill:"none",stroke:"var(--lake)","stroke-width":1.2},s);
 }
-function draw31(series){
+function draw31(series, fc){
   const svg = document.getElementById("chart31"); svg.innerHTML = "";
-  const tEnd = series.at(-1).t, tStart = tEnd - 30*DAY;
+  const tNow = series.at(-1).t, tStart = tNow - 30*DAY;
   const pts = []; let lastH = -1;
   for(const p of series){ if(p.t < tStart) continue; const h = Math.floor(p.t/3600e3); if(h!==lastH){pts.push(p); lastH=h;} }
   if(pts.at(-1) !== series.at(-1)) pts.push(series.at(-1));
   if(pts.length < 2) return;
+  const tEnd = fc ? Math.max(tNow, fc.end.t) : tNow;
   const means = [];
   for(let t=pts[0].t; t<=tEnd; t+=DAY/2) means.push({t, v: meanFor(new Date(t))});
   means.push({t:tEnd, v:meanFor(new Date(tEnd))});
-  const all = pts.map(p=>p.v).concat(means.map(m=>m.v));
+  let all = pts.map(p=>p.v).concat(means.map(m=>m.v));
+  if(fc) all = all.concat(fc.lo.map(p=>p.v), fc.hi.map(p=>p.v));
   const lo = Math.floor((Math.min(...all)-6)/10)*10, hi = Math.ceil((Math.max(...all)+6)/10)*10;
   const x0=36,x1=350,y0=10,y1=176;
   const Y = axes(svg,x0,x1,y0,y1,lo,hi,(hi-lo)>80?20:10);
   const t0 = pts[0].t;
   const X = t => x0 + (t-t0)/(tEnd-t0)*(x1-x0);
   const line = pts.map((p,i)=>`${i?"L":"M"}${X(p.t).toFixed(1)} ${Y(p.v).toFixed(1)}`).join("");
-  el("path",{d:`${line}L${X(tEnd)} ${y1}L${X(t0)} ${y1}Z`,fill:"var(--lake-soft)",opacity:.8},svg);
+  el("path",{d:`${line}L${X(tNow)} ${y1}L${X(t0)} ${y1}Z`,fill:"var(--lake-soft)",opacity:.8},svg);
   el("path",{d:means.map((m,i)=>`${i?"L":"M"}${X(m.t).toFixed(1)} ${Y(m.v).toFixed(1)}`).join(""),fill:"none",stroke:"var(--mean)","stroke-width":1.8,"stroke-dasharray":"5 3"},svg);
+  if(fc){
+    el("line",{x1:X(tNow),x2:X(tNow),y1:y0,y2:y1,stroke:"var(--fg)","stroke-width":1,opacity:.35,"stroke-dasharray":"2 3"},svg);
+    const up = fc.hi.map(p=>`${X(p.t).toFixed(1)} ${Y(p.v).toFixed(1)}`), dn = fc.lo.map(p=>`${X(p.t).toFixed(1)} ${Y(p.v).toFixed(1)}`).reverse();
+    if(up.length > 1) el("path",{d:"M"+up.concat(dn).join("L")+"Z",fill:"var(--lake)",opacity:.22},svg);
+    el("path",{d:fc.med.map((p,i)=>`${i?"L":"M"}${X(p.t).toFixed(1)} ${Y(p.v).toFixed(1)}`).join(""),fill:"none",stroke:"var(--lake)","stroke-width":2,"stroke-dasharray":"4 3"},svg);
+  }
   el("path",{d:line,fill:"none",stroke:"var(--lake)","stroke-width":2,"stroke-linejoin":"round"},svg);
-  el("circle",{cx:X(tEnd),cy:Y(pts.at(-1).v),r:4,fill:"var(--lake)",stroke:"var(--surface)","stroke-width":2},svg);
+  el("circle",{cx:X(tNow),cy:Y(pts.at(-1).v),r:4,fill:"var(--lake)",stroke:"var(--surface)","stroke-width":2},svg);
   [0,1,2,3,4].forEach(i=>{ const t = t0 + (tEnd-t0)*i/4;
     el("text",{x:X(t),y:192,"text-anchor":i===0?"start":i===4?"end":"middle"},svg,fmtD(new Date(t))); });
 }
@@ -306,9 +450,15 @@ function drawYear(series, now, cur, meanToday){
   el("path",{d,fill:"none",stroke:"var(--mean)","stroke-width":2},svg);
   el("line",{x1:x0,x2:x1,y1:Y(MNW),y2:Y(MNW),stroke:"var(--down)","stroke-dasharray":"2 3",opacity:.7},svg);
   el("text",{x:x1,y:Y(MNW)-4,"text-anchor":"end",fill:"var(--down)"},svg,"MNW 262");
-  const seg = []; let lastD = -1;
-  for(const p of series){ const dt = new Date(p.t); if(dt.getFullYear()!==y) continue; const k = doy(dt); if(k!==lastD){ seg.push(`${X(k).toFixed(1)} ${Yc(p.v).toFixed(1)}`); lastD=k; } }
-  if(seg.length>1) el("path",{d:"M"+seg.join("L"),fill:"none",stroke:"var(--lake)","stroke-width":2.6},svg);
+  const byDay = new Map();
+  if(WHIST){
+    const [hy,hm,hd] = WHIST.start.split("-").map(Number); const hs = new Date(hy,hm-1,hd);
+    for(let t=0;t<=doy(now);t++){ const i = Math.round((new Date(y,0,1+t) - hs)/DAY); const v = i>=0 && i<WHIST.daily.length ? WHIST.daily[i] : null; if(v!=null) byDay.set(t, v); }
+  }
+  for(const p of series){ const dt = new Date(p.t); if(dt.getFullYear()===y) byDay.set(doy(dt), p.v); }
+  let dIst = "", pen = false;
+  for(let t=0;t<=doy(now);t++){ const v = byDay.get(t); if(v==null){ pen=false; continue; } dIst += `${pen?"L":"M"}${X(t).toFixed(1)} ${Yc(v).toFixed(1)}`; pen = true; }
+  if(dIst) el("path",{d:dIst,fill:"none",stroke:"var(--lake)","stroke-width":2.4,"stroke-linejoin":"round"},svg);
   const tx = X(doy(now));
   el("line",{x1:tx,x2:tx,y1:Yc(meanToday),y2:Yc(cur),stroke:"var(--fg)","stroke-width":1,opacity:.5},svg);
   el("circle",{cx:tx,cy:Yc(cur),r:4.5,fill:"var(--lake)",stroke:"var(--surface)","stroke-width":2},svg);
@@ -342,6 +492,7 @@ function tempModel(j){
   return {start, at, now, year, climo, cur: j.current.v, firstYear: sy};
 }
 function renderT(j, live){
+  lastT = {j, live};
   const m = tempModel(j);
   const {now, cur} = m;
   const today = new Date(now.getFullYear(),now.getMonth(),now.getDate());
@@ -371,14 +522,19 @@ function renderT(j, live){
   html += row("Vor einem Tag", `${fmtD(back(1))}, Tagesmittel`, m.at(back(1)));
   html += row("Vor einer Woche", `${fmtD(back(7))}, Tagesmittel`, m.at(back(7)));
   html += row("Vor einem Monat", `${fmtD(back(30))}, Tagesmittel`, m.at(back(30)));
-  html += row("Vor einem Jahr", `${fmtD(ly)}${ly.getFullYear()}, Tagesmittel`, m.at(ly));
+  html += row("Vorjahr", `${fmtD(ly)}${ly.getFullYear()}, Tagesmittel`, m.at(ly));
   if(c) html += row(`Mittel am ${fmtD(today)}`, `${m.firstYear}–${m.year-1}, ${c.n} Jahre`, c.mean, "mean");
   document.getElementById("trows").innerHTML = html;
-  drawThermo(cur, c);
-  drawT31(m, today, cur);
+  const proj = tempProjection(m, today, cur);
+  renderTOut(m, today, cur, proj);
+  if(proj){ const e = proj.pts.at(-1), d = e.v - cur, dd = new Date(today); dd.setDate(dd.getDate()+e.n);
+    heroForecast("tfc", Math.round(d*10)>0?"↗":Math.round(d*10)<0?"↘":"→", clsT(d), `${fmtC(e.v)} °C`, dd.getTime(), "Abschätzung"); }
+  else heroForecast("tfc", "", "", null);
+  drawThermo(cur, c, proj ? proj.pts.at(-1).v : null);
+  drawT31(m, today, cur, proj);
   drawTYear(m, today, cur, c);
 }
-function drawThermo(cur, c){
+function drawThermo(cur, c, fcv){
   const s = document.getElementById("thermo"); s.innerHTML = "";
   const lo=0, hi=28, top=8, bot=176;
   const y = v => bot - (Math.max(lo,Math.min(hi,v))-lo)/(hi-lo)*(bot-top);
@@ -394,29 +550,36 @@ function drawThermo(cur, c){
     el("line",{x1:16,x2:50,y1:y(c.mean),y2:y(c.mean),stroke:"var(--mean)","stroke-width":2,"stroke-dasharray":"4 2"},s);
     el("text",{x:52,y:y(c.mean)+3,"font-size":"8",fill:"var(--mean)"},s,"Ø");
   }
+  if(fcv!=null && Math.abs(fcv-cur) >= 0.2) el("path",{d:`M10 ${y(fcv)} l-7 -4 v8z`,fill:"none",stroke:"var(--warm)","stroke-width":1.2},s);
 }
-function drawT31(m, today, cur){
+function drawT31(m, today, cur, proj){
   const svg = document.getElementById("tchart31"); svg.innerHTML = "";
-  const days = []; for(let n=30;n>=0;n--){ const d = new Date(today); d.setDate(d.getDate()-n); days.push(d); }
-  const obs = days.map(d=>({d, v: m.at(d)}));
-  if(obs[obs.length-1].v==null) obs[obs.length-1].v = cur;
+  const ahead = proj ? proj.pts.at(-1).n : 0, N = 30 + ahead;
+  const days = []; for(let n=-30;n<=ahead;n++){ const d = new Date(today); d.setDate(d.getDate()+n); days.push(d); }
+  const obs = days.slice(0,31).map(d=>({d, v: m.at(d)}));
+  if(obs[30].v==null) obs[30].v = cur;
   const cl = days.map(d=>({d, c: m.climo(d)}));
-  const all = obs.filter(o=>o.v!=null).map(o=>o.v).concat(cl.filter(x=>x.c).flatMap(x=>[x.c.min,x.c.max]), [cur]);
+  let all = obs.filter(o=>o.v!=null).map(o=>o.v).concat(cl.filter(x=>x.c).flatMap(x=>[x.c.min,x.c.max]), [cur]);
+  if(proj) all = all.concat(proj.pts.map(p=>p.v));
   const lo = Math.floor(Math.min(...all)-1), hi = Math.ceil(Math.max(...all)+1);
   const x0=36,x1=350,y0=10,y1=176;
   const step = (hi-lo) > 12 ? 4 : 2;
   const Y = axes(svg,x0,x1,y0,y1,lo,hi,step,v=>v+"°");
-  const X = i => x0 + i/30*(x1-x0);
+  const X = i => x0 + i/N*(x1-x0);
   const band = cl.map((x,i)=>x.c?[X(i),Y(x.c.max)]:null).filter(Boolean);
   const bandLo = cl.map((x,i)=>x.c?[X(i),Y(x.c.min)]:null).filter(Boolean).reverse();
   if(band.length>1) el("path",{d:"M"+band.concat(bandLo).map(p=>p[0].toFixed(1)+" "+p[1].toFixed(1)).join("L")+"Z",fill:"var(--band)",opacity:.8},svg);
   const meanPts = cl.map((x,i)=>x.c?`${X(i).toFixed(1)} ${Y(x.c.mean).toFixed(1)}`:null).filter(Boolean);
   if(meanPts.length>1) el("path",{d:"M"+meanPts.join("L"),fill:"none",stroke:"var(--mean)","stroke-width":1.8,"stroke-dasharray":"5 3"},svg);
+  if(proj){
+    el("line",{x1:X(30),x2:X(30),y1:y0,y2:y1,stroke:"var(--fg)","stroke-width":1,opacity:.35,"stroke-dasharray":"2 3"},svg);
+    el("path",{d:proj.pts.map((p,i)=>`${i?"L":"M"}${X(30+p.n).toFixed(1)} ${Y(p.v).toFixed(1)}`).join(""),fill:"none",stroke:"var(--warm)","stroke-width":2,"stroke-dasharray":"4 3"},svg);
+  }
   let d="", pen=false;
   obs.forEach((o,i)=>{ if(o.v==null){pen=false;return;} d += `${pen?"L":"M"}${X(i).toFixed(1)} ${Y(o.v).toFixed(1)}`; pen=true; });
   el("path",{d,fill:"none",stroke:"var(--warm)","stroke-width":2.2,"stroke-linejoin":"round"},svg);
   el("circle",{cx:X(30),cy:Y(cur),r:4,fill:"var(--warm)",stroke:"var(--surface)","stroke-width":2},svg);
-  [0,7.5,15,22.5,30].forEach((i,k)=>el("text",{x:X(i),y:192,"text-anchor":k===0?"start":k===4?"end":"middle"},svg,fmtD(days[Math.round(i)])));
+  [0,1,2,3,4].forEach(k=>{ const i = Math.round(N*k/4); el("text",{x:X(i),y:192,"text-anchor":k===0?"start":k===4?"end":"middle"},svg,fmtD(days[i])); });
 }
 function drawTYear(m, today, cur, c){
   const svg = document.getElementById("tchartYear"); svg.innerHTML = "";
@@ -459,6 +622,23 @@ async function refreshW(){
     const data = {series}; save(STORE, data); renderW(data, true);
   }catch(e){ renderW(load(STORE)?.series?.length ? load(STORE) : SNAPSHOT, false); }
 }
+async function refreshH(){
+  try{
+    const j = await getJSON(`wl_hist.json?t=${Date.now()}`);
+    if(!j || !j.daily) throw new Error("leer");
+    WHIST = j; save(HSTORE, j);
+  }catch(e){ if(!WHIST) WHIST = load(HSTORE); }
+  if(lastW) renderW(lastW.data, lastW.live);
+}
+async function refreshO(){
+  try{
+    const j = await getJSON(`outlook.json?t=${Date.now()}`);
+    if(!j || (!j.lake && !j.wx)) throw new Error("leer");
+    OUTLOOK = j; save(OSTORE, j);
+  }catch(e){ if(!OUTLOOK) OUTLOOK = load(OSTORE); }
+  if(lastW) renderW(lastW.data, lastW.live);
+  if(lastT) renderT(lastT.j, lastT.live);
+}
 async function refreshT(){
   try{
     const j = await getJSON(`temp.json?t=${Date.now()}`);
@@ -474,10 +654,11 @@ let busy = false;
 async function refresh(){
   if(busy) return; busy = true;
   const btn = document.getElementById("refresh"); btn.disabled = true; btn.textContent = "Lädt …";
-  try{ await Promise.all([refreshW(), refreshT()]); }
+  try{ await Promise.all([refreshW(), refreshT(), refreshH(), refreshO()]); }
   finally{ busy = false; btn.disabled = false; btn.textContent = "Aktualisieren"; }
 }
 
+WHIST = load(HSTORE); OUTLOOK = load(OSTORE);
 let startView = "w";
 try{ startView = localStorage.getItem(VSTORE) || "w"; }catch(e){}
 if(location.hash === "#temperatur") startView = "t";

@@ -20,10 +20,16 @@ jobs:
         env:
           TZ: Europe/Berlin
         run: python3 scripts/update_temp.py
+      - name: Wasserstand-Historie (Lindau, auf Konstanz umgerechnet)
+        continue-on-error: true
+        run: python3 scripts/update_wl_hist.py
+      - name: Ausblick (Vorhersage BAFU, Wetter Open-Meteo)
+        continue-on-error: true
+        run: python3 scripts/update_outlook.py
       - name: Speichern
         run: |
           rm -f data.tmp
           git config user.name "pegel-bot"
           git config user.email "pegel-bot@users.noreply.github.com"
-          git add data.json temp.json
+          git add data.json temp.json wl_hist.json outlook.json
           git diff --cached --quiet || (git commit -m "Daten $(date -u +%FT%TZ)" && git push)
