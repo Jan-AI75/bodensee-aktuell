@@ -67,8 +67,8 @@ button.refresh[disabled]{opacity:.6}
 .pal-item .sw i{width:12px;height:18px}
 .pal-item .chk{margin-left:auto;color:var(--lake);font-size:.9rem;visibility:hidden}
 .pal-item[aria-checked="true"] .chk{visibility:visible}
-.seg{display:grid;grid-template-columns:1fr 1fr;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:4px;gap:4px}
-.seg button{font:600 .9rem var(--body);border:0;border-radius:9px;padding:9px 8px;background:transparent;color:var(--muted);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:1px}
+.seg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:4px;gap:4px}
+.seg button{font:600 clamp(.8rem,3.6vw,.9rem) var(--body);min-width:0;border:0;border-radius:9px;padding:9px 8px;background:transparent;color:var(--muted);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:1px}
 .seg button small{font:500 .78rem var(--mono);font-variant-numeric:tabular-nums}
 .seg button[aria-selected="true"]{background:var(--lake);color:var(--surface)}
 .status{font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:6px}
@@ -120,6 +120,57 @@ svg text{font-family:var(--mono);font-size:10px;fill:var(--muted)}
 footer{font-size:.75rem;color:var(--muted);line-height:1.5}
 footer a{color:var(--lake)}
 @media (prefers-reduced-motion: no-preference){.seg button{transition:background .15s,color .15s}}
+/* Warnhinweis */
+.warnbar{display:flex;gap:10px;align-items:flex-start;border-radius:12px;padding:10px 14px;border:1px solid color-mix(in srgb,var(--wcol) 55%,transparent);background:color-mix(in srgb,var(--wcol) 16%,var(--surface));color:var(--fg);cursor:pointer;text-align:left;font:inherit;width:100%}
+.warnbar .wi{width:22px;height:22px;flex:none;margin-top:1px}
+.warnbar b{display:block;font-weight:600}
+.warnbar span{font-size:.8rem;color:var(--muted)}
+.lvl1{--wcol:var(--mean)} .lvl2{--wcol:var(--down)}
+/* Wetter */
+.rseg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:4px}
+.rseg button{border:0;border-radius:9px;padding:7px 4px;background:transparent;color:var(--muted);cursor:pointer;display:flex;flex-direction:column;align-items:center;font:600 .82rem var(--body);min-width:0}
+.rseg button small{font:400 .72rem var(--body)}
+.rseg button[aria-pressed="true"]{background:color-mix(in srgb,var(--lake) 20%,transparent);color:var(--fg);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--lake) 55%,transparent)}
+.wxhero{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(10px,3vw,16px);align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
+.wxicon{width:58px;height:58px;color:var(--fg)}
+.wxicon svg,.hr svg,.drow svg{display:block;width:100%;height:100%}
+.wind{display:grid;gap:1px;padding:2px 0 6px clamp(8px,2.5vw,12px);border-left:1px solid var(--line);flex:none}
+.wind .fv{font:500 clamp(.95rem,4vw,1.15rem)/1.2 var(--mono);white-space:nowrap;display:flex;align-items:center;gap:6px}
+.wind .fv svg{width:16px;height:16px;flex:none}
+.wind .fd{font-size:.74rem;color:var(--muted);line-height:1.3;white-space:nowrap}
+.wind .fl{font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-family:var(--mono)}
+.view > *{min-width:0}
+.hours{min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 0 8px}
+.hours h2,.days h2,.warns h2{font-family:var(--display);font-weight:500;font-size:1.05rem;margin:0;padding:0 16px 8px}
+.hscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.hscroll::-webkit-scrollbar{display:none}
+.hrow{display:flex;gap:2px;padding:0 10px;width:max-content}
+.hr{display:grid;justify-items:center;gap:3px;width:56px;padding:6px 2px;border-radius:10px;font-variant-numeric:tabular-nums}
+.hr.now{background:color-mix(in srgb,var(--lake) 12%,transparent)}
+.hr .h{font:500 .74rem var(--mono);color:var(--muted)}
+.hr .ic{width:26px;height:26px}
+.hr .t{font:500 .95rem var(--mono)}
+.hr .w{font:400 .74rem var(--mono);display:flex;align-items:center;gap:2px}
+.hr .w svg{width:11px;height:11px}
+.hr .g{font:400 .68rem var(--mono);color:var(--muted)}
+.hr .r{font:400 .68rem var(--mono);color:var(--lake);min-height:1em}
+.days,.warns{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding-top:12px;overflow:hidden}
+.drow{display:grid;grid-template-columns:3.9em 26px minmax(0,1fr) auto;gap:8px;align-items:center;padding:11px 16px;border-top:1px solid var(--line)}
+.drow .dl{font-weight:500}
+.drow .dl span{display:block;font:400 .74rem var(--mono);color:var(--muted)}
+.drow .ic{width:28px;height:28px}
+.drow .mid{min-width:0;font-size:.8rem;color:var(--muted);line-height:1.35}
+.drow .mid b{color:var(--fg);font-weight:500;font-family:var(--mono);font-size:.84rem}
+.drow .tt{font:500 .95rem var(--mono);text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.drow .tt small{color:var(--muted);font-weight:400}
+.wrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;padding:11px 16px;border-top:1px solid var(--line)}
+.wrow .lbl{font-weight:500;min-width:0}
+.wrow .lbl span{display:block;font-size:.76rem;color:var(--muted);font-weight:400}
+.wchip{font-size:.78rem;font-weight:600;padding:3px 10px;border-radius:999px;white-space:nowrap;color:var(--up);background:color-mix(in srgb,var(--up) 15%,transparent)}
+.wchip.l1{color:var(--mean);background:color-mix(in srgb,var(--mean) 18%,transparent)}
+.wchip.l2{color:var(--down);background:color-mix(in srgb,var(--down) 18%,transparent)}
+.wchip.lx{color:var(--muted);background:color-mix(in srgb,var(--muted) 15%,transparent)}
+.warns .note{font-size:.75rem;color:var(--muted);padding:10px 16px 12px;border-top:1px solid var(--line)}
 </style>
 <script>
   (function(){ var p = "nachtsee"; try{ p = localStorage.getItem("pegel-kn-palette") || p; }catch(e){}
@@ -145,7 +196,10 @@ footer a{color:var(--lake)}
   <div class="seg" role="tablist" aria-label="Ansicht">
     <button type="button" role="tab" id="tab-w" aria-selected="true" aria-controls="view-w">Wasserstand<small id="tab-w-val">–</small></button>
     <button type="button" role="tab" id="tab-t" aria-selected="false" aria-controls="view-t">Temperatur<small id="tab-t-val">–</small></button>
+    <button type="button" role="tab" id="tab-x" aria-selected="false" aria-controls="view-x">Wetter<small id="tab-x-val">–</small></button>
   </div>
+
+  <button type="button" class="warnbar" id="warnbar" hidden></button>
 
   <div class="status" id="status"><span class="dot"></span><span id="statusText">Lade aktuelle Werte …</span></div>
 
@@ -203,10 +257,34 @@ footer a{color:var(--lake)}
     </section>
   </div>
 
+  <!-- Wetter -->
+  <div class="view" id="view-x" role="tabpanel" aria-labelledby="tab-x" hidden>
+    <div class="rseg" id="rseg" role="group" aria-label="Seeteil">
+      <button type="button" data-r="0" aria-pressed="true">Ost<small>Lindau</small></button>
+      <button type="button" data-r="1" aria-pressed="false">Mitte<small>Friedrichshafen</small></button>
+      <button type="button" data-r="2" aria-pressed="false">West<small>Überlingen</small></button>
+    </div>
+    <section class="wxhero">
+      <div class="wxicon" id="wxicon"></div>
+      <div>
+        <div class="eyebrow" id="wxeb">Wetter</div>
+        <div class="bigrow"><div class="big" id="wxt">–<small>°C</small></div>
+          <div class="wind" id="wxwind"></div></div>
+        <div class="nhn" id="wxsub"></div>
+        <div class="state" id="wxstate" hidden></div>
+      </div>
+    </section>
+    <section class="hours"><h2>Heute stündlich</h2><div class="hscroll"><div class="hrow" id="hrow"></div></div></section>
+    <section class="days"><h2>Die nächsten Tage</h2><div id="drows"></div></section>
+    <section class="warns" id="warns"><h2>Starkwind- und Sturmwarnung</h2><div id="wrows"></div>
+      <div class="note" id="wnote"></div></section>
+  </div>
+
   <footer>
     Wasserstand live von <a href="https://www.pegelonline.wsv.de/gast/stammdaten?pegelnr=906" target="_blank" rel="noopener">PEGELONLINE (WSV)</a>, Pegelnull 391,89 m ü. NHN. MW 341 cm, MNW 262 cm (1902–2006, <a href="https://www.bodensee-hochwasser.info/pdf/W-Kennwerte-Obersee.pdf" target="_blank" rel="noopener">IGKB</a>). Das Wasserstandsmittel je Kalendertag ist eine Näherung aus typischen Monatswerten. Der Vorjahreswert ist das Tagesmittel am <a href="https://www.gkd.bayern.de/de/seen/wasserstand/bayern/lindau-20001001" target="_blank" rel="noopener">Pegel Lindau</a>, auf Konstanz umgerechnet (Lindau liegt im Mittel 3,9 cm tiefer, Abweichung meist unter 1 cm).<br>
     Wassertemperatur: Messstelle Lindau des <a href="https://www.gkd.bayern.de/de/seen/wassertemperatur/bayern/lindau-20001001" target="_blank" rel="noopener">Gewässerkundlichen Dienstes Bayern</a> (Konstanz misst keine Temperatur). Vergleichswerte sind Tagesmittel; das Mittel je Kalendertag ist aus den Messjahren seit 2004 berechnet. Temperaturdaten werden etwa alle 30 Minuten übernommen.<br>
-    Ausblick: Wasserstandsvorhersage des <a href="https://www.hydrodaten.admin.ch/de/seen-und-fluesse/stationen-und-daten/2032" target="_blank" rel="noopener">BAFU für Romanshorn</a>, Wetter von <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a>.
+    Ausblick: Wasserstandsvorhersage des <a href="https://www.hydrodaten.admin.ch/de/seen-und-fluesse/stationen-und-daten/2032" target="_blank" rel="noopener">BAFU für Romanshorn</a>, Wetter von <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a> (CC BY 4.0), Modelle u. a. des Deutschen Wetterdienstes und von MeteoSchweiz.<br>
+    Starkwind- und Sturmwarnung: Status der <a href="https://www.kttg.ch/kapo/htm/stwarn.shtml" target="_blank" rel="noopener">Kantonspolizei Thurgau</a>, etwa alle 5 Minuten übernommen. Verbindlich sind allein die Warnleuchten am Ufer.
   </footer>
 </div>
 
@@ -216,7 +294,7 @@ const MW = 341, MNW = 262, ZERO = 391.89;
 const MONTH_MEAN = [296,289,296,319,361,403,411,391,363,339,319,303]; // Näherung, Monatsmitte
 const DAY = 864e5;
 const STORE = "pegel-kn-v1", TSTORE = "pegel-kn-temp-v1", VSTORE = "pegel-kn-view", HSTORE = "pegel-kn-hist-v1", OSTORE = "pegel-kn-outlook-v1";
-let WHIST = null, lastW = null, lastT = null, OUTLOOK = null; // Tagesmittel seit 1990, aus Pegel Lindau auf Konstanz umgerechnet
+let WHIST = null, lastW = null, lastT = null, OUTLOOK = null, WX = null, WARN = null; // Tagesmittel seit 1990, aus Pegel Lindau auf Konstanz umgerechnet
 
 // Fallback Wasserstand, Stand 26.10.2026 23:30
 const SNAPSHOT = (() => {
@@ -277,20 +355,23 @@ applyPalette(palette);
 
 /* ---------- Ansicht umschalten ---------- */
 let view = "w";
+const EYEBROW = {w:"Konstanz · Pegelstand", t:"Lindau · Wassertemperatur", x:"Bodensee · Wetter"};
 function setView(v){
+  if(!EYEBROW[v]) v = "w";
   view = v;
-  document.getElementById("tab-w").setAttribute("aria-selected", v==="w");
-  document.getElementById("tab-t").setAttribute("aria-selected", v==="t");
-  document.getElementById("view-w").hidden = v!=="w";
-  document.getElementById("view-t").hidden = v!=="t";
-  document.getElementById("eyebrow").textContent = v==="w" ? "Konstanz · Pegelstand" : "Lindau · Wassertemperatur";
+  for(const k of ["w","t","x"]){
+    document.getElementById("tab-"+k).setAttribute("aria-selected", v===k);
+    document.getElementById("view-"+k).hidden = v!==k;
+  }
+  document.getElementById("eyebrow").textContent = EYEBROW[v];
   try{ localStorage.setItem(VSTORE, v); }catch(e){}
   showStatus();
 }
 document.getElementById("tab-w").addEventListener("click", ()=>setView("w"));
 document.getElementById("tab-t").addEventListener("click", ()=>setView("t"));
+document.getElementById("tab-x").addEventListener("click", ()=>setView("x"));
 
-const statusInfo = {w:{text:"Lade aktuelle Werte …",live:true}, t:{text:"Lade aktuelle Werte …",live:true}};
+const statusInfo = {w:{text:"Lade aktuelle Werte …",live:true}, t:{text:"Lade aktuelle Werte …",live:true}, x:{text:"Lade aktuelle Werte …",live:true}};
 function showStatus(){
   const s = statusInfo[view];
   document.getElementById("status").classList.toggle("stale", !s.live);
@@ -719,22 +800,161 @@ async function refreshT(){
     else { statusInfo.t = {live:false, text:"Temperaturdaten nicht erreichbar"}; showStatus(); }
   }
 }
+/* ---------- Wetter ---------- */
+const WX_URL = "https://api.open-meteo.com/v1/forecast?latitude=47.535,47.625,47.755&longitude=9.66,9.47,9.165"
+  + "&current=temperature_2m,apparent_temperature,weather_code,cloud_cover,precipitation,wind_speed_10m,wind_gusts_10m,wind_direction_10m"
+  + "&hourly=temperature_2m,precipitation,precipitation_probability,weather_code,wind_speed_10m,wind_gusts_10m,wind_direction_10m"
+  + "&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,wind_speed_10m_max,wind_gusts_10m_max,wind_direction_10m_dominant,sunrise,sunset"
+  + "&forecast_days=4&timezone=Europe%2FBerlin&wind_speed_unit=kmh";
+const WXSTORE = "pegel-kn-wx-v1", RSTORE = "pegel-kn-region", WNSTORE = "pegel-kn-warn-v1";
+const REGIONS = [
+  {n:"Ost", town:"Lindau", warn:"ost"},
+  {n:"Mitte", town:"Friedrichshafen", warn:"mitte"},
+  {n:"West", town:"Überlingen", warn:"west"},
+];
+const WARNAREA = {
+  west: {n:"West", d:"Überlinger See und Untersee, westlich der Linie Konstanz–Meersburg"},
+  mitte:{n:"Mitte", d:"Konstanz, Meersburg, Friedrichshafen bis Arbon–Langenargen"},
+  ost:  {n:"Ost", d:"Langenargen, Lindau, Bregenz, östlich von Arbon–Langenargen"},
+};
+let region = 0; try{ region = +(localStorage.getItem(RSTORE) || 0) || 0; }catch(e){}
+const BFT = [1,6,12,20,29,39,50,62,75,89,103,118];
+const bft = v => { let b = 0; while(b < BFT.length && v >= BFT[b]) b++; return b; };
+const DIRS = ["N","NO","O","SO","S","SW","W","NW"];
+const dirName = deg => DIRS[Math.round(((deg%360)+360)%360/45)%8];
+function wxText(c){
+  if(c===0) return "Klar"; if(c===1) return "Überwiegend klar"; if(c===2) return "Teils bewölkt"; if(c===3) return "Bedeckt";
+  if(c===45||c===48) return "Nebel"; if(c>=51&&c<=57) return "Nieselregen"; if(c>=61&&c<=67) return c>=65?"Starker Regen":"Regen";
+  if(c>=71&&c<=77) return "Schnee"; if(c>=80&&c<=82) return "Schauer"; if(c===85||c===86) return "Schneeschauer"; if(c>=95) return "Gewitter"; return "–";
+}
+function wxIcon(c, night){ // schlichte Liniensymbole
+  const S = 'fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
+  const sun = `<circle cx="12" cy="12" r="4.2" ${S}/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" ${S}/>`;
+  const moon = `<path d="M19 14.5A7.5 7.5 0 0 1 9.5 5a7.5 7.5 0 1 0 9.5 9.5z" ${S}/>`;
+  const cloud = (y=0) => `<path d="M7 ${18+y}h10a4 4 0 0 0 .4-8A5.5 5.5 0 0 0 7 ${10.5+y}a3.8 3.8 0 0 0 0 ${7.5}z" ${S}/>`;
+  const small = night ? `<g transform="translate(-3,-4) scale(.62)">${moon}</g>` : `<g transform="translate(-3,-4) scale(.62)">${sun}</g>`;
+  let b;
+  if(c===0) b = night ? moon : sun;
+  else if(c===1||c===2) b = small + `<g transform="translate(2,1) scale(.92)">${cloud()}</g>`;
+  else if(c===3) b = cloud(-1);
+  else if(c===45||c===48) b = `<path d="M4 9h16M3 13h18M5 17h14" ${S}/>`;
+  else if(c>=95) b = cloud(-4) + `<path d="M12.5 15.5l-2 3.5h3l-2 3.5" ${S}/>`;
+  else if((c>=71&&c<=77)||c===85||c===86) b = cloud(-4) + `<path d="M8 18.5v.01M12 20.5v.01M16 18.5v.01" ${S} stroke-width="2.6"/>`;
+  else if(c>=51) b = cloud(-4) + `<path d="M8 17l-1 3M12 17l-1 3M16 17l-1 3" ${S}/>`;
+  else b = cloud(-1);
+  return `<svg viewBox="0 0 24 24" aria-hidden="true">${b}</svg>`;
+}
+const arrowSvg = deg => `<svg viewBox="0 0 16 16" aria-hidden="true" style="transform:rotate(${deg}deg)"><path d="M8 1.5v12M3.5 9.5L8 14l4.5-4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+const isNight = (iso, daily) => { const day = iso.slice(0,10); const i = daily.time.indexOf(day); if(i<0) return false; return iso < daily.sunrise[i] || iso >= daily.sunset[i]; };
+const wd = s => { const [y,m,d] = s.split("-").map(Number); return new Date(y,m-1,d); };
+
+function renderX(live){
+  if(!WX) return;
+  const p = WX[region]; if(!p || !p.current) return;
+  const R = REGIONS[region], c = p.current, D = p.daily, H = p.hourly;
+  document.querySelectorAll("#rseg button").forEach(b=>b.setAttribute("aria-pressed", +b.dataset.r===region));
+  const night = isNight(c.time, D);
+  document.getElementById("wxicon").innerHTML = wxIcon(c.weather_code, night);
+  document.getElementById("wxeb").textContent = `${R.n} · ${R.town}`;
+  document.getElementById("wxt").innerHTML = `${Math.round(c.temperature_2m)}<small>°C</small>`;
+  document.getElementById("wxwind").innerHTML = `<span class="fl">Wind aus ${dirName(c.wind_direction_10m)}</span>
+    <span class="fv">${arrowSvg(c.wind_direction_10m)}${Math.round(c.wind_speed_10m)} km/h</span>
+    <span class="fd">${bft(c.wind_speed_10m)} Bft · Böen ${Math.round(c.wind_gusts_10m)} km/h (${bft(c.wind_gusts_10m)} Bft)</span>`;
+  document.getElementById("wxsub").textContent = `${wxText(c.weather_code)} · gefühlt ${Math.round(c.apparent_temperature)} °C`;
+  document.getElementById("tab-x-val").textContent = `${Math.round(c.temperature_2m)}° · ${Math.round(c.wind_speed_10m)} km/h`;
+  // Warnstatus fuer den gewaehlten Ort
+  const st = document.getElementById("wxstate");
+  const wr = WARN && WARN.regions && WARN.regions[R.warn];
+  if(wr && wr.level != null){
+    st.hidden = false; st.className = "state " + (wr.level===0 ? "ok" : "");
+    st.textContent = wr.level===0 ? `Keine Warnung · Warngebiet ${WARNAREA[R.warn].n}` : `${wr.level===2?"Sturmwarnung":"Starkwindwarnung"} · ${WARNAREA[R.warn].n}`;
+  } else st.hidden = true;
+  // Stunden: ab jetzt bis Mitternacht, mindestens 8 Stunden
+  const nowH = c.time.slice(0,13);
+  let i0 = H.time.findIndex(t => t.slice(0,13) >= nowH); if(i0 < 0) i0 = 0;
+  const today = c.time.slice(0,10);
+  let i1 = H.time.findIndex((t,i) => i > i0 && t.slice(0,10) !== today); if(i1 < 0) i1 = H.time.length;
+  i1 = Math.max(i1, i0 + 8);
+  let hh = "";
+  for(let i=i0; i<i1 && i<H.time.length; i++){
+    const t = H.time[i], r = H.precipitation[i];
+    hh += `<div class="hr ${i===i0?"now":""}"><span class="h">${i===i0?"jetzt":t.slice(11,13)+" Uhr"}</span><span class="ic">${wxIcon(H.weather_code[i], isNight(t, D))}</span>
+      <span class="t">${Math.round(H.temperature_2m[i])}°</span><span class="w">${arrowSvg(H.wind_direction_10m[i])}${Math.round(H.wind_speed_10m[i])}</span>
+      <span class="g">B ${Math.round(H.wind_gusts_10m[i])}</span><span class="r">${r>=0.1 ? fmtC(r)+" mm" : ""}</span></div>`;
+  }
+  document.getElementById("hrow").innerHTML = hh;
+  // Tage: heute + 3
+  let dd = "";
+  D.time.forEach((t,i)=>{
+    const d = wd(t), lbl = i===0 ? "Heute" : i===1 ? "Morgen" : d.toLocaleDateString("de-DE",{weekday:"short"}).replace(".","");
+    const rain = D.precipitation_sum[i], pp = D.precipitation_probability_max[i];
+    dd += `<div class="drow"><div class="dl">${lbl}<span>${fmtD(d)}</span></div><div class="ic">${wxIcon(D.weather_code[i], false)}</div>
+      <div class="mid">${dirName(D.wind_direction_10m_dominant[i])}&nbsp;<b>${Math.round(D.wind_speed_10m_max[i])}</b>&nbsp;km/h&nbsp;·&nbsp;${bft(D.wind_speed_10m_max[i])}&nbsp;Bft<br>Böen ${Math.round(D.wind_gusts_10m_max[i])} · ${rain>=0.1 ? `${fmtC(rain)} mm` : "trocken"}</div>
+      <div class="tt">${Math.round(D.temperature_2m_max[i])}°<small> / ${Math.round(D.temperature_2m_min[i])}°</small></div></div>`;
+  });
+  document.getElementById("drows").innerHTML = dd;
+  const ts = new Date(c.time);
+  statusInfo.x = {live, text: live ? `Wetter von ${fmtT(ts)} Uhr` : `Keine Verbindung · Wetter vom ${fmtD(ts)}, ${fmtT(ts)} Uhr`};
+  if(view === "x") showStatus();
+}
+function renderWarn(){
+  const bar = document.getElementById("warnbar");
+  if(!WARN || !WARN.regions){ bar.hidden = true; document.getElementById("wrows").innerHTML = ""; document.getElementById("wnote").innerHTML = `Warnstatus nicht verfügbar. Verbindlich sind die Warnleuchten am Ufer. <a href="https://www.kttg.ch/kapo/htm/stwarn.shtml" target="_blank" rel="noopener">Offizieller Status</a>`; return; }
+  const checked = new Date(WARN.checked), ageMin = (Date.now() - checked) / 60000;
+  const stale = ageMin > 45;
+  let rows = "";
+  for(const k of ["west","mitte","ost"]){
+    const r = WARN.regions[k] || {}, a = WARNAREA[k];
+    const lv = r.level, chip = lv===2 ? "l2" : lv===1 ? "l1" : lv===0 ? "" : "lx";
+    const txt = lv===2 ? "Sturmwarnung" : lv===1 ? "Starkwindwarnung" : lv===0 ? "Keine Warnung" : (r.text || "unbekannt");
+    rows += `<div class="wrow"><div class="lbl">${a.n}<span>${a.d}</span></div><span class="wchip ${chip}">${txt}</span></div>`;
+  }
+  document.getElementById("wrows").innerHTML = rows;
+  document.getElementById("wnote").innerHTML = `Stand ${fmtD(checked)}, ${fmtT(checked)} Uhr${stale ? " – möglicherweise veraltet" : ""}. Starkwind: Böen etwa 25–33 kn (Bft 6–7), Sturm: ab 34 kn (Bft 8). Verbindlich sind allein die Warnleuchten am Ufer. <a href="https://www.kttg.ch/kapo/htm/stwarn.shtml" target="_blank" rel="noopener">Offizieller Status</a>`;
+  // Hinweis oben in allen Ansichten
+  const active = ["west","mitte","ost"].filter(k => (WARN.regions[k]||{}).level > 0);
+  if(active.length){
+    const max = Math.max(...active.map(k => WARN.regions[k].level));
+    const names = active.map(k => `${WARNAREA[k].n}${WARN.regions[k].level===2?" (Sturm)":""}`).join(", ");
+    bar.className = "warnbar lvl" + max;
+    bar.innerHTML = `<svg class="wi" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9.5 17h-19z M12 10v4.5 M12 17.5v.01" fill="none" stroke="var(--wcol)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div><b>${max===2 ? "Sturmwarnung" : "Starkwindwarnung"} Bodensee</b><span>${names} · Stand ${fmtT(checked)} Uhr${stale?" (möglicherweise veraltet)":""}</span></div>`;
+    bar.hidden = false;
+  } else bar.hidden = true;
+}
+document.getElementById("warnbar").addEventListener("click", ()=>{ setView("x"); document.getElementById("warns").scrollIntoView({behavior:"smooth", block:"start"}); });
+document.querySelectorAll("#rseg button").forEach(b=>b.addEventListener("click", ()=>{ region = +b.dataset.r; try{ localStorage.setItem(RSTORE, region); }catch(e){} renderX(statusInfo.x.live); }));
+async function refreshX(){
+  try{ WX = await getJSON(WX_URL); if(!Array.isArray(WX) || WX.length !== 3) throw new Error("Format"); save(WXSTORE, WX); renderX(true); }
+  catch(e){
+    try{ WX = await getJSON(`weather.json?t=${Date.now()}`); save(WXSTORE, WX); renderX(false); }
+    catch(e2){ WX = WX || load(WXSTORE); if(WX) renderX(false); else { statusInfo.x = {live:false, text:"Wetterdaten nicht erreichbar"}; if(view==="x") showStatus(); } }
+  }
+}
+async function refreshWarn(){
+  try{ WARN = await getJSON(`warn.json?t=${Date.now()}`); save(WNSTORE, WARN); }
+  catch(e){ WARN = WARN || load(WNSTORE); }
+  renderWarn(); if(WX) renderX(statusInfo.x.live);
+}
+
 let busy = false;
 async function refresh(){
   if(busy) return; busy = true;
   const btn = document.getElementById("refresh"); btn.disabled = true; btn.textContent = "Lädt …";
-  try{ await Promise.all([refreshW(), refreshT(), refreshH(), refreshO()]); }
+  try{ await Promise.all([refreshW(), refreshT(), refreshH(), refreshO(), refreshX(), refreshWarn()]); }
   finally{ busy = false; btn.disabled = false; btn.textContent = "Aktualisieren"; }
 }
 
-WHIST = load(HSTORE); OUTLOOK = load(OSTORE);
+WHIST = load(HSTORE); OUTLOOK = load(OSTORE); WX = load(WXSTORE); WARN = load(WNSTORE);
 let startView = "w";
 try{ startView = localStorage.getItem(VSTORE) || "w"; }catch(e){}
 if(location.hash === "#temperatur") startView = "t";
+if(location.hash === "#wetter") startView = "x";
 renderW(load(STORE)?.series?.length ? load(STORE) : SNAPSHOT, false);
 const tCached = load(TSTORE); if(tCached && tCached.daily) renderT(tCached, false);
-statusInfo.w.text = statusInfo.t.text = "Lade aktuelle Werte …"; statusInfo.w.live = statusInfo.t.live = true;
-setView(startView === "t" ? "t" : "w");
+if(WX) renderX(false); renderWarn();
+for(const k of ["w","t","x"]) statusInfo[k] = {text:"Lade aktuelle Werte …", live:true};
+setView(startView);
 document.getElementById("refresh").addEventListener("click", refresh);
 document.addEventListener("visibilitychange", () => { if(document.visibilityState === "visible") refresh(); });
 setInterval(() => { if(document.visibilityState === "visible") refresh(); }, 15*60*1000);

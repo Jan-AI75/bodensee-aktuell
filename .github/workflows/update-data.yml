@@ -5,6 +5,9 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+concurrency:
+  group: data-commit
+  cancel-in-progress: false
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -26,10 +29,16 @@ jobs:
       - name: Ausblick (Vorhersage BAFU, Wetter Open-Meteo)
         continue-on-error: true
         run: python3 scripts/update_outlook.py
+      - name: Wetter (Open-Meteo, drei Seeteile)
+        continue-on-error: true
+        run: python3 scripts/update_weather.py
+      - name: Sturmwarnung (Prüfzeitpunkt aktualisieren)
+        continue-on-error: true
+        run: python3 scripts/update_warn.py --touch
       - name: Speichern
         run: |
           rm -f data.tmp
           git config user.name "pegel-bot"
           git config user.email "pegel-bot@users.noreply.github.com"
-          git add data.json temp.json wl_hist.json outlook.json
-          git diff --cached --quiet || (git commit -m "Daten $(date -u +%FT%TZ)" && git push)
+          git add data.json temp.json wl_hist.json outlook.json weather.json warn.json
+          git diff --cached --quiet || (git commit -m "Daten $(date -u +%FT%TZ)" && git pull --rebase -q && git push)
