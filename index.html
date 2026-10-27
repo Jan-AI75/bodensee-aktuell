@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Bodensee aktuell</title>
+<meta name="robots" content="noindex, nofollow">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Bodensee">
@@ -68,8 +69,8 @@ button.refresh[disabled]{opacity:.6}
 .pal-item .chk{margin-left:auto;color:var(--lake);font-size:.9rem;visibility:hidden}
 .pal-item[aria-checked="true"] .chk{visibility:visible}
 .seg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:4px;gap:4px}
-.seg button{font:600 clamp(.8rem,3.6vw,.9rem) var(--body);min-width:0;border:0;border-radius:9px;padding:9px 8px;background:transparent;color:var(--muted);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:1px}
-.seg button small{font:500 .78rem var(--mono);font-variant-numeric:tabular-nums}
+.seg button{font:600 clamp(.74rem,3.4vw,.9rem) var(--body);min-width:0;text-align:center;line-height:1.2;hyphens:manual;border:0;border-radius:9px;padding:8px 4px;background:transparent;color:var(--muted);cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.seg button small{font:500 clamp(.66rem,3vw,.78rem) var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
 .seg button[aria-selected="true"]{background:var(--lake);color:var(--surface)}
 .status{font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:6px}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--up);flex:none}
@@ -181,7 +182,7 @@ footer a{color:var(--lake)}
 <div class="wrap">
   <header>
     <div>
-      <div class="eyebrow" id="eyebrow">Konstanz · Pegelstand</div>
+      <div class="eyebrow" id="eyebrow" style="font-size:clamp(.6rem,2.9vw,.72rem);white-space:nowrap">Wasserstand</div>
       <h1>Bodensee aktuell</h1>
     </div>
     <div class="hbtns">
@@ -195,7 +196,7 @@ footer a{color:var(--lake)}
 
   <div class="seg" role="tablist" aria-label="Ansicht">
     <button type="button" role="tab" id="tab-w" aria-selected="true" aria-controls="view-w">Wasserstand<small id="tab-w-val">–</small></button>
-    <button type="button" role="tab" id="tab-t" aria-selected="false" aria-controls="view-t">Temperatur<small id="tab-t-val">–</small></button>
+    <button type="button" role="tab" id="tab-t" aria-selected="false" aria-controls="view-t">Wasser&shy;temperatur<small id="tab-t-val">–</small></button>
     <button type="button" role="tab" id="tab-x" aria-selected="false" aria-controls="view-x">Wetter<small id="tab-x-val">–</small></button>
   </div>
 
@@ -355,7 +356,7 @@ applyPalette(palette);
 
 /* ---------- Ansicht umschalten ---------- */
 let view = "w";
-const EYEBROW = {w:"Konstanz · Pegelstand", t:"Lindau · Wassertemperatur", x:"Bodensee · Wetter"};
+const EYEBROW = {w:"Wasserstand", t:"Wassertemperatur", x:"Wetter"};
 function setView(v){
   if(!EYEBROW[v]) v = "w";
   view = v;
