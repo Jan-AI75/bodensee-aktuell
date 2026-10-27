@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Bodensee aktuell</title>
 <meta name="robots" content="noindex, nofollow">
+<link rel="manifest" href="manifest.webmanifest">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Bodensee">
@@ -966,6 +967,7 @@ document.getElementById("refresh").addEventListener("click", refresh);
 document.addEventListener("visibilitychange", () => { if(document.visibilityState === "visible") refresh(); });
 setInterval(() => { if(document.visibilityState === "visible") refresh(); }, 15*60*1000);
 refresh();
+if("serviceWorker" in navigator && location.protocol === "https:" && location.hostname.endsWith("github.io")){ navigator.serviceWorker.register("sw.js").catch(()=>{}); }
 </script>
 </body>
 </html>
