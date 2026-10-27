@@ -43,6 +43,11 @@
   --bg:#eef3f4; --surface:#ffffff; --fg:#0f2a33; --muted:#5a7480; --line:#cfdde1;
   --lake:#1f6f8b; --lake-soft:#cfe6ee; --mean:#b07a2a; --band:#ead9bd; --up:#2c7a4b; --down:#b4472f;
   --warm:#c2552f; --cool:#2f6fb4; --statusbar:#0f2a33; color-scheme:light}
+:root[data-palette="nacht"]{
+  /* Rotlicht wie im Boot-Cockpit (Nachtsicht schonen) */
+  --bg:#000000; --surface:#0A0404; --fg:#FF6A5C; --muted:#C2513F; --line:#2A0F0C;
+  --lake:#E8604F; --lake-soft:#2A0806; --mean:#9C4034; --band:#1E0605; --up:#FF6A5C; --down:#D5584B;
+  --warm:#FF6A5C; --cool:#B44A3E; --statusbar:#000000; color-scheme:dark}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--statusbar);z-index:10}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -328,6 +333,7 @@ const PALETTES = [
   {k:"graphit",  n:"Graphit",  c:["#111316","#1a1d21","#6aa8ff","#d6ad62"]},
   {k:"marine",   n:"Marine",   c:["#0a1426","#101d35","#58c4f2","#f0c35a"]},
   {k:"schwarz",  n:"Schwarz",  c:["#000000","#0e0f11","#4aa8f0","#e2b04e"]},
+  {k:"nacht",    n:"Nacht",    c:["#000000","#0A0404","#FF6A5C","#D5584B"]},
   {k:"hell",     n:"Hell",     c:["#eef3f4","#ffffff","#1f6f8b","#b07a2a"]},
 ];
 const PSTORE = "pegel-kn-palette";
