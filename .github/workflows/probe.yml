@@ -10,14 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          mkdir -p out11
-          UA="Mozilla/5.0 (compatible; bodensee-aktuell/1.0; +https://jan-ai75.github.io/pegel-konstanz/)"
-          curl -sSL -A "$UA" "https://www.kttg.ch/kapo/htm/stwarn.shtml" -o out11/kttg.html -w "kttg %{http_code}\n" || true
-          curl -sSI -A "$UA" -H "Origin: https://jan-ai75.github.io" "https://www.kttg.ch/kapo/htm/stwarn.shtml" -o out11/kttg_headers.txt || true
-          for u in warnings_lake.json warnings.json seaWarnings.json; do curl -sSL -A "$UA" "https://www.dwd.de/DWD/warnungen/warnapp/json/$u" -o "out11/dwd_$u" -w "dwd $u %{http_code} %{size_download}\n" || true; done
-          curl -sSI -H "Origin: https://jan-ai75.github.io" "https://www.dwd.de/DWD/warnungen/warnapp/json/warnings_lake.json" -o out11/dwd_headers.txt || true
-          curl -sSL "https://api.open-meteo.com/v1/forecast?latitude=47.53,47.62,47.67&longitude=9.65,9.45,9.22&current=temperature_2m,apparent_temperature,weather_code,cloud_cover,precipitation,wind_speed_10m,wind_gusts_10m,wind_direction_10m&hourly=temperature_2m,precipitation,precipitation_probability,weather_code,wind_speed_10m,wind_gusts_10m,wind_direction_10m&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,wind_speed_10m_max,wind_gusts_10m_max,wind_direction_10m_dominant,sunrise,sunset&forecast_days=4&timezone=Europe%2FBerlin&wind_speed_unit=kmh" -o out11/weather.json -w "om %{http_code}\n" || true
-          ls -la out11
+          mkdir -p out12
+          python3 scripts/update_weather.py && mv weather.json out12/
+          ls -la out12
       - run: |
           git config user.name probe; git config user.email probe@users.noreply.github.com
-          git add out11 && git commit -m probe-results && git push
+          git add out12 && git commit -m probe-results && git push
