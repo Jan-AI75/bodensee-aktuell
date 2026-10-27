@@ -6,7 +6,7 @@ Ohne --touch wird die Datei nur bei geänderter Warnlage neu geschrieben
 import datetime as dt, html, json, os, re, sys, urllib.request
 OUT = os.path.join(os.path.dirname(__file__), "..", "warn.json")
 URL = "https://www.kttg.ch/kapo/htm/stwarn.shtml"
-req = urllib.request.Request(URL, headers={"User-Agent": "bodensee-aktuell/1.0 (+https://jan-ai75.github.io/pegel-konstanz/)"})
+req = urllib.request.Request(URL, headers={"User-Agent": "bodensee-aktuell/1.0 (+https://jan-ai75.github.io/bodensee-aktuell/)"})
 raw = urllib.request.urlopen(req, timeout=30).read().decode("latin-1")
 texts = [re.sub(r"\s+", " ", html.unescape(t)).strip() for t in re.findall(r"<strong>(.*?)</strong>", raw, re.S)]
 texts = [t for t in texts if t]

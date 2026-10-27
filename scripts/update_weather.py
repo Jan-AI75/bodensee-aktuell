@@ -9,7 +9,7 @@ URL = ("https://api.open-meteo.com/v1/forecast?latitude=47.535,47.625,47.755&lon
        "&hourly=temperature_2m,precipitation,precipitation_probability,weather_code,wind_speed_10m,wind_gusts_10m,wind_direction_10m"
        "&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,wind_speed_10m_max,wind_gusts_10m_max,wind_direction_10m_dominant,sunrise,sunset"
        "&forecast_days=4&timezone=Europe%2FBerlin&wind_speed_unit=kmh")
-req = urllib.request.Request(URL, headers={"User-Agent": "bodensee-aktuell/1.0 (+https://jan-ai75.github.io/pegel-konstanz/)"})
+req = urllib.request.Request(URL, headers={"User-Agent": "bodensee-aktuell/1.0 (+https://jan-ai75.github.io/bodensee-aktuell/)"})
 try:
     d = json.loads(urllib.request.urlopen(req, timeout=60).read())
     assert isinstance(d, list) and len(d) == 3

@@ -7,7 +7,7 @@
 """
 import datetime as dt, json, os, sys, urllib.request
 
-UA = "Mozilla/5.0 (compatible; pegel-konstanz/1.0; +https://jan-ai75.github.io/pegel-konstanz/)"
+UA = "bodensee-aktuell/1.0 (+https://jan-ai75.github.io/bodensee-aktuell/)"
 OUT = os.path.join(os.path.dirname(__file__), "..", "outlook.json")
 BAFU = "https://www.hydrodaten.admin.ch/plots/p_forecast/2032_p_forecast_de.json"
 # Lindau, Rheintal, Chur, Prättigau/Davos, Montafon, Appenzell/Säntis
