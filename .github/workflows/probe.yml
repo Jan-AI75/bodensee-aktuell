@@ -10,9 +10,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          mkdir -p out12
-          python3 scripts/update_weather.py && mv weather.json out12/
-          ls -la out12
+          mkdir -p out13
+          for m in best_match icon_d2 meteoswiss_icon_ch1 meteoswiss_icon_ch2 icon_eu ecmwf_ifs025; do
+            curl -sS "https://api.open-meteo.com/v1/forecast?latitude=47.535,47.5455,47.552,47.625,47.665&longitude=9.66,9.6829,9.715,9.47,9.205&current=temperature_2m&hourly=temperature_2m&past_days=1&forecast_days=1&models=$m&timezone=Europe%2FBerlin" -o out13/$m.json || true
+          done
+          ls -la out13
       - run: |
           git config user.name probe; git config user.email probe@users.noreply.github.com
-          git add out12 && git commit -m probe-results && git push
+          git add out13 && git commit -m probe-results && git push
