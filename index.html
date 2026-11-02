@@ -290,7 +290,7 @@ footer a{color:var(--lake)}
   <footer>
     Wasserstand live von <a href="https://www.pegelonline.wsv.de/gast/stammdaten?pegelnr=906" target="_blank" rel="noopener">PEGELONLINE (WSV)</a>, Pegelnull 391,89 m ü. NHN. MW 341 cm, MNW 262 cm (1902–2006, <a href="https://www.bodensee-hochwasser.info/pdf/W-Kennwerte-Obersee.pdf" target="_blank" rel="noopener">IGKB</a>). Das Wasserstandsmittel je Kalendertag ist eine Näherung aus typischen Monatswerten. Der Vorjahreswert ist das Tagesmittel am <a href="https://www.gkd.bayern.de/de/seen/wasserstand/bayern/lindau-20001001" target="_blank" rel="noopener">Pegel Lindau</a>, auf Konstanz umgerechnet (Lindau liegt im Mittel 3,9 cm tiefer, Abweichung meist unter 1 cm).<br>
     Wassertemperatur: Messstelle Lindau des <a href="https://www.gkd.bayern.de/de/seen/wassertemperatur/bayern/lindau-20001001" target="_blank" rel="noopener">Gewässerkundlichen Dienstes Bayern</a> (Konstanz misst keine Temperatur). Vergleichswerte sind Tagesmittel; das Mittel je Kalendertag ist aus den Messjahren seit 2004 berechnet. Temperaturdaten werden etwa alle 30 Minuten übernommen.<br>
-    Ausblick: Wasserstandsvorhersage des <a href="https://www.hydrodaten.admin.ch/de/seen-und-fluesse/stationen-und-daten/2032" target="_blank" rel="noopener">BAFU für Romanshorn</a>, Wetter von <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a> (CC BY 4.0), Modelle u. a. des Deutschen Wetterdienstes und von MeteoSchweiz.<br>
+    Ausblick: Wasserstandsvorhersage des <a href="https://www.hydrodaten.admin.ch/de/seen-und-fluesse/stationen-und-daten/2032" target="_blank" rel="noopener">BAFU für Romanshorn</a>, Wetter von <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a> (CC BY 4.0), Modelle u. a. des Deutschen Wetterdienstes und von MeteoSchweiz. Temperatur, Wetterlage und Regen gelten für den Ort an Land, Wind und Böen für einen Punkt auf dem See davor.<br>
     Starkwind- und Sturmwarnung: Status der <a href="https://www.kttg.ch/kapo/htm/stwarn.shtml" target="_blank" rel="noopener">Kantonspolizei Thurgau</a>, etwa alle 5 Minuten übernommen. Verbindlich sind allein die Warnleuchten am Ufer.
   </footer>
 </div>
@@ -809,7 +809,8 @@ async function refreshT(){
   }
 }
 /* ---------- Wetter ---------- */
-const WX_URL = "https://api.open-meteo.com/v1/forecast?latitude=47.535,47.625,47.755&longitude=9.66,9.47,9.165"
+// Reihenfolge: drei Punkte auf dem See (Wind), dann drei Orte an Land (Temperatur, Wetter, Regen)
+const WX_URL = "https://api.open-meteo.com/v1/forecast?latitude=47.535,47.625,47.755,47.5455,47.654,47.767&longitude=9.66,9.47,9.165,9.6829,9.479,9.159"
   + "&current=temperature_2m,apparent_temperature,weather_code,cloud_cover,precipitation,wind_speed_10m,wind_gusts_10m,wind_direction_10m"
   + "&hourly=temperature_2m,precipitation,precipitation_probability,weather_code,wind_speed_10m,wind_gusts_10m,wind_direction_10m"
   + "&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,wind_speed_10m_max,wind_gusts_10m_max,wind_direction_10m_dominant,sunrise,sunset"
@@ -825,6 +826,17 @@ const WARNAREA = {
   mitte:{n:"Mitte", d:"Konstanz, Meersburg, Friedrichshafen bis Arbon–Langenargen"},
   ost:  {n:"Ost", d:"Langenargen, Lindau, Bregenz, östlich von Arbon–Langenargen"},
 };
+const WINDKEYS = ["wind_speed_10m","wind_gusts_10m","wind_direction_10m","wind_speed_10m_max","wind_gusts_10m_max","wind_direction_10m_dominant"];
+function mergeWx(arr){ // Wind vom See, alles andere vom Ort an Land
+  if(!Array.isArray(arr)) return null;
+  if(arr.length === 3) return arr;
+  if(arr.length !== 6) return null;
+  return [0,1,2].map(i => {
+    const lake = arr[i], land = arr[i+3], out = JSON.parse(JSON.stringify(land));
+    for(const part of ["current","hourly","daily"]) for(const k of WINDKEYS) if(lake[part] && k in lake[part]) out[part][k] = lake[part][k];
+    return out;
+  });
+}
 let region = 0; try{ region = +(localStorage.getItem(RSTORE) || 0) || 0; }catch(e){}
 const BFT = [1,6,12,20,29,39,50,62,75,89,103,118];
 const bft = v => { let b = 0; while(b < BFT.length && v >= BFT[b]) b++; return b; };
@@ -933,9 +945,9 @@ function renderWarn(){
 document.getElementById("warnbar").addEventListener("click", ()=>{ setView("x"); document.getElementById("warns").scrollIntoView({behavior:"smooth", block:"start"}); });
 document.querySelectorAll("#rseg button").forEach(b=>b.addEventListener("click", ()=>{ region = +b.dataset.r; try{ localStorage.setItem(RSTORE, region); }catch(e){} renderX(statusInfo.x.live); }));
 async function refreshX(){
-  try{ WX = await getJSON(WX_URL); if(!Array.isArray(WX) || WX.length !== 3) throw new Error("Format"); save(WXSTORE, WX); renderX(true); }
+  try{ const r = mergeWx(await getJSON(WX_URL)); if(!r) throw new Error("Format"); WX = r; save(WXSTORE, WX); renderX(true); }
   catch(e){
-    try{ WX = await getJSON(`weather.json?t=${Date.now()}`); save(WXSTORE, WX); renderX(false); }
+    try{ const r = mergeWx(await getJSON(`weather.json?t=${Date.now()}`)); if(!r) throw new Error("Format"); WX = r; save(WXSTORE, WX); renderX(false); }
     catch(e2){ WX = WX || load(WXSTORE); if(WX) renderX(false); else { statusInfo.x = {live:false, text:"Wetterdaten nicht erreichbar"}; if(view==="x") showStatus(); } }
   }
 }
