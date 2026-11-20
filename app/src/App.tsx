@@ -124,7 +124,7 @@ export default function App() {
         <Sidebar collapsible="none" className="glass h-full rounded-[22px] bg-transparent">
           <SidebarHeader className="px-4 pt-5 pb-3">
             <div className="flex items-center gap-2.5">
-              <img src="./icon-192.png" alt="" className="size-8 rounded-[9px] shadow-sm" />
+              <img src="./icon.svg" alt="" className="size-8 shadow-sm rounded-[9px]" />
               <span className="font-heading text-headline font-semibold tracking-[-0.015em]">Bodensee aktuell</span>
             </div>
           </SidebarHeader>

@@ -13,7 +13,7 @@ Seeteile; Starkwind- und Sturmwarnung.
 - `scripts/update_outlook.py` → `outlook.json` (BAFU-Vorhersage Romanshorn, Wetter im Einzugsgebiet)
 - `scripts/update_weather.py` → `weather.json` (Rückfall, wenn Open-Meteo nicht erreichbar)
 - `scripts/update_warn.py` → `warn.json` (Kantonspolizei Thurgau)
-- `sw.js`, `manifest.webmanifest`, `icon-*.png` – installierbare Web-App
+- `sw.js`, `manifest.webmanifest`, `icon.svg`, `icon-*.png`, `apple-touch-icon.png` – installierbare Web-App (Logo: Quelle `app/public/icon.svg`)
 - `.github/workflows/update-data.yml` – Daten, alle 30 Minuten
 - `.github/workflows/storm-warn.yml` – Sturmwarnung, alle 5 Minuten
 - `.github/workflows/build-app.yml` – baut die App bei Änderungen in `app/`
