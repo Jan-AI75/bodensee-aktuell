@@ -1,4 +1,4 @@
-/* Wetter für drei Seeteile: jetzt, stündlich bis Mitternacht, die nächsten Tage, Starkwind- und Sturmwarnung. */
+/* Wetter für drei Seeteile: jetzt, Wind und Wetter stündlich (48 Stunden), die nächsten Tage, Starkwind- und Sturmwarnung. */
 import { motion, useReducedMotion } from "motion/react"
 import { ExternalLink, Wind } from "lucide-react"
 import { cn } from "@/lib/utils"
@@ -6,24 +6,16 @@ import type { LakeData, Warn } from "@/lib/types"
 import {
   REGIONS, WARNAREA, WARN_KEYS, bft, dirName, fmtC, fmtD, fmtT, isNight, warnInfo, warnName, wdDay, wxKind, wxText,
 } from "@/lib/model"
-import { WindForecast } from "./WindChart"
+import { WindHours } from "./WindChart"
 import { Hero, Note, Section, StatePill, WeatherIcon, WindArrow } from "./bits"
 
 const WARN_URL = "https://www.kttg.ch/kapo/htm/stwarn.shtml"
 
 export function WeatherView({ D, region, setRegion }: { D: LakeData; region: number; setRegion: (r: number) => void }) {
   const p = D.wx!.list[region]
-  const R = REGIONS[region], c = p.current, Dd = p.daily, H = p.hourly
+  const R = REGIONS[region], c = p.current, Dd = p.daily
   const night = isNight(c.time, Dd)
   const wr = D.warn?.regions?.[R.warn]
-
-  // Stunden: ab jetzt bis Mitternacht, mindestens 8 Stunden
-  const nowH = c.time.slice(0, 13)
-  let i0 = H.time.findIndex((t) => t.slice(0, 13) >= nowH); if (i0 < 0) i0 = 0
-  const today = c.time.slice(0, 10)
-  let i1 = H.time.findIndex((t, i) => i > i0 && t.slice(0, 10) !== today); if (i1 < 0) i1 = H.time.length
-  i1 = Math.min(H.time.length, Math.max(i1, i0 + 8))
-  const hours = Array.from({ length: Math.max(0, i1 - i0) }, (_, k) => i0 + k)
 
   return (
     <div className="grid gap-6">
@@ -52,28 +44,7 @@ export function WeatherView({ D, region, setRegion }: { D: LakeData; region: num
             },
           ]} />
 
-        <WindForecast p={p} area={`${R.n}, ${R.town}`} />
-
-        <Section title="Heute stündlich" id="x-hours" area="a" aside="Temperatur, Wind, Böen, Regen">
-          <div className="no-scrollbar overflow-x-auto overscroll-x-contain" tabIndex={0} aria-label="Stündliche Vorhersage, waagerecht scrollbar">
-            <ol className="flex w-max min-w-full gap-1 p-2.5">
-              {hours.map((i) => {
-                const t = H.time[i], r = H.precipitation[i], now = i === i0
-                return (
-                  <li key={t} className={cn("grid min-w-[4.25rem] flex-1 justify-items-center gap-1.5 rounded-2xl px-1 py-3 tabular-nums", now && "bg-accent")}>
-                    <span className={cn("text-caption", now ? "font-semibold text-accent-foreground" : "text-muted-foreground")}>{now ? "Jetzt" : `${t.slice(11, 13)} Uhr`}</span>
-                    <WeatherIcon kind={wxKind(H.weather_code[i])} night={isNight(t, Dd)} className="size-6" />
-                    <span className="text-headline font-semibold">{Math.round(H.temperature_2m[i])}°</span>
-                    <span className="flex items-center gap-0.5 text-caption"><WindArrow deg={H.wind_direction_10m[i]} className="size-3 text-lake" />{Math.round(H.wind_speed_10m[i])}</span>
-                    <span className="text-[0.6875rem] text-muted-foreground">Böen {Math.round(H.wind_gusts_10m[i])}</span>
-                    <span className="min-h-4 text-[0.6875rem] font-medium text-lake">{r >= 0.1 ? `${fmtC(r)} mm` : ""}</span>
-                  </li>
-                )
-              })}
-            </ol>
-          </div>
-          <Note>Wind in km/h über dem See, Temperatur und Regen am Ufer.</Note>
-        </Section>
+        <WindHours p={p} area={`${R.n}, ${R.town}`} />
 
         <Section title="Die nächsten Tage" id="x-days" area="c">
           <ul className="hairline">
