@@ -267,7 +267,9 @@
   .view-grid[data-layout="wide-a"] {
     grid-template-areas:
       "hero hero"
+      "w    w"
       "a    a"
       "c    d";
   }
+  .view-grid > [data-area="w"] { grid-area: w; }
 }

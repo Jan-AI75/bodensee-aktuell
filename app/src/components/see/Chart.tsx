@@ -13,6 +13,8 @@ export type Layer =
   | { kind: "vline"; t: number; label?: string }
   | { kind: "dot"; t: number; v: number; color: string; r?: number }
   | { kind: "label"; t: number; v: number; text: string }
+  /** Waagerechter Bereich über die volle Breite, z. B. Risikostufe; Beschriftung oben rechts im Bereich */
+  | { kind: "zone"; lo: number; hi: number; color: string; label?: string; labelColor?: string }
 export type Probe = { t: number; title: string; items: { color: string; label: string; value: string; v: number }[] }
 
 export type ChartProps = {
@@ -130,6 +132,17 @@ export function Chart({ t0, t1, lo, hi, step, yFmt = String, xTicks, layers, hei
                       {L.label && <text x={X(L.t) + 5} y={y0 + 10} className="fill-muted-foreground text-[11px]">{L.label}</text>}
                     </g>
                   )
+                case "zone": {
+                  const top = Y(Math.min(L.hi, hi)), bot = Y(Math.max(L.lo, lo))
+                  if (bot <= top) return null
+                  return (
+                    <g key={i}>
+                      <rect x={x0} y={top} width={x1 - x0} height={bot - top} fill={L.color} />
+                      <line x1={x0} x2={x1} y1={bot} y2={bot} stroke={L.labelColor ?? L.color} strokeDasharray="2 4" opacity={0.8} />
+                      {L.label && bot - top > 16 && <text x={x1 - 6} y={bot - 6} textAnchor="end" fill={L.labelColor} className="text-[11px] font-semibold">{L.label}</text>}
+                    </g>
+                  )
+                }
                 case "dot":
                   return <circle key={i} cx={X(L.t)} cy={Y(L.v)} r={L.r ?? 4.5} fill={L.color} stroke="var(--card)" strokeWidth={2} />
                 case "label": {

@@ -13,6 +13,7 @@
 - Fachlogik: `app/src/lib/model.ts` (Rechenwege aus der bisherigen App unverändert übernommen). Laden: `app/src/lib/data.ts`,
   localStorage-Schlüssel `pegel-kn-*` bleiben gleich, damit gespeicherte Stände und Einstellungen erhalten bleiben.
 - Ansichten: `app/src/components/see/` (WaterView, TempView, WeatherView), Diagramme über `Chart.tsx` (abtastbar).
+  Windprognose `WindChart.tsx`: 48 h Wind und Böen mit Bändern Starkwind ab 25 kn (46 km/h) und Sturm ab 34 kn (63 km/h) Böen, wie im Boot-Cockpit.
 - Qualitätsprüfung: in `app/` `npm run build` und `npm run lint`, dann im Browser Handy/Tablet/Desktop, hell/dunkel.
 
 ## 1. Deine Rolle

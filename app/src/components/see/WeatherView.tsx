@@ -6,6 +6,7 @@ import type { LakeData, Warn } from "@/lib/types"
 import {
   REGIONS, WARNAREA, WARN_KEYS, bft, dirName, fmtC, fmtD, fmtT, isNight, warnInfo, warnName, wdDay, wxKind, wxText,
 } from "@/lib/model"
+import { WindForecast } from "./WindChart"
 import { Hero, Note, Section, StatePill, WeatherIcon, WindArrow } from "./bits"
 
 const WARN_URL = "https://www.kttg.ch/kapo/htm/stwarn.shtml"
@@ -50,6 +51,8 @@ export function WeatherView({ D, region, setRegion }: { D: LakeData; region: num
               note: Dd.precipitation_sum[0] >= 0.1 ? `${fmtC(Dd.precipitation_sum[0])} mm Regen` : "trocken",
             },
           ]} />
+
+        <WindForecast p={p} area={`${R.n}, ${R.town}`} />
 
         <Section title="Heute stündlich" id="x-hours" area="a" aside="Temperatur, Wind, Böen, Regen">
           <div className="no-scrollbar overflow-x-auto overscroll-x-contain" tabIndex={0} aria-label="Stündliche Vorhersage, waagerecht scrollbar">
