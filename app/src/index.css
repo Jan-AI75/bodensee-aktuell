@@ -1,0 +1,273 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/inter";
+
+/* Dunkle Paletten setzen .dark am <html>; data-palette wählt die Variante. */
+@custom-variant dark (&:is(.dark *));
+
+/* ───────────────────────── Design-Tokens ─────────────────────────
+   Farben: Nebel (Grund), Ufer (Schrift), Kiesel (Nebentext), Seeblau (Akzent, Wasserstand),
+   Schilf (langjähriges Mittel), Abendrot (Wärme), Eis (Kälte).
+   Schrift: Apple-Systemschrift, Inter als Ersatz. Größen 13/15/17/22/34/64.
+   Radien: Flächen 22 px, Elemente 12 px, Pillen rund. */
+@theme inline {
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter Variable", "Segoe UI", Roboto, system-ui, sans-serif;
+  --font-heading: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter Variable", "Segoe UI", Roboto, system-ui, sans-serif;
+
+  --text-caption: 0.8125rem;
+  --text-caption--line-height: 1.35;
+  --text-body: 0.9375rem;
+  --text-body--line-height: 1.47;
+  --text-headline: 1.0625rem;
+  --text-headline--line-height: 1.35;
+  --text-title: 1.375rem;
+  --text-title--line-height: 1.2;
+  --text-large: 2.125rem;
+  --text-large--line-height: 1.1;
+  --text-display: 4rem;
+  --text-display--line-height: 0.95;
+
+  --color-lake: var(--lake);
+  --color-lake-soft: var(--lake-soft);
+  --color-mean: var(--mean);
+  --color-band: var(--band);
+  --color-warm: var(--warm);
+  --color-cool: var(--cool);
+  --color-up: var(--up);
+  --color-down: var(--down);
+  --color-gale: var(--gale);
+  --color-storm: var(--storm);
+  --color-surface: var(--card);
+  --color-fill: var(--fill);
+  --color-glass: var(--glass);
+  --color-glass-line: var(--glass-line);
+
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  --shadow-surface: 0 1px 2px rgb(16 32 40 / 0.04), 0 8px 24px rgb(16 32 40 / 0.05);
+  --shadow-glass: 0 10px 40px rgb(16 32 40 / 0.14), 0 1px 2px rgb(16 32 40 / 0.06);
+  --ease-out-soft: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Hell (Voreinstellung bei hellem System) */
+:root {
+  --radius: 0.75rem;
+  --background: #f2f5f6;       /* Nebel */
+  --foreground: #142026;       /* Ufer */
+  --card: #ffffff;
+  --card-foreground: #142026;
+  --popover: #ffffff;
+  --popover-foreground: #142026;
+  --primary: #0b6f8f;          /* Seeblau */
+  --primary-foreground: #ffffff;
+  --secondary: #e7eef0;
+  --secondary-foreground: #142026;
+  --muted: #e7eef0;
+  --muted-foreground: #5c6a71; /* Kiesel, AA auf Weiß und Nebel */
+  --accent: #e1eff3;
+  --accent-foreground: #075a74;
+  --destructive: #c8102e;
+  --border: rgb(20 32 38 / 0.09);
+  --input: rgb(20 32 38 / 0.14);
+  --ring: #0b6f8f;
+  --fill: #edf2f4;
+  --lake: #0b6f8f;
+  --lake-soft: rgb(11 111 143 / 0.12);
+  --mean: #9a6812;             /* Schilf */
+  --band: rgb(154 104 18 / 0.13);
+  --warm: #c2410c;             /* Abendrot */
+  --cool: #2563b0;             /* Eis */
+  --up: #1d7f4e;
+  --down: #b8432c;
+  --gale: #a86a00;             /* Starkwind */
+  --storm: #c8102e;            /* Sturm */
+  --glass: rgb(255 255 255 / 0.7);
+  --glass-solid: #f8fafb;
+  --glass-line: rgb(20 32 38 / 0.08);
+  --glass-hi: rgb(255 255 255 / 0.8);
+  --sidebar: var(--glass);
+  --sidebar-foreground: #142026;
+  --sidebar-primary: #0b6f8f;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: rgb(11 111 143 / 0.1);
+  --sidebar-accent-foreground: #142026;
+  --sidebar-border: var(--glass-line);
+  --sidebar-ring: #0b6f8f;
+  color-scheme: light;
+}
+
+/* Dunkel: abgestufte Seetiefe, kein reines Schwarz */
+.dark {
+  --background: #0e1316;
+  --foreground: #ecf2f4;
+  --card: #172024;
+  --card-foreground: #ecf2f4;
+  --popover: #1c272c;
+  --popover-foreground: #ecf2f4;
+  --primary: #6cc3e0;
+  --primary-foreground: #06151b;
+  --secondary: #213036;
+  --secondary-foreground: #ecf2f4;
+  --muted: #213036;
+  --muted-foreground: #95a5ad;
+  --accent: rgb(108 195 224 / 0.14);
+  --accent-foreground: #a6dcee;
+  --destructive: #ff6b6b;
+  --border: rgb(255 255 255 / 0.08);
+  --input: rgb(255 255 255 / 0.14);
+  --ring: #6cc3e0;
+  --fill: #1e2a2f;
+  --lake: #6cc3e0;
+  --lake-soft: rgb(108 195 224 / 0.16);
+  --mean: #e0b25c;
+  --band: rgb(224 178 92 / 0.14);
+  --warm: #ff9f6e;
+  --cool: #8cb8ff;
+  --up: #5fd08a;
+  --down: #ff8a73;
+  --gale: #f2b84b;
+  --storm: #ff6b5e;
+  --glass: rgb(23 32 36 / 0.64);
+  --glass-solid: #172024;
+  --glass-line: rgb(255 255 255 / 0.1);
+  --glass-hi: rgb(255 255 255 / 0.06);
+  --sidebar: var(--glass);
+  --sidebar-foreground: #ecf2f4;
+  --sidebar-primary: #6cc3e0;
+  --sidebar-primary-foreground: #06151b;
+  --sidebar-accent: rgb(108 195 224 / 0.14);
+  --sidebar-accent-foreground: #ecf2f4;
+  --sidebar-border: var(--glass-line);
+  --sidebar-ring: #6cc3e0;
+  color-scheme: dark;
+}
+/* Nachtsee: die frühere Bodensee-aktuell-Optik */
+.dark[data-palette="nachtsee"] {
+  --background: #0b1a20; --card: #11252d; --popover: #152c35; --foreground: #e3eef1; --card-foreground: #e3eef1; --popover-foreground: #e3eef1;
+  --muted: #173a47; --secondary: #173a47; --muted-foreground: #8aa5ae; --fill: #173a47;
+  --primary: #5fb6d3; --ring: #5fb6d3; --lake: #5fb6d3; --lake-soft: rgb(95 182 211 / 0.18); --mean: #e0a957; --band: rgb(224 169 87 / 0.15);
+  --warm: #f0916c; --cool: #7fb2ec; --up: #6cc890; --down: #ee8a72;
+  --glass: rgb(17 37 45 / 0.68); --glass-solid: #11252d; --glass-line: rgb(95 182 211 / 0.16);
+}
+/* Nachtsicht: rot wie im Boot-Cockpit, schont die Dunkeladaption */
+.dark[data-palette="nacht"] {
+  --background: #070303; --card: #110606; --popover: #160808; --foreground: #ff6a5c; --card-foreground: #ff6a5c; --popover-foreground: #ff6a5c;
+  --muted: #210b09; --secondary: #210b09; --muted-foreground: #c2513f; --fill: #1d0907; --accent: #2a0d0a; --accent-foreground: #ff8a7c;
+  --primary: #e8604f; --primary-foreground: #070303; --ring: #e8604f; --lake: #e8604f; --lake-soft: rgb(232 96 79 / 0.16);
+  --mean: #9c4034; --band: rgb(156 64 52 / 0.25); --warm: #ff6a5c; --cool: #b44a3e; --up: #ff6a5c; --down: #d5584b;
+  --gale: #ff6a5c; --storm: #ff8a7c;
+  --border: #2a0f0c; --glass: rgb(17 6 6 / 0.72); --glass-solid: #110606; --glass-line: #2a0f0c; --glass-hi: transparent;
+  --sidebar-foreground: #ff6a5c; --sidebar-accent: #2a0d0a; --sidebar-accent-foreground: #ff8a7c; --sidebar-primary: #e8604f;
+}
+
+@layer base {
+  * { @apply border-border outline-ring/50; }
+  html {
+    @apply font-sans;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-background text-foreground text-body;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.006em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  :focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
+}
+
+@layer components {
+  /* Liquid Glass – nur für schwebende Bedienelemente. Ohne backdrop-filter: feste Fläche. */
+  .glass {
+    background: var(--glass-solid);
+    border: 1px solid var(--glass-line);
+    box-shadow: var(--shadow-glass), inset 0 1px 0 var(--glass-hi);
+  }
+  @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .glass {
+      background: var(--glass);
+      -webkit-backdrop-filter: saturate(180%) blur(22px);
+      backdrop-filter: saturate(180%) blur(22px);
+    }
+  }
+  /* Gruppierte Fläche im iOS-Stil */
+  .surface {
+    background: var(--card);
+    border-radius: 22px;
+    box-shadow: var(--shadow-surface);
+  }
+  .dark .surface { box-shadow: inset 0 0 0 1px var(--border); }
+  .hairline > * + * { border-top: 1px solid var(--border); }
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+}
+
+/* Ab 1024 px: zwei Spalten mit gemeinsamen Kanten je Zeile. Darunter eine Spalte in Code-Reihenfolge. */
+@media (min-width: 1024px) {
+  .view-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "hero hero"
+      "a    b"
+      "c    d";
+  }
+  .view-grid > [data-area="hero"] { grid-area: hero; }
+  .view-grid > [data-area="a"] { grid-area: a; }
+  .view-grid > [data-area="b"] { grid-area: b; }
+  .view-grid > [data-area="c"] { grid-area: c; }
+  .view-grid > [data-area="d"] { grid-area: d; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Wetter: Stundenleiste über die volle Breite */
+@media (min-width: 1024px) {
+  .view-grid[data-layout="wide-a"] {
+    grid-template-areas:
+      "hero hero"
+      "a    a"
+      "c    d";
+  }
+}
